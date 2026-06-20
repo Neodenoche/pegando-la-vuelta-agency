@@ -55,7 +55,7 @@ nav.scrolled{background:rgba(245,242,236,.92);backdrop-filter:blur(16px);border-
 .btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.04em;padding:13px 24px;border-radius:40px;border:1.5px solid rgba(255,255,255,.2);text-decoration:none;transition:all .25s;cursor:none}
 .btn-s:hover{border-color:var(--white);transform:translateY(-2px)}
 .hero-right{position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.85)}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.85)}
 .hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--dark) 0%,transparent 40%)}
 .hero-stats{position:absolute;bottom:3rem;right:3rem;display:flex;gap:2.5rem;z-index:3}
 .stat-num{font-family:var(--fd);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
@@ -93,7 +93,7 @@ nav.scrolled{background:rgba(245,242,236,.92);backdrop-filter:blur(16px);border-
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
 .team-card{border-radius:20px;overflow:hidden;position:relative;background:var(--white)}
 .team-card-img{height:380px;overflow:hidden}
-.team-card-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .6s var(--ease)}
+.team-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .6s var(--ease)}
 .team-card:hover .team-card-img img{transform:scale(1.05)}
 .team-card-info{padding:1.75rem}
 .team-card-top{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
@@ -121,7 +121,7 @@ nav.scrolled{background:rgba(245,242,236,.92);backdrop-filter:blur(16px);border-
 .svc-card.cr::before{background:var(--red)}
 .svc-card:hover{background:#1c1c1c}
 .svc-card:hover::before{transform:scaleX(1)}
-.svc-icon{font-size:2rem;margin-bottom:1.25rem;display:block}
+.svc-icon{width:36px;height:36px;margin-bottom:1.25rem;display:block}
 .svc-title{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
 .svc-desc{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.7}
 .svc-who{display:inline-block;margin-top:1.25rem;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:10px}
@@ -139,7 +139,7 @@ nav.scrolled{background:rgba(245,242,236,.92);backdrop-filter:blur(16px);border-
 .pcard:hover{transform:scale(1.02)}
 .pcard:hover .pover{opacity:1}
 .pbg{position:absolute;inset:0;font-size:4rem;display:flex;align-items:center;justify-content:center;opacity:.15;color:var(--white)}
-.pover{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.2) 60%,transparent 100%);opacity:.75;transition:opacity .3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.pover{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 55%,transparent 100%);opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
 .ptag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
 .pname{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:var(--white)}
 .pdesc{font-size:12px;color:rgba(255,255,255,.6);margin-top:3px}
@@ -170,7 +170,7 @@ nav.scrolled{background:rgba(245,242,236,.92);backdrop-filter:blur(16px);border-
 .ct-icon{font-size:1.25rem}
 .ct-label{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
 .ct-val{font-size:13px;font-weight:500}
-.ct-big{display:inline-block;font-family:var(--fd);font-size:clamp(1.2rem,2.5vw,2rem);font-weight:800;color:var(--white);text-decoration:none;border-bottom:3px solid var(--teal);padding-bottom:4px;transition:all .2s;cursor:none}
+.ct-big{display:inline-block;font-family:var(--fd);font-size:clamp(1rem,1.8vw,1.5rem);font-weight:800;color:var(--white);text-decoration:none;border-bottom:3px solid var(--teal);padding-bottom:4px;transition:all .2s;cursor:none}
 .ct-big:hover{color:var(--amber);border-color:var(--amber)}
 
 /* FOOTER */
@@ -262,11 +262,11 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
           <p data-en="<strong>Pegando La Vuelta</strong> is Emi + Lorena. We've been traveling South America overland together for over 12 years — Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, and always moving forward." data-es="<strong>Pegando La Vuelta</strong> es Emi + Lorena. Llevamos más de 12 años viajando Sudamérica juntos — Bogotá a Ushuaia, tres veces. Ese viaje moldeó cómo trabajamos: adaptables, creativos, siempre avanzando."><strong>Pegando La Vuelta</strong> is Emi + Lorena. We've been traveling South America overland together for over 12 years — Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward.</p>
           <p data-en="We're a remote-first agency offering the full stack — strategy, design, development, content, and community — without subcontracting anything. One team, end to end." data-es="Somos una agencia remota que ofrece el stack completo — estrategia, diseño, desarrollo, contenido y comunidad — sin subcontratar nada. Un equipo, de punta a punta.">We're a remote-first agency offering the full stack — strategy, design, development, content, and community — without subcontracting anything. One team, end to end.</p>
         </div>
-        <span class="route-badge">🗺 Bogotá → Lima → Santiago → Buenos Aires → Ushuaia</span>
+        <span class="route-badge">🗺 Bogotá → Quito → Lima → La Paz → Buenos Aires → Ushuaia</span>
       </div>
       <div class="photo-stack reveal">
         <img class="p1" src="couple-inca.jpg" alt="Emi & Lorena en ruinas incas"/>
-        <img class="p2" src="lorena-portrait.jpg" alt="Lorena"/>
+        <img class="p2" src="lorena-portrait.jpg" alt="Lorena" style="object-position:center 30%"/>
         <div class="map-badge"><img src="route-map.jpg" alt="Ruta Sudamérica"/></div>
       </div>
     </div>
@@ -280,7 +280,7 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
     <h2 class="section-title reveal" data-en="Built by travelers.<br>Driven by craft." data-es="Construido por viajeros.<br>Impulsado por el oficio.">Built by travelers.<br>Driven by craft.</h2>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-card-img"><img src="emi-portrait.jpg" alt="Emi Torres"/></div>
+        <div class="team-card-img"><img src="emi-portrait.jpg" alt="Emi Torres" style="object-position:center 25%"/></div>
         <div class="team-card-info">
           <div class="team-card-top">
             <div class="team-avatar ta-emi">EM</div>
@@ -292,7 +292,7 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img"><img src="lorena-portrait.jpg" alt="Lorena"/></div>
+        <div class="team-card-img"><img src="lorena-portrait.jpg" alt="Lorena" style="object-position:center 30%"/></div>
         <div class="team-card-info">
           <div class="team-card-top">
             <div class="team-avatar ta-lore">LO</div>
@@ -333,11 +333,11 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
       <h2 class="section-title" data-en="Selected projects." data-es="Proyectos seleccionados.">Selected projects.</h2>
     </div>
     <div class="port-grid">
-      <div class="pcard big at reveal"><div class="pbg">🤖</div><div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div></div>
-      <div class="pcard aa reveal"><div class="pbg">🌊</div><div class="pover"><div class="ptag">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf & lifestyle for intl. travelers</div></div></div>
-      <div class="pcard ar reveal"><div class="pbg">🏗️</div><div class="pover"><div class="ptag">Web · Industrial</div><div class="pname">FERROX</div><div class="pdesc" data-en="Heavy machinery rental · dark editorial site" data-es="Maquinaria pesada · sitio industrial oscuro">Heavy machinery rental · dark editorial site</div></div></div>
-      <div class="pcard at reveal"><div class="pbg">🦉</div><div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div></div>
-      <div class="pcard aa reveal"><div class="pbg">🎮</div><div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div></div>
+      <div class="pcard big at reveal" style="background-image:url(emi-working.jpg);background-size:cover;background-position:center"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div></div>
+      <div class="pcard aa reveal" style="background-image:url(couple-rainbow.jpg);background-size:cover;background-position:center top"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf & lifestyle for intl. travelers</div></div></div>
+      <div class="pcard ar reveal" style="background-image:url(lorena-snow.jpg);background-size:cover;background-position:center"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Web · Industrial</div><div class="pname">FERROX</div><div class="pdesc" data-en="Heavy machinery rental · dark editorial site" data-es="Maquinaria pesada · sitio industrial oscuro">Heavy machinery rental · dark editorial site</div></div></div>
+      <div class="pcard at reveal" style="background-image:url(couple-mountain.jpg);background-size:cover;background-position:center top"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div></div>
+      <div class="pcard aa reveal" style="background-image:url(couple-inca.jpg);background-size:cover;background-position:center"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div></div>
     </div>
   </div>
 </section>
@@ -374,7 +374,7 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
 
 <footer>
   <div class="fl"><img src="logo.png" alt="PLV" style="filter:invert(1)"/></div>
-  <div class="fc" data-en="© 2025 Pegando La Vuelta Agency. Máncora, Peru." data-es="© 2025 Pegando La Vuelta Agency. Máncora, Perú.">© 2025 Pegando La Vuelta Agency. Máncora, Peru.</div>
+  <div class="fc" data-en="© 2026 Pegando La Vuelta Agency. Remote · South America." data-es="© 2026 Pegando La Vuelta Agency. Remotos · Sudamérica.">© 2026 Pegando La Vuelta Agency. Remote · South America.</div>
   <div class="flinks"><a href="#hero">Top</a><a href="#portfolio" data-en="Work" data-es="Proyectos">Work</a><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></div>
 </footer>
 
