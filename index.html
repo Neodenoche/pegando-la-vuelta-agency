@@ -82,8 +82,8 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:
 
 /* PHOTO STACK */
 .photo-stack{position:relative;height:520px}
-.photo-stack .p1{position:absolute;top:0;right:40px;width:55%;height:70%;object-fit:cover;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.12)}
-.photo-stack .p2{position:absolute;bottom:0;left:0;width:55%;height:65%;object-fit:cover;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.12)}
+.photo-stack .p1{position:absolute;top:0;right:20px;width:52%;height:68%;object-fit:cover;object-position:center 30%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.12)}
+.photo-stack .p2{position:absolute;bottom:0;left:0;width:58%;height:72%;object-fit:cover;object-position:center 15%;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.12);z-index:2}
 .photo-stack .map-badge{position:absolute;top:50%;right:0;transform:translateY(-50%);width:120px;height:120px;border-radius:50%;overflow:hidden;border:4px solid var(--white);box-shadow:0 12px 32px rgba(0,0,0,.15)}
 .photo-stack .map-badge img{width:100%;height:100%;object-fit:cover;object-position:center top}
 
@@ -138,7 +138,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:
 .pcard.big{aspect-ratio:16/9}
 .pcard:hover{transform:scale(1.02)}
 .pcard:hover .pover{opacity:1}
-.pbg{position:absolute;inset:0;font-size:4rem;display:flex;align-items:center;justify-content:center;opacity:.15;color:var(--white)}
+.pbg{position:absolute;inset:0;font-size:6rem;display:flex;align-items:center;justify-content:center;opacity:.12;color:var(--white);filter:grayscale(1)}
 .pover{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 55%,transparent 100%);opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
 .ptag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
 .pname{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:var(--white)}
@@ -210,7 +210,7 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
 <div class="cur-ring" id="cr"></div>
 
 <nav id="nav">
-  <div class="nav-logo"><img src="logo-white.png" alt="Pegando La Vuelta" onerror="this.style.display='none'"/></div>
+  <div class="nav-logo"><img src="logo.png" alt="Pegando La Vuelta"/></div>
   <div class="nav-links">
     <a href="#about" data-en="About" data-es="Nosotros">About</a>
     <a href="#services" data-en="Services" data-es="Servicios">Services</a>
@@ -266,7 +266,7 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
       </div>
       <div class="photo-stack reveal">
         <img class="p1" src="couple-inca.jpg" alt="Emi & Lorena en ruinas incas"/>
-        <img class="p2" src="lorena-portrait.jpg" alt="Lorena" style="object-position:center 20%;object-fit:cover"/>
+        <img class="p2" src="lorena-portrait.jpg" alt="Lorena" style="object-position:center 15%"/>
         <div class="map-badge"><img src="route-map.jpg" alt="Ruta Sudamérica"/></div>
       </div>
     </div>
@@ -333,11 +333,11 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
       <h2 class="section-title" data-en="Selected projects." data-es="Proyectos seleccionados.">Selected projects.</h2>
     </div>
     <div class="port-grid">
-      <div class="pcard big at reveal" style="background-image:url(emi-working.jpg);background-size:cover;background-position:center left"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div></div>
-      <div class="pcard aa reveal" style="background-image:url(couple-rainbow.jpg);background-size:cover;background-position:center 30%"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf & lifestyle for intl. travelers</div></div></div>
-      <div class="pcard ar reveal" style="background-image:url(lorena-snow.jpg);background-size:cover;background-position:center 20%"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Web · Industrial</div><div class="pname">FERROX</div><div class="pdesc" data-en="Heavy machinery rental · dark editorial site" data-es="Maquinaria pesada · sitio industrial oscuro">Heavy machinery rental · dark editorial site</div></div></div>
-      <div class="pcard at reveal" style="background-image:url(couple-mountain.jpg);background-size:cover;background-position:center 25%"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div></div>
-      <div class="pcard aa reveal" style="background-image:url(emi-yellow.jpg);background-size:cover;background-position:center 20%"><div class="pbg" style="display:none"><div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div></div>
+      <div class="pcard big at reveal" style="background-image:url(proj-panther.jpg);background-size:cover;background-position:center 20%"><div class="pbg" ><div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div></div>
+      <div class="pcard aa reveal" style="background-image:url(couple-rainbow.jpg);background-size:cover;background-position:center 40%"><div class="pbg" ><div class="pover"><div class="ptag">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf & lifestyle for intl. travelers</div></div></div>
+      <div class="pcard ar reveal" style="background-image:url(proj-ferrox.jpg);background-size:cover;background-position:center top"><div class="pbg" ><div class="pover"><div class="ptag">Web · Industrial</div><div class="pname">FERROX</div><div class="pdesc" data-en="Heavy machinery rental · dark editorial site" data-es="Maquinaria pesada · sitio industrial oscuro">Heavy machinery rental · dark editorial site</div></div></div>
+      <div class="pcard at reveal" style="background-image:url(proj-kalmoon.jpg);background-size:cover;background-position:center 20%"><div class="pbg" ><div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div></div>
+      <div class="pcard aa reveal" style="background-image:url(proj-defender.jpg);background-size:cover;background-position:center 15%"><div class="pbg" ><div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div></div>
     </div>
   </div>
 </section>
