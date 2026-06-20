@@ -207,10 +207,11 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
 
 
 /* KALMOON MODAL */
-.km-overlay{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9999;display:none;align-items:center;justify-content:center;padding:1.5rem;animation:kmFade .3s ease}
+.km-overlay{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9999;display:none;align-items:center;justify-content:center;padding:1.5rem;animation:kmFade .3s ease;cursor:auto}
 .km-overlay.open{display:flex}
 @keyframes kmFade{from{opacity:0}to{opacity:1}}
-.km-modal{background:#0a0a12;border-radius:20px;max-width:880px;width:100%;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.7)}
+.km-modal{background:#0a0a12;border-radius:20px;max-width:880px;width:100%;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.7);cursor:auto}
+.km-modal *{cursor:auto!important}
 .km-header{display:flex;align-items:flex-start;justify-content:space-between;padding:1.75rem 2rem 1rem;gap:1rem}
 .km-meta{flex:1;min-width:0}
 .km-title{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:#fff;line-height:1.1}
@@ -222,11 +223,11 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
 .km-tag.teal{border-color:var(--teal);color:var(--teal);background:rgba(0,151,167,.1)}
 .km-tag.amber{border-color:var(--amber);color:var(--amber-dark);background:rgba(232,160,0,.1)}
 .km-tag.grey{border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.45);background:rgba(255,255,255,.04)}
-.km-gallery{flex:1;overflow:hidden;padding:0 2rem 1.25rem;display:flex;flex-direction:column;gap:.65rem;min-height:0}
-.km-slides{position:relative;border-radius:14px;overflow:hidden;background:#06060e;display:flex;align-items:center;justify-content:center;flex:1;min-height:320px}
-.km-slide{display:none;max-height:100%;max-width:100%;border-radius:8px;object-fit:contain;user-select:none}
+.km-gallery{padding:0 2rem 1.25rem;display:flex;flex-direction:column;gap:.65rem}
+.km-slides{position:relative;border-radius:14px;overflow:hidden;background:#06060e;display:flex;align-items:center;justify-content:center;height:460px;min-height:460px}
+.km-slide{display:none;height:460px;max-width:100%;border-radius:8px;object-fit:contain;user-select:none}
 .km-slide.active{display:block}
-.km-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2;line-height:1}
+.km-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:22px;cursor:pointer!important;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10;line-height:1}
 .km-nav-btn:hover{background:rgba(255,255,255,.18)}
 .km-prev{left:10px}
 .km-next{right:10px}
@@ -246,7 +247,8 @@ footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);paddin
   .km-header{padding:1.25rem 1.25rem .75rem}
   .km-tags,.km-gallery,.km-cta{padding-left:1.25rem;padding-right:1.25rem}
   .km-title{font-size:1.3rem}
-  .km-slides{min-height:260px}
+  .km-slides{height:320px;min-height:320px}
+  .km-slide{height:320px}
 }
 
 </style>
@@ -499,7 +501,10 @@ function setLang(l){
       img.className='km-slide'+(i===0?' active':'');
       img.id='kmSlide'+i;
       img.draggable=false;
-      slides.appendChild(img);
+      // Insert before the first nav button so buttons stay on top
+      const firstBtn=slides.querySelector('.km-nav-btn');
+      if(firstBtn) slides.insertBefore(img, firstBtn);
+      else slides.appendChild(img);
       const dot=document.createElement('button');
       dot.className='km-dot'+(i===0?' active':'');
       dot.onclick=function(){goKM(i);};
