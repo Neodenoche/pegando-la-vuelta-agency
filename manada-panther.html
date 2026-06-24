@@ -65,20 +65,27 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
   .feat-grid{grid-template-columns:1fr}
   .hero-stats{gap:24px}
 }
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:#FF6B35;color:#fff}
 </style>
 </head>
 <body>
 
 <a class="back" href="https://pegandolavuelta.agency">
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
-  Agency
-</a>
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg><span data-en="Agency" data-es="Agencia">Agency</span></a>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
 
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Case Study · Telegram Bot · Web3</div>
+    <div class="hero-eyebrow" data-en="Case Study · Telegram Bot · Web3" data-es="Caso de estudio · Bot Telegram · Web3">Case Study · Telegram Bot · Web3</div>
     <h1 class="hero-title">Manada<br><em>Panther Bot</em></h1>
     <p class="hero-sub">A fully gamified Telegram community ecosystem built for Panther Wallet — loyalty tiers, USDT raffles, referral campaigns, and an HTML5 mini-game, all running on Python + SQLite deployed on Railway.</p>
     <div class="hero-stats">
@@ -92,7 +99,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">The brief</div>
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
   <h2 class="section-title">Build the community.<br><em>Own the engagement.</em></h2>
   <p class="section-body">Panther Wallet needed more than a Telegram group — they needed a retention engine. The bot had to reward loyal holders, run surprise raffles, track referrals, and keep 10,000+ users coming back daily without manual intervention.</p>
   <div class="tags">
@@ -105,7 +112,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">What was built</div>
+  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó">What was built</div>
   <h2 class="section-title">Six systems.<br><em>One ecosystem.</em></h2>
   <div class="feat-grid">
     <div class="feat">
@@ -144,7 +151,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">The community</div>
+  <div class="section-eyebrow" data-en="The community" data-es="La comunidad">The community</div>
   <h2 class="section-title">10,000 members.<br><em>One chat room.</em></h2>
   <p class="section-body">The Manada Panther Telegram group runs 24/7 with automated moderation, pinned announcements, and the bot responding in real-time to dozens of commands. The screenshot below shows a typical afternoon in the group — holders helping each other, Panther staff answering questions, and the community growing organically.</p>
   <div class="chat-screen">
@@ -156,7 +163,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 
 <div class="cta-section">
   <h2 class="cta-title">Need a bot that<br><em>runs your community?</em></h2>
-  <p class="cta-sub">Telegram bots, Web3 integrations, mini-games — we build the full stack.</p>
+  <p class="cta-sub"><span data-en="Telegram bots, Web3 integrations, mini-games — we build the full stack." data-es="Bots de Telegram, integraciones Web3, mini-juegos — construimos el stack completo.">Telegram bots, Web3 integrations, mini-games — we build the full stack.</span></p>
   <div class="cta-links">
     <a href="https://t.me/ManadaPantherBot" target="_blank" class="cta-link">Join the community ↗</a>
     <a href="https://go.mypanther.io/game-defender" target="_blank" class="cta-link">Play PNT Defender ↗</a>
@@ -168,5 +175,26 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
   <div class="cta-fine">Pegando La Vuelta Agency · Máncora, Peru</div>
 </div>
 
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.getAttribute('data-'+lang+'-html')==='true'){
+      el.innerHTML=el.getAttribute('data-'+lang);
+    } else {
+      el.textContent=el.getAttribute('data-'+lang);
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
 </body>
 </html>
