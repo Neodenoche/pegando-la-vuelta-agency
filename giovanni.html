@@ -705,6 +705,338 @@ body {
   font-size: 15px;
   color: #C9A96E;
 }
+
+/* ══════════════════════════════════════════
+   PITCH PAGE STYLES
+════════════════════════════════════════════ */
+
+.pitch-section {
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  border-top: 1px solid rgba(201,169,110,0.12);
+}
+
+.ps-inner { width: 100%; }
+
+.ps-eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #C9A96E;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.ps-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+.ps-headline em {
+  font-style: italic;
+  color: #C9A96E;
+}
+
+.ps-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 52px;
+}
+
+/* ── STATS ── */
+.ps-stat-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ps-stat {
+  flex: 1;
+  padding: 32px 24px;
+  text-align: center;
+}
+.ps-stat-divider {
+  width: 1px;
+  background: rgba(201,169,110,0.15);
+}
+.ps-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: #C9A96E;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.ps-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+/* ── FEATURES ── */
+.ps-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(201,169,110,0.1);
+  border: 1px solid rgba(201,169,110,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ps-feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 28px 24px;
+  background: #0e0e0e;
+  transition: background 0.2s;
+}
+.ps-feature:hover { background: rgba(201,169,110,0.04); }
+.ps-feature-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ps-feature-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+.ps-feature-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.65;
+}
+
+/* ── ROI TABLE ── */
+.ps-roi-table {
+  border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.ps-roi-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1px solid rgba(201,169,110,0.08);
+}
+.ps-roi-row:last-child { border-bottom: none; }
+.ps-roi-cell {
+  padding: 14px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+.ps-roi-header .ps-roi-cell {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.02);
+}
+.ps-roi-label { color: rgba(255,255,255,0.5); }
+.ps-roi-ota { text-align: center; }
+.ps-roi-direct { text-align: center; color: #C9A96E; }
+.ps-roi-bad { color: rgba(255,100,100,0.7); }
+.ps-roi-good { color: rgba(120,200,120,0.8); }
+.ps-roi-mild { color: rgba(255,255,255,0.3); }
+.ps-roi-total .ps-roi-cell { 
+  background: rgba(201,169,110,0.05); 
+  font-size: 14px;
+  padding: 18px 20px;
+}
+.ps-roi-total .ps-roi-label { color: rgba(255,255,255,0.7); font-weight: 500; }
+.ps-roi-win { color: #C9A96E; font-weight: 600; font-size: 16px !important; }
+.ps-roi-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.65;
+}
+.ps-roi-note strong { color: rgba(255,255,255,0.75); }
+
+/* ── STEPS ── */
+.ps-steps { display: flex; flex-direction: column; gap: 0; }
+.ps-step {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.ps-step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(201,169,110,0.5);
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.ps-step-body { flex: 1; padding-bottom: 32px; }
+.ps-step-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 8px;
+}
+.ps-step-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.ps-step-time {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.5);
+}
+.ps-step-line {
+  width: 1px;
+  height: 24px;
+  background: rgba(201,169,110,0.15);
+  margin-left: 17px;
+}
+
+/* ── PRICING ── */
+.ps-pricing {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.ps-price-plus {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: rgba(201,169,110,0.3);
+  flex-shrink: 0;
+}
+.ps-price-main, .ps-price-monthly {
+  flex: 1;
+  border: 1px solid rgba(201,169,110,0.18);
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+.ps-price-main { border-color: rgba(201,169,110,0.35); }
+.ps-price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+  font-weight: 300;
+  color: #C9A96E;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.ps-price-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+}
+.ps-pi-item {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.5);
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.ps-pi-item:last-child { border-bottom: none; }
+
+.ps-payback {
+  border: 1px solid rgba(201,169,110,0.15);
+  border-radius: 8px;
+  padding: 24px;
+  background: rgba(201,169,110,0.03);
+  text-align: center;
+}
+.ps-payback-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  margin-bottom: 8px;
+}
+.ps-payback-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+.ps-payback-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── CTA ── */
+.ps-cta {
+  background: #080808;
+  border-top: 1px solid rgba(201,169,110,0.12);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ps-cta-inner { position: relative; z-index: 1; }
+.ps-cta-glow {
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 200px;
+  background: radial-gradient(ellipse, rgba(201,169,110,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ps-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #C9A96E;
+  color: #0e0e0e;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-bottom: 20px;
+}
+.ps-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.ps-cta-fine {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.18);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .pitch-section { padding: 56px 20px; }
+  .ps-features { grid-template-columns: 1fr; }
+  .ps-pricing { flex-direction: column; }
+  .ps-price-plus { display: none; }
+  .ps-stat-row { flex-direction: column; }
+  .ps-stat-divider { width: auto; height: 1px; }
+  .ps-roi-table { font-size: 12px; }
+  .ps-roi-cell { padding: 10px 12px; }
+}
+
+
 </style>
 </head>
 <body>
@@ -1024,6 +1356,250 @@ body {
   </div>
 
 </div>
+<!-- ══════════════════════════════════════════
+     PITCH SECTIONS — below the mockups
+════════════════════════════════════════════ -->
+
+<!-- SECTION: Value proposition -->
+<section class="pitch-section ps-value">
+  <div class="ps-inner">
+    <div class="ps-eyebrow">The problem</div>
+    <h2 class="ps-headline">Every guest you send to Booking.com<br><em>is a guest you'll never own.</em></h2>
+    <p class="ps-sub">OTAs take 15–25% per reservation. They own the relationship, the data, and the repeat booking. Your hotel works for them.</p>
+    <div class="ps-stat-row">
+      <div class="ps-stat">
+        <div class="ps-stat-num">20%</div>
+        <div class="ps-stat-label">Average OTA commission per booking</div>
+      </div>
+      <div class="ps-stat-divider"></div>
+      <div class="ps-stat">
+        <div class="ps-stat-num">0</div>
+        <div class="ps-stat-label">Guest data you keep after checkout</div>
+      </div>
+      <div class="ps-stat-divider"></div>
+      <div class="ps-stat">
+        <div class="ps-stat-num">67%</div>
+        <div class="ps-stat-label">Of guests would book direct if given the chance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: What the app is -->
+<section class="pitch-section ps-what">
+  <div class="ps-inner">
+    <div class="ps-eyebrow">The solution</div>
+    <h2 class="ps-headline">Your hotel,<br><em>your channel.</em></h2>
+    <p class="ps-sub">A branded mobile app that puts direct booking, loyalty points, and the full guest experience in your guests' pockets — with zero commission to anyone.</p>
+
+    <div class="ps-features">
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Direct booking engine</div>
+          <div class="ps-feature-desc">Real-time availability, instant confirmation, and a price that's always better than the OTAs — because you're not paying commission.</div>
+        </div>
+      </div>
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3 7h7l-6 4.5 2.3 7L12 17l-6.3 3.5L8 13 2 8.5h7z"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Loyalty points program</div>
+          <div class="ps-feature-desc">Guests earn points per night, activity, or referral. They redeem for cocktails, surf lessons, or free nights. Repeat stays go up. OTA dependency goes down.</div>
+        </div>
+      </div>
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Guest profile & history</div>
+          <div class="ps-feature-desc">Know who's coming back before they arrive. Preferences, past stays, earned points — all yours, not Expedia's.</div>
+        </div>
+      </div>
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Push notifications</div>
+          <div class="ps-feature-desc">Last-minute deals, weather alerts, or a personal welcome message when a guest checks in. Direct channel, no algorithm between you.</div>
+        </div>
+      </div>
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9c1.5-2 3-2 4.5 0S10.5 11 12 9s3-2 4.5 0 3 2 4.5 0"/><path d="M3 15c1.5-2 3-2 4.5 0S10.5 17 12 15s3-2 4.5 0 3 2 4.5 0"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Activities & upsells</div>
+          <div class="ps-feature-desc">Surf lessons, bar menu, tour packages — all bookable inside the app. New revenue streams without a third party taking a cut.</div>
+        </div>
+      </div>
+      <div class="ps-feature">
+        <div class="ps-feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <div class="ps-feature-text">
+          <div class="ps-feature-title">Owner dashboard</div>
+          <div class="ps-feature-desc">Occupancy, revenue per channel, top guests, and points circulation — at a glance, from your phone.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: ROI -->
+<section class="pitch-section ps-roi">
+  <div class="ps-inner">
+    <div class="ps-eyebrow">The numbers</div>
+    <h2 class="ps-headline">What direct booking<br><em>actually means.</em></h2>
+
+    <div class="ps-roi-table">
+      <div class="ps-roi-row ps-roi-header">
+        <div class="ps-roi-cell"></div>
+        <div class="ps-roi-cell ps-roi-ota">Via Booking.com</div>
+        <div class="ps-roi-cell ps-roi-direct">Via your app</div>
+      </div>
+      <div class="ps-roi-row">
+        <div class="ps-roi-cell ps-roi-label">Room · 3 nights · $130/night</div>
+        <div class="ps-roi-cell ps-roi-ota">$390</div>
+        <div class="ps-roi-cell ps-roi-direct">$390</div>
+      </div>
+      <div class="ps-roi-row">
+        <div class="ps-roi-cell ps-roi-label">OTA commission (20%)</div>
+        <div class="ps-roi-cell ps-roi-ota ps-roi-bad">− $78</div>
+        <div class="ps-roi-cell ps-roi-direct ps-roi-good">$0</div>
+      </div>
+      <div class="ps-roi-row">
+        <div class="ps-roi-cell ps-roi-label">App maintenance</div>
+        <div class="ps-roi-cell ps-roi-ota">$0</div>
+        <div class="ps-roi-cell ps-roi-direct ps-roi-mild">− $4</div>
+      </div>
+      <div class="ps-roi-row ps-roi-total">
+        <div class="ps-roi-cell ps-roi-label">You keep</div>
+        <div class="ps-roi-cell ps-roi-ota">$312</div>
+        <div class="ps-roi-cell ps-roi-direct ps-roi-win">$386</div>
+      </div>
+    </div>
+
+    <p class="ps-roi-note">At 10 direct bookings per month, that's <strong>$740 more revenue</strong> per month — enough to cover the app's cost for 15 years.</p>
+  </div>
+</section>
+
+<!-- SECTION: How it works -->
+<section class="pitch-section ps-how">
+  <div class="ps-inner">
+    <div class="ps-eyebrow">The process</div>
+    <h2 class="ps-headline">From concept to<br><em>launch in 8 weeks.</em></h2>
+
+    <div class="ps-steps">
+      <div class="ps-step">
+        <div class="ps-step-num">I</div>
+        <div class="ps-step-body">
+          <div class="ps-step-title">Brand & UX design</div>
+          <div class="ps-step-desc">We adapt the app's visual identity to your hotel. Logo, colors, tone of voice, and every screen — designed to feel like yours, not a white-label template.</div>
+          <div class="ps-step-time">Weeks 1–2</div>
+        </div>
+      </div>
+      <div class="ps-step-line"></div>
+      <div class="ps-step">
+        <div class="ps-step-num">II</div>
+        <div class="ps-step-body">
+          <div class="ps-step-title">Development & integrations</div>
+          <div class="ps-step-desc">Native mobile app (iOS + Android) with booking engine, payment gateway, push notifications, and points backend. All integrated with your existing calendar if needed.</div>
+          <div class="ps-step-time">Weeks 3–6</div>
+        </div>
+      </div>
+      <div class="ps-step-line"></div>
+      <div class="ps-step">
+        <div class="ps-step-num">III</div>
+        <div class="ps-step-body">
+          <div class="ps-step-title">Launch & onboarding</div>
+          <div class="ps-step-desc">Published on App Store and Google Play under your hotel's name. We train your team, set up the admin panel, and design the first campaign to drive app downloads.</div>
+          <div class="ps-step-time">Weeks 7–8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: Investment -->
+<section class="pitch-section ps-invest">
+  <div class="ps-inner">
+    <div class="ps-eyebrow">The investment</div>
+    <h2 class="ps-headline">One price.<br><em>Everything included.</em></h2>
+
+    <div class="ps-pricing">
+      <div class="ps-price-main">
+        <div class="ps-price-amount">$3,000</div>
+        <div class="ps-price-label">One-time development</div>
+        <div class="ps-price-includes">
+          <div class="ps-pi-item">✓ Full branded app (iOS + Android)</div>
+          <div class="ps-pi-item">✓ Booking engine + payment integration</div>
+          <div class="ps-pi-item">✓ Loyalty points system</div>
+          <div class="ps-pi-item">✓ Push notifications</div>
+          <div class="ps-pi-item">✓ Owner dashboard</div>
+          <div class="ps-pi-item">✓ App Store + Google Play publishing</div>
+          <div class="ps-pi-item">✓ Team training & launch campaign</div>
+        </div>
+      </div>
+      <div class="ps-price-plus">+</div>
+      <div class="ps-price-monthly">
+        <div class="ps-price-amount">$120</div>
+        <div class="ps-price-label">/ month maintenance</div>
+        <div class="ps-price-includes">
+          <div class="ps-pi-item">✓ Server & infrastructure</div>
+          <div class="ps-pi-item">✓ iOS + Android updates</div>
+          <div class="ps-pi-item">✓ Technical support</div>
+          <div class="ps-pi-item">✓ Analytics & reports</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ps-payback">
+      <div class="ps-payback-inner">
+        <div class="ps-payback-label">Break-even point</div>
+        <div class="ps-payback-val">~4 direct bookings</div>
+        <div class="ps-payback-sub">The development pays for itself before the end of the first month.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: CTA -->
+<section class="pitch-section ps-cta">
+  <div class="ps-inner ps-cta-inner">
+    <div class="ps-cta-glow"></div>
+    <div class="ps-eyebrow" style="color:rgba(255,255,255,0.4)">Ready when you are</div>
+    <h2 class="ps-headline" style="color:#fff">Let's build<br><em>Don Giovanni's app.</em></h2>
+    <p class="ps-sub" style="color:rgba(255,255,255,0.55); max-width:440px; margin:0 auto 40px">This is a visual concept built specifically for your hotel. The actual app would be adapted with your branding, your rooms, and your services.</p>
+    <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20concepto%20de%20app%20para%20Don%20Giovanni%20y%20me%20interesa%20hablar." class="ps-cta-btn" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.9">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      </svg>
+      Talk to Emi on WhatsApp
+    </a>
+    <div class="ps-cta-fine">Pegando La Vuelta Agency · Máncora, Peru</div>
+  </div>
+</section>
+
+
 
 </body>
 </html>
