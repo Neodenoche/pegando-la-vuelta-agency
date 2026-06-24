@@ -1063,6 +1063,10 @@ body {
   color: #C9A96E;
   border-color: rgba(201,169,110,0.3);
 }
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:#F59E0B;color:#fff}
 </style>
 </head>
 <body>
@@ -1073,8 +1077,13 @@ body {
   Agency
 </a>
 
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
+
 <div class="page-header">
-  <div class="page-eyebrow">Visual concept · Interactive mockup</div>
+  <div class="page-eyebrow" data-en="Visual concept · Interactive mockup" data-es="Concepto visual · Mockup interactivo">Visual concept · Interactive mockup</div>
   <div class="page-title">Don Giovanni <em>Beach Resort</em></div>
 </div>
 
@@ -1212,7 +1221,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="screen-label">Home screen</div>
+    <div class="screen-label" data-en="Home screen" data-es="Pantalla de inicio">Home screen</div>
   </div>
 
   <!-- SCREEN 2: RESERVAR -->
@@ -1286,7 +1295,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="screen-label">Direct booking</div>
+    <div class="screen-label" data-en="Direct booking" data-es="Reserva directa">Direct booking</div>
   </div>
 
   <!-- SCREEN 3: PUNTOS -->
@@ -1384,7 +1393,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="screen-label">Loyalty program</div>
+    <div class="screen-label" data-en="Loyalty program" data-es="Programa de fidelidad">Loyalty program</div>
   </div>
 
 </div>
@@ -1395,7 +1404,7 @@ body {
 <!-- SECTION: Value proposition -->
 <section class="pitch-section ps-value">
   <div class="ps-inner">
-    <div class="ps-eyebrow">The problem</div>
+    <div class="ps-eyebrow" data-en="The problem" data-es="El problema">The problem</div>
     <h2 class="ps-headline">Every guest you send to Booking.com<br><em>is a guest you'll never own.</em></h2>
     <p class="ps-sub">OTAs take 15–25% per reservation. They own the relationship, the data, and the repeat booking. Your hotel works for them.</p>
     <div class="ps-stat-row">
@@ -1420,7 +1429,7 @@ body {
 <!-- SECTION: What the app is -->
 <section class="pitch-section ps-what">
   <div class="ps-inner">
-    <div class="ps-eyebrow">The solution</div>
+    <div class="ps-eyebrow" data-en="The solution" data-es="La solución">The solution</div>
     <h2 class="ps-headline">Your hotel,<br><em>your channel.</em></h2>
     <p class="ps-sub">A branded mobile app that puts direct booking, loyalty points, and the full guest experience in your guests' pockets — with zero commission to anyone.</p>
 
@@ -1498,7 +1507,7 @@ body {
 <!-- SECTION: ROI -->
 <section class="pitch-section ps-roi">
   <div class="ps-inner">
-    <div class="ps-eyebrow">The numbers</div>
+    <div class="ps-eyebrow" data-en="The numbers" data-es="Los números">The numbers</div>
     <h2 class="ps-headline">What direct booking<br><em>actually means.</em></h2>
 
     <div class="ps-roi-table">
@@ -1536,14 +1545,14 @@ body {
 <!-- SECTION: How it works -->
 <section class="pitch-section ps-how">
   <div class="ps-inner">
-    <div class="ps-eyebrow">The process</div>
+    <div class="ps-eyebrow" data-en="The process" data-es="El proceso">The process</div>
     <h2 class="ps-headline">From concept to<br><em>launch in 8 weeks.</em></h2>
 
     <div class="ps-steps">
       <div class="ps-step">
         <div class="ps-step-num">I</div>
         <div class="ps-step-body">
-          <div class="ps-step-title">Brand & UX design</div>
+          <div class="ps-step-title" data-en="Brand & UX design" data-es="Diseño de marca & UX">Brand & UX design</div>
           <div class="ps-step-desc">We adapt the app's visual identity to your hotel. Logo, colors, tone of voice, and every screen — designed to feel like yours, not a white-label template.</div>
           <div class="ps-step-time">Weeks 1–2</div>
         </div>
@@ -1552,7 +1561,7 @@ body {
       <div class="ps-step">
         <div class="ps-step-num">II</div>
         <div class="ps-step-body">
-          <div class="ps-step-title">Development & integrations</div>
+          <div class="ps-step-title" data-en="Development & integrations" data-es="Desarrollo e integraciones">Development & integrations</div>
           <div class="ps-step-desc">Native mobile app (iOS + Android) with booking engine, payment gateway, push notifications, and points backend. All integrated with your existing calendar if needed.</div>
           <div class="ps-step-time">Weeks 3–6</div>
         </div>
@@ -1561,7 +1570,7 @@ body {
       <div class="ps-step">
         <div class="ps-step-num">III</div>
         <div class="ps-step-body">
-          <div class="ps-step-title">Launch & onboarding</div>
+          <div class="ps-step-title" data-en="Launch & onboarding" data-es="Lanzamiento & onboarding">Launch & onboarding</div>
           <div class="ps-step-desc">Published on App Store and Google Play under your hotel's name. We train your team, set up the admin panel, and design the first campaign to drive app downloads.</div>
           <div class="ps-step-time">Weeks 7–8</div>
         </div>
@@ -1573,13 +1582,13 @@ body {
 <!-- SECTION: Investment -->
 <section class="pitch-section ps-invest">
   <div class="ps-inner">
-    <div class="ps-eyebrow">The investment</div>
+    <div class="ps-eyebrow" data-en="The investment" data-es="La inversión">The investment</div>
     <h2 class="ps-headline">One price.<br><em>Everything included.</em></h2>
 
     <div class="ps-pricing">
       <div class="ps-price-main">
         <div class="ps-price-amount">$3,000</div>
-        <div class="ps-price-label">One-time development</div>
+        <div class="ps-price-label" data-en="One-time development" data-es="Desarrollo único">One-time development</div>
         <div class="ps-price-includes">
           <div class="ps-pi-item">✓ Full branded app (iOS + Android)</div>
           <div class="ps-pi-item">✓ Booking engine + payment integration</div>
@@ -1593,7 +1602,7 @@ body {
       <div class="ps-price-plus">+</div>
       <div class="ps-price-monthly">
         <div class="ps-price-amount">$120</div>
-        <div class="ps-price-label">/ month maintenance</div>
+        <div class="ps-price-label" data-en="/ month maintenance" data-es="/ mes mantenimiento">/ month maintenance</div>
         <div class="ps-price-includes">
           <div class="ps-pi-item">✓ Server & infrastructure</div>
           <div class="ps-pi-item">✓ iOS + Android updates</div>
@@ -1605,8 +1614,8 @@ body {
 
     <div class="ps-payback">
       <div class="ps-payback-inner">
-        <div class="ps-payback-label">Break-even point</div>
-        <div class="ps-payback-val">~4 direct bookings</div>
+        <div class="ps-payback-label" data-en="Break-even point" data-es="Punto de equilibrio">Break-even point</div>
+        <div class="ps-payback-val" data-en="~4 direct bookings" data-es="~4 reservas directas">~4 direct bookings</div>
         <div class="ps-payback-sub">The development pays for itself before the end of the first month.</div>
       </div>
     </div>
@@ -1627,11 +1636,32 @@ body {
       </svg>
       Talk to Emi on WhatsApp
     </a>
-    <div class="ps-cta-fine">Pegando La Vuelta Agency · Máncora, Peru</div>
+    <div class="ps-cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú">Pegando La Vuelta Agency · Máncora, Peru</span></div>
   </div>
 </section>
 
 
 
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.getAttribute('data-'+lang+'-html')==='true'){
+      el.innerHTML=el.getAttribute('data-'+lang);
+    } else {
+      el.textContent=el.getAttribute('data-'+lang);
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
 </body>
 </html>
