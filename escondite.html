@@ -68,21 +68,28 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
   .details-grid{grid-template-columns:1fr}
   .hero-meta{flex-wrap:wrap;gap:20px}
 }
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:var(--green,#3DB98B);color:#fff}
 </style>
 </head>
 <body>
 
 <a class="back" href="https://pegandolavuelta.agency">
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
-  Agency
-</a>
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg><span data-en="Agency" data-es="Agencia">Agency</span></a>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
 
 <div class="hero">
   <div class="hero-img"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Case Study · Web Design</div>
+    <div class="hero-eyebrow" data-en="Case Study · Web Design" data-es="Caso de estudio · Diseño Web">Case Study · Web Design</div>
     <h1 class="hero-title">El Escondite<br><em>Guayabal de Síquima</em></h1>
-    <p class="hero-sub">A boutique hospitality site built to match the intimacy and visual identity of a private mountain retreat in the Colombian highlands.</p>
+    <p class="hero-sub"><span data-en="A boutique hospitality site built to match the intimacy and visual identity of a private mountain retreat in the Colombian highlands." data-es="Un sitio web boutique construido para capturar la intimidad e identidad visual de un retiro privado de montaña en las tierras altas colombianas.">A boutique hospitality site built to match the intimacy and visual identity of a private mountain retreat in the Colombian highlands.</span></p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <span class="hero-meta-label">Client</span>
@@ -107,7 +114,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">The brief</div>
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
   <h2 class="section-title">Architecture and nature<br><em>in perfect balance.</em></h2>
   <p class="section-body">El Escondite is a collection of private villas built on the ruins of a 130-year-old coffee farm in the mountains of Cundinamarca. Each villa has its own pool, no shared spaces, and a visual identity rooted in Colombian bamboo, clay, and natural fibers.<br><br>The challenge was building a site that felt as intimate, calm, and architecturally considered as the property itself — without resorting to generic hospitality templates.</p>
   <div class="tags">
@@ -128,7 +135,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider" style="margin-top:64px">
 
 <section class="section">
-  <div class="section-eyebrow">The approach</div>
+  <div class="section-eyebrow" data-en="The approach" data-es="El enfoque">The approach</div>
   <h2 class="section-title">No stock photography.<br><em>No borrowed aesthetics.</em></h2>
   <p class="section-body">The entire visual language was built around the property's own photography — full-bleed hero images, split layouts that let the architecture breathe, and typography with enough weight to hold against dense tropical backgrounds.<br><br>The color palette came directly from the property: warm creams, deep earth tones, and the green of the surrounding jungle. Every section was designed to feel like a room, not a page.</p>
 
@@ -152,13 +159,34 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 
 <div class="cta-section">
   <h2 class="cta-title">Need a site that<br><em>does justice to your space?</em></h2>
-  <p class="cta-sub">We design hospitality experiences that feel as good as the real thing.</p>
+  <p class="cta-sub"><span data-en="We design hospitality experiences that feel as good as the real thing." data-es="Diseñamos experiencias de hospitalidad que se sienten tan buenas como la realidad.">We design hospitality experiences that feel as good as the real thing.</span></p>
   <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20case%20study%20de%20El%20Escondite%20y%20me%20interesa%20hablar." class="cta-btn" target="_blank">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
     Talk to Emi
   </a>
-  <div class="cta-fine">Pegando La Vuelta Agency · Máncora, Peru</div>
+  <div class="cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú">Pegando La Vuelta Agency · Máncora, Peru</span></div>
 </div>
 
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.getAttribute('data-'+lang+'-html')==='true'){
+      el.innerHTML=el.getAttribute('data-'+lang);
+    } else {
+      el.textContent=el.getAttribute('data-'+lang);
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
 </body>
 </html>
