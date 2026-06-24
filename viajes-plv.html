@@ -70,19 +70,26 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
   .screens-2,.screens-3{grid-template-columns:1fr}
   .details-grid{grid-template-columns:1fr}
 }
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:var(--teal,#14B8A6);color:#fff}
 </style>
 </head>
 <body>
 
 <a class="back" href="https://pegandolavuelta.agency">
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
-  Agency
-</a>
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg><span data-en="Agency" data-es="Agencia">Agency</span></a>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
 
 <div class="hero">
   <div class="hero-img"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Case Study · Web Design</div>
+    <div class="hero-eyebrow" data-en="Case Study · Web Design" data-es="Caso de estudio · Diseño Web">Case Study · Web Design</div>
     <h1 class="hero-title">Viajes<br><em>Pegando La Vuelta</em></h1>
     <p class="hero-sub">A full travel agency website for the personalized South America trip platform — built to convert curious visitors into booked travelers.</p>
     <div class="hero-meta">
@@ -109,7 +116,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">The brief</div>
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
   <h2 class="section-title">More than a catalog.<br><em>A travel identity.</em></h2>
   <p class="section-body">Viajes Pegando La Vuelta is a South America travel agency built by real travelers — not a booking engine, but a curated experience platform. The site needed to convey trust, adventure, and local knowledge while making it easy to browse trips by activity, duration, and destination.</p>
   <ul class="challenge-list">
@@ -139,7 +146,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow">The solution</div>
+  <div class="section-eyebrow" data-en="The solution" data-es="La solución">The solution</div>
   <h2 class="section-title">Visual energy<br><em>that sells the journey.</em></h2>
   <p class="section-body">The design uses full-bleed destination photography, bold handwritten typography for section headers, and a teal brand accent that reads as fresh and energetic without feeling corporate.<br><br>The trip catalog was structured to make browsing feel intuitive — filter by activity (Culture, Kitesurfing, Beach Escape...), read a quick description, and reach a human via WhatsApp in two taps.</p>
 
@@ -170,7 +177,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 
 <div class="cta-section">
   <h2 class="cta-title">Got a travel brand<br><em>that deserves a real site?</em></h2>
-  <p class="cta-sub">We know how to build for travelers — because we are travelers.</p>
+  <p class="cta-sub"><span data-en="We know how to build for travelers — because we are travelers." data-es="Sabemos construir para viajeros — porque nosotros somos viajeros.">We know how to build for travelers — because we are travelers.</span></p>
   <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20case%20study%20de%20Viajes%20PLV%20y%20me%20interesa%20hablar." class="cta-btn" target="_blank">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
     Talk to Emi
@@ -178,5 +185,26 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
   <div class="cta-fine">Pegando La Vuelta Agency · Máncora, Peru</div>
 </div>
 
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    if(el.getAttribute('data-'+lang+'-html')==='true'){
+      el.innerHTML=el.getAttribute('data-'+lang);
+    } else {
+      el.textContent=el.getAttribute('data-'+lang);
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
 </body>
 </html>
