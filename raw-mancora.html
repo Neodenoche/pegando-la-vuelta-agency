@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raw Máncora · Surf & Travel Experience · Pegando La Vuelta</title>
+<!-- SEO -->
+<meta name="description" content="Case study: surf & lifestyle landing page for a local guide offering the authentic Máncora experience. Built to convert English-speaking international travelers — no tourist traps, no scripted itineraries."/>
+<meta name="keywords" content="Mancora surf, Peru travel, surf guide Mancora, travel landing page, web design travel, Peru surf experience, authentic travel"/>
+<link rel="canonical" href="https://pegandolavuelta.agency/raw-mancora"/>
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://pegandolavuelta.agency/raw-mancora"/>
+<meta property="og:title" content="Raw Máncora · Surf & Travel Experience · Pegando La Vuelta"/>
+<meta property="og:description" content="Case study: surf & lifestyle landing page for a local guide offering the authentic Máncora experience. Built to convert English-speaking international travelers — no tourist traps, no scripted itineraries."/>
+<meta property="og:image" content="https://pegandolavuelta.agency/og-raw-mancora.jpg"/>
+<meta property="og:site_name" content="Pegando La Vuelta Agency"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://pegandolavuelta.agency/raw-mancora"/>
+<meta name="twitter:title" content="Raw Máncora · Surf & Travel Experience · Pegando La Vuelta"/>
+<meta name="twitter:description" content="Case study: surf & lifestyle landing page for a local guide offering the authentic Máncora experience. Built to convert English-speaking international travelers — no tourist traps, no scripted itineraries."/>
+<meta name="twitter:image" content="https://pegandolavuelta.agency/og-raw-mancora.jpg"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coral:#E05C3A;
+  --teal:#1B4A52;
+  --sand:#F5F0E8;
+  --dark:#0F1F22;
+  --text:#1B2B2E;
+  --muted:#6B7E82;
+}
+body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}
+
+.back{position:fixed;top:20px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;padding:8px 14px;border:1px solid rgba(255,255,255,0.2);border-radius:100px;background:rgba(0,0,0,0.4);backdrop-filter:blur(8px);transition:color .2s,border-color .2s}
+.back:hover{color:var(--coral);border-color:rgba(224,92,58,0.5)}
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.4);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:var(--coral);color:#fff}
+
+/* HERO */
+.hero{min-height:88vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background-image:url('./assets/img_a9bafb7c8a.png');background-size:cover;background-position:center top;filter:brightness(0.55)}
+.hero-content{position:relative;z-index:1;padding:0 56px 80px;width:100%;max-width:1100px}
+.hero-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(245,240,232,0.6);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--coral)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,8vw,96px);font-weight:300;line-height:1.0;color:#fff;margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--coral)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.6);max-width:480px;line-height:1.8;margin-bottom:36px}
+.hero-stats{display:flex;gap:40px}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;line-height:1}
+.stat-val em{font-style:italic;color:var(--coral)}
+.stat-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px}
+
+.divider{border:none;border-top:1px solid rgba(27,42,46,0.1);margin:0}
+.divider-light{border:none;border-top:1px solid rgba(255,255,255,0.08);margin:0}
+
+/* SECTIONS */
+.section{max-width:1100px;margin:0 auto;padding:80px 56px}
+.section-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--coral);margin-bottom:16px;opacity:.9;display:flex;align-items:center;gap:12px}
+.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--coral)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,56px);font-weight:300;color:var(--teal);line-height:1.1;margin-bottom:20px}
+.section-title em{font-style:italic;color:var(--coral)}
+.section-body{font-size:15px;color:var(--muted);line-height:1.9;max-width:620px}
+
+/* SCREENSHOT */
+.screenshot{width:100%;border-radius:12px;overflow:hidden;border:1px solid rgba(27,42,46,0.08);box-shadow:0 20px 60px rgba(27,42,46,0.12);margin-top:40px}
+.screenshot img{width:100%;display:block}
+
+/* SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.split-img{border-radius:10px;overflow:hidden;box-shadow:0 20px 60px rgba(27,42,46,0.15)}
+.split-img img{width:100%;display:block}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.feat{background:#fff;border-radius:8px;padding:28px 24px;border:1px solid rgba(27,42,46,0.06)}
+.feat-icon{font-size:24px;margin-bottom:14px}
+.feat-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--teal);margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* TECH */
+.tech-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.tech{font-size:12px;padding:6px 14px;border:1px solid rgba(27,74,82,0.2);border-radius:100px;color:var(--muted)}
+
+/* DARK SECTION */
+.dark-section{background:var(--dark);padding:80px 56px}
+.dark-inner{max-width:1100px;margin:0 auto}
+
+/* CTA */
+.cta-section{background:var(--teal);padding:100px 56px;text-align:center}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:300;color:#fff;line-height:1.05;margin-bottom:14px}
+.cta-title em{font-style:italic;color:var(--coral)}
+.cta-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-size:13px;font-weight:600;letter-spacing:.5px;padding:16px 32px;border-radius:100px;text-decoration:none;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+.cta-fine{margin-top:24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+
+@media(max-width:768px){
+  .hero-content{padding:0 24px 56px}
+  .hero-stats{gap:24px}
+  .section{padding:60px 20px}
+  .dark-section{padding:60px 20px}
+  .cta-section{padding:60px 24px}
+  .features{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="https://pegandolavuelta.agency">
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
+  <span data-en="Agency" data-es="Agencia">Agency</span>
+</a>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Case Study · Web Design · Travel" data-es="Caso de estudio · Diseño Web · Turismo">Case Study · Web Design · Travel</div>
+    <h1 class="hero-title">Raw <em>Máncora</em></h1>
+    <p class="hero-sub" data-en="A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers." data-es="Una landing page de surf y lifestyle para un guía local que ofrece la Máncora real — sin trampas turísticas, sin itinerarios guionados. Construida para convertir viajeros internacionales de habla inglesa.">A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">8<em>+</em></div>
+        <div class="stat-label" data-en="Experiences" data-es="Experiencias">Experiences</div>
+      </div>
+      <div>
+        <div class="stat-val">$<em>999</em></div>
+        <div class="stat-label" data-en="Base package" data-es="Paquete base">Base package</div>
+      </div>
+      <div>
+        <div class="stat-val">365<em>d</em></div>
+        <div class="stat-label" data-en="Surf season" data-es="Temporada de surf">Surf season</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider-light">
+
+<!-- THE BRIEF -->
+<section class="section">
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
+  <h2 class="section-title"><span data-en="Feel the real" data-es="Sentí la verdadera">Feel the real</span><br><em><span data-en="Máncora." data-es="Máncora.">Máncora.</span></em></h2>
+  <p class="section-body" data-en="Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation." data-es="Raw Máncora es un emprendimiento 50/50 entre Pegando La Vuelta y un guía local de Máncora con más de una década de experiencia en terreno. El encargo: construir un sitio que le hable directamente a viajeros internacionales buscando una experiencia auténtica — no un paquete de resort. Tipografía editorial serif, fotografía de playa a sangre y un tono que se siente como la recomendación de un amigo.">Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation.</p>
+  <div class="screenshot"><img src="./assets/img_a9bafb7c8a.png" alt="Raw Máncora hero" loading="lazy"></div>
+</section>
+
+<hr class="divider">
+
+<!-- EXPERIENCES -->
+<section class="section">
+  <div class="section-eyebrow" data-en="The experiences" data-es="Las experiencias">The experiences</div>
+  <h2 class="section-title"><span data-en="Real activities." data-es="Actividades reales.">Real activities.</span><br><em><span data-en="Zero filler." data-es="Sin relleno.">Zero filler.</span></em></h2>
+  <p class="section-body" data-en="The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking." data-es="El grid de experiencias muestra 8+ actividades — clases de surf, clases de ceviche, intro al kite surf, vóleibol playero, excursiones a Lobitos — todas fotografiadas con una estética cruda y honesta. Cada card está etiquetada por categoría y enlaza a una reserva directa por WhatsApp.">The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking.</p>
+  <div class="screenshot"><img src="./assets/img_a934707ddd.png" alt="Raw Máncora experiences" loading="lazy"></div>
+</section>
+
+<hr class="divider">
+
+<!-- APPROACH -->
+<section class="section">
+  <div class="split">
+    <div>
+      <div class="section-eyebrow" data-en="The approach" data-es="El enfoque">The approach</div>
+      <h2 class="section-title"><span data-en="Editorial meets" data-es="Lo editorial se encuentra">Editorial meets</span><br><em><span data-en="coastal." data-es="con lo costero.">coastal.</span></em></h2>
+      <p class="section-body" data-en="Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy." data-es="Cormorant Garamond le da al sitio una profundidad editorial inusual para un producto de turismo — señala una experiencia curada, no un tour masivo. El acento coral y el fondo oscuro teal llevan la paleta de un atardecer en Máncora. La prueba social viene de dos testimonios que se leen como despachos de viajeros reales, no como copy de marketing.">Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy.</p>
+      <div class="tech-row">
+        <span class="tech">HTML5 · CSS3</span>
+        <span class="tech">Cormorant Garamond</span>
+        <span class="tech" data-en="Scroll reveal" data-es="Scroll reveal">Scroll reveal</span>
+        <span class="tech" data-en="WhatsApp booking" data-es="Reserva WhatsApp">WhatsApp booking</span>
+        <span class="tech" data-en="English-first" data-es="Inglés primero">English-first</span>
+      </div>
+    </div>
+    <div class="split-img"><img src="./assets/img_8ff26d41d8.png" alt="Raw Máncora reviews" loading="lazy"></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT WAS BUILT -->
+<section class="section">
+  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó">What was built</div>
+  <h2 class="section-title"><span data-en="Everything a traveler" data-es="Todo lo que un viajero">Everything a traveler</span><br><em><span data-en="needs to say yes." data-es="necesita para decir sí.">needs to say yes.</span></em></h2>
+  <div class="features">
+    <div class="feat">
+      <div class="feat-icon">🌊</div>
+      <div class="feat-title" data-en="Hero + Social proof" data-es="Hero + Prueba social">Hero + Social proof</div>
+      <div class="feat-desc" data-en="Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold." data-es="Fotografía de playa a sangre, barra de 4 stats (8+ experiencias, 1 guía, 365d surf, ∞ historias), CTA de WhatsApp sobre el fold.">Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">🏄</div>
+      <div class="feat-title" data-en="Experiences grid" data-es="Grid de experiencias">Experiences grid</div>
+      <div class="feat-desc" data-en="8+ activities in a 3-column image grid with category tags, names, and per-card booking links." data-es="8+ actividades en un grid de imágenes de 3 columnas con tags de categoría, nombres y links de reserva por card.">8+ activities in a 3-column image grid with category tags, names, and per-card booking links.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">⭐</div>
+      <div class="feat-title" data-en="Testimonials" data-es="Testimonios">Testimonials</div>
+      <div class="feat-desc" data-en="Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic." data-es="Dos reseñas de 5 estrellas de viajeros reales (Brooklyn, NY y Melbourne, AU) escritas para sentirse auténticas y específicas, no genéricas.">Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2 class="cta-title"><span data-en="Need a site that" data-es="¿Necesitás un sitio que">Need a site that</span><br><em><span data-en="sells the experience?" data-es="venda la experiencia?">sells the experience?</span></em></h2>
+  <p class="cta-sub" data-en="Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive." data-es="Turismo, hospitalidad, lifestyle — construimos sitios que hacen que los visitantes internacionales sientan el lugar antes de llegar.">Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive.</p>
+  <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20case%20study%20de%20Raw%20M%C3%A1ncora%20y%20me%20interesa%20hablar." class="cta-btn" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    <span data-en="Talk to Emi" data-es="Hablar con Emi">Talk to Emi</span>
+  </a>
+  <div class="cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú">Pegando La Vuelta Agency · Máncora, Peru</span></div>
+</div>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
+</body>
+</html>
