@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FERROX · Heavy Machinery Web Design · Pegando La Vuelta</title>
+<!-- SEO -->
+<meta name="description" content="Case study: dark, high-impact editorial website for a heavy machinery rental company. Built to command authority — 24/7 availability, certified operators, and a fleet ready to deploy."/>
+<meta name="keywords" content="industrial web design, heavy machinery website, dark editorial design, web design industrial, construction company website, machinery rental"/>
+<link rel="canonical" href="https://pegandolavuelta.agency/ferrox"/>
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://pegandolavuelta.agency/ferrox"/>
+<meta property="og:title" content="FERROX · Heavy Machinery Web Design · Pegando La Vuelta"/>
+<meta property="og:description" content="Case study: dark, high-impact editorial website for a heavy machinery rental company. Built to command authority — 24/7 availability, certified operators, and a fleet ready to deploy."/>
+<meta property="og:image" content="https://pegandolavuelta.agency/og-ferrox.jpg"/>
+<meta property="og:site_name" content="Pegando La Vuelta Agency"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://pegandolavuelta.agency/ferrox"/>
+<meta name="twitter:title" content="FERROX · Heavy Machinery Web Design · Pegando La Vuelta"/>
+<meta name="twitter:description" content="Case study: dark, high-impact editorial website for a heavy machinery rental company. Built to command authority — 24/7 availability, certified operators, and a fleet ready to deploy."/>
+<meta name="twitter:image" content="https://pegandolavuelta.agency/og-ferrox.jpg"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --yellow:#F5C800;
+  --black:#0A0A0A;
+  --dark:#111111;
+  --text:rgba(255,255,255,0.82);
+  --muted:rgba(255,255,255,0.4);
+}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6}
+
+.back{position:fixed;top:20px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;padding:8px 14px;border:1px solid rgba(255,255,255,0.1);border-radius:100px;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);transition:color .2s,border-color .2s}
+.back:hover{color:var(--yellow);border-color:rgba(245,200,0,0.4)}
+
+.lang-toggle{position:fixed;top:20px;right:20px;z-index:200;display:flex;align-items:center;gap:4px;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:var(--yellow);color:var(--black)}
+
+/* HERO */
+.hero{min-height:85vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:0;background-image:url('./assets/img_ef9ccb2a66.png');background-size:cover;background-position:center;filter:brightness(0.35)}
+.hero-content{position:relative;z-index:1;padding:0 48px 72px;width:100%;max-width:1100px}
+.hero-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--yellow);margin-bottom:20px;opacity:.9}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(56px,9vw,110px);font-weight:900;line-height:.95;text-transform:uppercase;color:#fff;margin-bottom:28px}
+.hero-title span{color:var(--yellow)}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.55);max-width:520px;line-height:1.8;border-left:3px solid var(--yellow);padding-left:20px;margin-bottom:40px}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap}
+.tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(245,200,0,0.3);border-radius:2px;color:var(--muted)}
+
+.divider{border:none;border-top:1px solid rgba(255,255,255,0.06);margin:0}
+
+/* SECTIONS */
+.section{max-width:1100px;margin:0 auto;padding:80px 48px}
+.section-eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;opacity:.8}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:800;text-transform:uppercase;color:#fff;line-height:1.0;margin-bottom:20px}
+.section-body{font-size:14px;color:var(--muted);line-height:1.9;max-width:620px}
+
+/* SCREENSHOT */
+.screenshot{width:100%;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);box-shadow:0 24px 60px rgba(0,0,0,0.6);margin-top:40px}
+.screenshot img{width:100%;display:block}
+
+/* SPLIT */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-img{border-radius:6px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);box-shadow:0 20px 50px rgba(0,0,0,0.5)}
+.split-img img{width:100%;display:block}
+
+/* FEATURES */
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);border-radius:4px;overflow:hidden;margin-top:48px}
+.feat{background:var(--dark);padding:28px 24px}
+.feat-num{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:900;color:var(--yellow);line-height:1;margin-bottom:10px}
+.feat-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* TECH */
+.tech-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.tech{font-size:12px;padding:6px 14px;border:1px solid rgba(245,200,0,0.2);border-radius:2px;color:var(--muted)}
+
+/* CTA */
+.cta-section{background:#111;border-top:3px solid var(--yellow);padding:80px 48px;text-align:center}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:900;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:12px}
+.cta-title span{color:var(--yellow)}
+.cta-sub{font-size:14px;color:var(--muted);margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--black);font-size:13px;font-weight:700;letter-spacing:.5px;padding:16px 32px;border-radius:2px;text-decoration:none;transition:opacity .2s;text-transform:uppercase}
+.cta-btn:hover{opacity:.85}
+.cta-fine{margin-top:20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.12)}
+
+@media(max-width:768px){
+  .hero-content{padding:0 24px 56px}
+  .section{padding:60px 20px}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .cta-section{padding:60px 24px}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="https://pegandolavuelta.agency">
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
+  <span data-en="Agency" data-es="Agencia">Agency</span>
+</a>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('es')">ES</button>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Case Study · Web Design · Industrial" data-es="Caso de estudio · Diseño Web · Industrial">Case Study · Web Design · Industrial</div>
+    <h1 class="hero-title">FERRO<span>X</span></h1>
+    <p class="hero-sub" data-en="A dark, high-impact editorial site for a heavy machinery rental company. Built to command authority in a sector where trust and availability mean everything." data-es="Un sitio editorial oscuro y de alto impacto para una empresa de renta de maquinaria pesada. Construido para imponer autoridad en un sector donde la confianza y la disponibilidad lo son todo.">A dark, high-impact editorial site for a heavy machinery rental company. Built to command authority in a sector where trust and availability mean everything.</p>
+    <div class="hero-tags">
+      <span class="tag" data-en="Web Design" data-es="Diseño Web">Web Design</span>
+      <span class="tag" data-en="Industrial" data-es="Industrial">Industrial</span>
+      <span class="tag" data-en="Dark Editorial" data-es="Editorial Oscuro">Dark Editorial</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- THE BRIEF -->
+<section class="section">
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
+  <h2 class="section-title" data-en="MOVE THE EARTH." data-es="MUEVE LA TIERRA.">MOVE THE EARTH.</h2>
+  <p class="section-body" data-en="FERROX needed a site that felt as heavy and reliable as the machines in their fleet. No stock photo softness, no generic construction templates. The design had to communicate 24/7 availability, certified operators, and a fleet ready to deploy — all in under 3 seconds of reading." data-es="FERROX necesitaba un sitio que se sintiera tan pesado y confiable como las máquinas de su flota. Sin la suavidad de fotos de stock, sin templates genéricos de construcción. El diseño tenía que comunicar disponibilidad 24/7, operadores certificados y una flota lista para desplegarse — todo en menos de 3 segundos de lectura.">FERROX needed a site that felt as heavy and reliable as the machines in their fleet. No stock photo softness, no generic construction templates. The design had to communicate 24/7 availability, certified operators, and a fleet ready to deploy — all in under 3 seconds of reading.</p>
+  <div class="screenshot"><img src="./assets/img_ef9ccb2a66.png" alt="FERROX hero" loading="lazy"></div>
+</section>
+
+<hr class="divider">
+
+<!-- THE BUILD -->
+<section class="section">
+  <div class="split">
+    <div>
+      <div class="section-eyebrow" data-en="The approach" data-es="El enfoque">The approach</div>
+      <h2 class="section-title" data-en="WEIGHT AS DESIGN." data-es="EL PESO COMO DISEÑO.">WEIGHT AS DESIGN.</h2>
+      <p class="section-body" data-en="Black backgrounds, compressed condensed type at maximum weight, and a single yellow accent that hits like a warning label. The fleet section uses an asymmetric three-column layout — the hero machine taking double the space — to mirror how a real fleet works: not all units are equal." data-es="Fondos negros, tipografía condensada comprimida al máximo peso, y un único acento amarillo que golpea como una etiqueta de advertencia. La sección de flota usa un layout asimétrico de tres columnas — la máquina hero ocupando el doble del espacio — para reflejar cómo funciona una flota real: no todas las unidades son iguales.">Black backgrounds, compressed condensed type at maximum weight, and a single yellow accent that hits like a warning label. The fleet section uses an asymmetric three-column layout — the hero machine taking double the space — to mirror how a real fleet works: not all units are equal.</p>
+      <div class="tech-row">
+        <span class="tech">HTML5 · CSS3</span>
+        <span class="tech" data-en="Barlow Condensed" data-es="Barlow Condensed">Barlow Condensed</span>
+        <span class="tech" data-en="Dark editorial" data-es="Editorial oscuro">Dark editorial</span>
+        <span class="tech" data-en="Responsive" data-es="Responsive">Responsive</span>
+        <span class="tech">WhatsApp CTA</span>
+      </div>
+    </div>
+    <div class="split-img"><img src="./assets/img_a9bafb7c8a.png" alt="FERROX why us" loading="lazy"></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FLEET -->
+<section class="section">
+  <div class="section-eyebrow" data-en="The fleet section" data-es="La sección de flota">The fleet section</div>
+  <h2 class="section-title" data-en="THREE MACHINES,<br>ONE GRID." data-es="TRES MÁQUINAS,<br>UN GRID.">THREE MACHINES,<br>ONE GRID.</h2>
+  <p class="section-body" data-en="Hydraulic excavator, backhoe loader, bulldozer — each with specs, brand tags, and a direct quote CTA. The asymmetric layout puts the most-requested machine center stage without resorting to carousels or tabs." data-es="Excavadora hidráulica, retroexcavadora, bulldozer — cada una con especificaciones, tags de marca y un CTA de cotización directa. El layout asimétrico pone la máquina más solicitada en el centro sin recurrir a carousels ni tabs.">Hydraulic excavator, backhoe loader, bulldozer — each with specs, brand tags, and a direct quote CTA. The asymmetric layout puts the most-requested machine center stage without resorting to carousels or tabs.</p>
+  <div class="screenshot"><img src="./assets/img_a9bafb7c8a.png" alt="FERROX fleet" loading="lazy"></div>
+</section>
+
+<hr class="divider">
+
+<!-- WHY IT WORKS -->
+<section class="section">
+  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó">What was built</div>
+  <h2 class="section-title" data-en="BUILT TO CONVERT." data-es="CONSTRUIDO PARA CONVERTIR.">BUILT TO CONVERT.</h2>
+  <div class="features">
+    <div class="feat">
+      <div class="feat-num">01</div>
+      <div class="feat-title" data-en="Hero section" data-es="Sección hero">Hero section</div>
+      <div class="feat-desc" data-en="Full-bleed dark image, condensed display type, yellow accent. Quote CTA above the fold." data-es="Imagen oscura a sangre, tipografía display condensada, acento amarillo. CTA de cotización sobre el fold.">Full-bleed dark image, condensed display type, yellow accent. Quote CTA above the fold.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-num">02</div>
+      <div class="feat-title" data-en="Fleet catalog" data-es="Catálogo de flota">Fleet catalog</div>
+      <div class="feat-desc" data-en="3 machines in asymmetric grid with specs, brand tags, and per-unit quote buttons." data-es="3 máquinas en grid asimétrico con especificaciones, tags de marca y botones de cotización por unidad.">3 machines in asymmetric grid with specs, brand tags, and per-unit quote buttons.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-num">03</div>
+      <div class="feat-title" data-en="Why FERROX" data-es="Por qué FERROX">Why FERROX</div>
+      <div class="feat-desc" data-en="Split layout: yellow/black. 4 differentiators + 6 sectors served. Regional coverage." data-es="Layout dividido: amarillo/negro. 4 diferenciadores + 6 sectores atendidos. Cobertura regional.">Split layout: yellow/black. 4 differentiators + 6 sectors served. Regional coverage.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-num">04</div>
+      <div class="feat-title" data-en="Floating CTA" data-es="CTA flotante">Floating CTA</div>
+      <div class="feat-desc" data-en="Persistent WhatsApp button fixed on scroll. Always one tap away from a quote." data-es="Botón WhatsApp persistente fijo en el scroll. Siempre a un tap de una cotización.">Persistent WhatsApp button fixed on scroll. Always one tap away from a quote.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2 class="cta-title"><span data-en="Need a site that" data-es="¿Necesitás un sitio que">Need a site that</span><br><span data-en="means business?" data-es="hable en serio?">means business?</span></h2>
+  <p class="cta-sub" data-en="Dark editorial, industrial, B2B — we design sites that match the weight of what you do." data-es="Editorial oscuro, industrial, B2B — diseñamos sitios que están a la altura de lo que hacés.">Dark editorial, industrial, B2B — we design sites that match the weight of what you do.</p>
+  <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20case%20study%20de%20FERROX%20y%20me%20interesa%20hablar." class="cta-btn" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+    <span data-en="Talk to Emi" data-es="Hablar con Emi">Talk to Emi</span>
+  </a>
+  <div class="cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú">Pegando La Vuelta Agency · Máncora, Peru</span></div>
+</div>
+
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent=el.getAttribute('data-'+lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem('plv-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('plv-lang')||'en';
+  if(saved==='es') setLang('es');
+})();
+</script>
+</body>
+</html>
