@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-site-verification" content="fwouYyEt_EunKfOqt3iJaU5PWFKHFmVfqvQ4zEPXAaQ"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Tyba Pocket · Case Study — Pegando La Vuelta Agency</title>
-<meta name="description" content="UX Writing, Content Strategy & Landing Page Design for tyba Pocket — a fintech investment product by Credicorp Capital & BCP."/>
-<link rel="canonical" href="https://pegandolavuelta.agency/tyba.html"/>
-<meta property="og:title" content="Tyba Pocket · Case Study — Pegando La Vuelta Agency"/>
-<meta property="og:description" content="UX Writing, Content Strategy & Landing Page Design for tyba Pocket."/>
-<meta property="og:url" content="https://pegandolavuelta.agency/tyba.html"/>
+<title>Pegando La Vuelta — Creative & Digital Agency</title>
+<!-- SEO -->
+<meta name="description" content="Pegando La Vuelta is a creative & digital agency founded by Emiliano Torres and Lorena. We build Telegram bots, web apps, mobile apps, and digital experiences for Web3, hospitality, and travel brands."/>
+<meta name="keywords" content="creative agency, digital agency, telegram bot, web3, react native, web design, Pegando La Vuelta"/>
+<link rel="canonical" href="https://pegandolavuelta.agency/"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://pegandolavuelta.agency/"/>
+<meta property="og:title" content="Pegando La Vuelta — Creative & Digital Agency"/>
+<meta property="og:description" content="Pegando La Vuelta is a creative & digital agency founded by Emiliano Torres and Lorena. We build Telegram bots, web apps, mobile apps, and digital experiences for Web3, hospitality, and travel brands."/>
+<meta property="og:image" content="https://pegandolavuelta.agency/og-index.jpg"/>
+<meta property="og:site_name" content="Pegando La Vuelta Agency"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:url" content="https://pegandolavuelta.agency/"/>
+<meta name="twitter:title" content="Pegando La Vuelta — Creative & Digital Agency"/>
+<meta name="twitter:description" content="Pegando La Vuelta is a creative & digital agency founded by Emiliano Torres and Lorena. We build Telegram bots, web apps, mobile apps, and digital experiences for Web3, hospitality, and travel brands."/>
+<meta name="twitter:image" content="https://pegandolavuelta.agency/og-index.jpg"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -16,12 +30,11 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --teal:#0097A7;--teal-dark:#006B75;--teal-light:#E0F7FA;
-  --amber:#E8A000;--amber-dark:#9E6C00;
-  --red:#E8381A;
+  --amber:#E8A000;--amber-dark:#9E6C00;--amber-light:#FFF8E1;
+  --red:#E8381A;--red-dark:#9E2610;--red-light:#FBE9E7;
   --dark:#0E0E0E;--dark2:#161616;--mid:#242424;
   --cream:#F5F2EC;--grey:#666;--light-grey:#F0EDE8;
   --white:#FFFFFF;
-  --blue:#1A6BF5;--blue-light:#EEF4FF;
   --fd:'Syne',sans-serif;--fb:'Inter',sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
@@ -31,332 +44,678 @@ body{font-family:var(--fb);background:var(--cream);color:var(--dark);overflow-x:
 /* CURSOR */
 .cur-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--dark);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference}
 .cur-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(0,0,0,.25);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
-body.hov .cur-dot{width:14px;height:14px;background:var(--blue)}
-body.hov .cur-ring{width:52px;height:52px;border-color:var(--blue)}
+body.hov .cur-dot{width:14px;height:14px;background:var(--teal)}
+body.hov .cur-ring{width:52px;height:52px;border-color:var(--teal)}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(245,242,236,.95);backdrop-filter:blur(16px);border-bottom:.5px solid rgba(0,0,0,.08)}
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;transition:all .4s;background:rgba(245,242,236,.95);backdrop-filter:blur(16px);border-bottom:.5px solid rgba(0,0,0,.08)}
+
 .nav-logo img{height:34px}
-.nav-back{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(0,0,0,.55);text-decoration:none;transition:color .2s;cursor:none}
-.nav-back:hover{color:var(--dark)}
-.nav-back svg{width:16px;height:16px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:12px;font-weight:500;color:rgba(0,0,0,.55);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;cursor:none}
+.nav-links a:hover{color:var(--dark)}
 .lang-toggle{display:flex;gap:3px;background:rgba(0,0,0,.08);border-radius:20px;padding:3px}
 .lang-toggle button{font-size:11px;font-weight:600;letter-spacing:.06em;padding:4px 10px;border:none;border-radius:16px;cursor:none;background:transparent;color:rgba(0,0,0,.4);transition:all .2s}
 .lang-toggle button.active{background:var(--dark);color:var(--white)}
 
 /* HERO */
-.cs-hero{min-height:90vh;background:var(--dark);display:flex;flex-direction:column;justify-content:flex-end;padding:10rem 3rem 5rem;position:relative;overflow:hidden}
-.cs-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a1628 0%,#1a2a4a 50%,#0d1f3c 100%);opacity:.95}
-.cs-hero-accent{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 30%,rgba(26,107,245,.08) 100%)}
-.cs-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
-.cs-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
-.cs-tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6)}
-.cs-tag.blue{border-color:rgba(26,107,245,.5);color:#6B9EFF;background:rgba(26,107,245,.1)}
-.cs-hero h1{font-family:var(--fd);font-size:clamp(3rem,7vw,7rem);font-weight:800;line-height:.92;letter-spacing:-.03em;color:var(--white);margin-bottom:1.5rem}
-.cs-hero h1 em{font-style:normal;color:#6B9EFF}
-.cs-hero-sub{font-size:1.1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.75;margin-bottom:3rem}
-.cs-meta{display:flex;gap:3rem;flex-wrap:wrap}
-.cs-meta-item{display:flex;flex-direction:column;gap:4px}
-.cs-meta-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}
-.cs-meta-val{font-size:14px;font-weight:500;color:rgba(255,255,255,.75)}
-
-/* CONTENT */
-.cs-body{max-width:1200px;margin:0 auto;padding:6rem 3rem}
-.cs-section{margin-bottom:6rem}
-.cs-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
-.cs-section h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
-.cs-section p{font-size:1rem;color:var(--grey);line-height:1.85;max-width:680px;margin-bottom:1rem}
-.cs-section p strong{color:var(--dark);font-weight:600}
-
-/* OVERVIEW GRID */
-.cs-overview{display:grid;grid-template-columns:1.2fr .8fr;gap:5rem;align-items:start;margin-bottom:6rem}
-.cs-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
-.cs-pill{font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;background:var(--blue-light);color:var(--blue)}
-
-/* STATS */
-.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0}
-.cs-stat{padding:2rem;background:var(--white);border-radius:16px;border:1px solid rgba(0,0,0,.06)}
-.cs-stat-num{font-family:var(--fd);font-size:2.5rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.5rem}
-.cs-stat-label{font-size:13px;color:var(--grey);line-height:1.5}
-
-/* SCREENSHOTS */
-.cs-screens{display:grid;grid-template-columns:1fr;gap:2rem;margin:3rem 0}
-.cs-screen{border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 40px rgba(0,0,0,.08)}
-.cs-screen img{width:100%;height:auto;display:block}
-.cs-screen-caption{padding:1rem 1.25rem;background:var(--white);font-size:13px;color:var(--grey);border-top:1px solid rgba(0,0,0,.06)}
-
-.cs-screens-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:3rem 0}
-
-/* DELIVERABLES */
-.cs-deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem 0}
-.cs-del{padding:1.75rem;background:var(--white);border-radius:16px;border:1px solid rgba(0,0,0,.06)}
-.cs-del-icon{font-size:1.75rem;margin-bottom:1rem}
-.cs-del h3{font-family:var(--fd);font-size:1rem;font-weight:700;margin-bottom:.5rem}
-.cs-del p{font-size:13px;color:var(--grey);line-height:1.6}
-
-/* CREDITS */
-.cs-credits{background:var(--dark);border-radius:24px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.cs-credits-text h3{font-family:var(--fd);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.5rem}
-.cs-credits-text p{font-size:14px;color:rgba(255,255,255,.5);max-width:500px}
-.cs-credit-people{display:flex;gap:1.5rem;flex-wrap:wrap}
-.cs-credit-person{display:flex;align-items:center;gap:10px}
-.cs-credit-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.85rem;font-weight:800}
-.cs-credit-avatar.an{background:#e8f4f8;color:#2d6a8a}
-.cs-credit-name{font-size:13px;font-weight:600;color:var(--white)}
-.cs-credit-role{font-size:11px;color:rgba(255,255,255,.4)}
-
-/* CTA */
-.cs-cta{text-align:center;padding:5rem 0 2rem}
-.cs-cta h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:1rem}
-.cs-cta p{color:var(--grey);margin-bottom:2rem}
-.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);font-size:13px;font-weight:600;letter-spacing:.04em;padding:14px 28px;border-radius:40px;text-decoration:none;transition:all .25s;cursor:none}
-.btn-p:hover{background:var(--blue);transform:translateY(-2px)}
-
-/* FOOTER */
-footer{border-top:1px solid rgba(0,0,0,.08);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
-.fl img{height:28px;opacity:.5}
-.fr{font-size:12px;color:var(--grey)}
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;background:var(--dark);contain:paint}
+.hero-left{display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 3rem 5rem;position:relative;z-index:2}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--amber)}
+.hero-headline{font-family:var(--fd);font-size:clamp(3rem,6vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-.02em;color:var(--white);margin-bottom:2rem;overflow:hidden}
+.hero-headline .word{display:inline-block;transform:translateY(110%);opacity:0}
+.hero-headline em{font-style:normal;color:var(--amber)}
+.hero-headline .r{color:var(--red)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.5);max-width:420px;line-height:1.75;margin-bottom:2.5rem;transform:translateY(20px);opacity:0}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap;transform:translateY(20px);opacity:0}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--dark);font-size:13px;font-weight:600;letter-spacing:.04em;padding:13px 24px;border-radius:40px;text-decoration:none;transition:all .25s;cursor:none}
+.btn-p:hover{background:var(--amber);transform:translateY(-2px)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-size:13px;font-weight:600;letter-spacing:.04em;padding:13px 24px;border-radius:40px;border:1.5px solid rgba(255,255,255,.2);text-decoration:none;transition:all .25s;cursor:none}
+.btn-s:hover{border-color:var(--white);transform:translateY(-2px)}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.85)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--dark) 0%,transparent 40%)}
+.hero-stats{position:absolute;bottom:3rem;right:3rem;display:flex;gap:2.5rem;z-index:3}
+.stat-num{font-family:var(--fd);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
+.stat-label{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+.scroll-hint{position:absolute;bottom:3rem;left:3rem;display:flex;align-items:center;gap:10px;font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.12em;text-transform:uppercase;z-index:3}
+.scroll-line{width:40px;height:1px;background:rgba(255,255,255,.15);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;top:0;left:-40px;width:40px;height:100%;background:rgba(255,255,255,.5);animation:sa 1.8s ease-in-out infinite}
+@keyframes sa{0%{left:-40px}100%{left:40px}}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.visible{opacity:1;transform:none}
 
-/* RESPONSIVE */
+/* ABOUT */
+#about{background:var(--white);padding:7rem 0}
+.about-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--teal)}
+.section-title{font-family:var(--fd);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
+.about-text p{color:var(--grey);line-height:1.8;font-size:1rem;margin-bottom:1.25rem}
+.about-text p strong{color:var(--dark);font-weight:600}
+.route-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);color:var(--teal-dark);font-size:12px;font-weight:600;padding:8px 16px;border-radius:20px;margin-top:.5rem}
+
+/* PHOTO STACK */
+.photo-stack{position:relative;height:680px}
+.photo-stack .p1{display:none}
+.photo-stack .p2{position:absolute;bottom:0;left:0;width:75%;height:100%;object-fit:cover;object-position:center top;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.15);z-index:5}
+.photo-stack .map-badge{position:absolute;bottom:18%;right:2%;width:110px;height:110px;border-radius:50%;overflow:hidden;border:4px solid var(--white);box-shadow:0 10px 30px rgba(0,0,0,.2);z-index:6;display:block}
+.photo-stack .map-badge img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* TEAM */
+.team-section{background:var(--cream);padding:6rem 0}
+.team-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}.team-grid-3{grid-template-columns:1fr 1fr 1fr}
+.team-card{border-radius:20px;overflow:hidden;position:relative;background:var(--white)}
+.team-card-img{height:380px;overflow:hidden}
+.team-card-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .6s var(--ease)}
+.team-card:hover .team-card-img img{transform:scale(1.05)}
+.team-card-info{padding:1.75rem}
+.team-card-top{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.team-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1rem;font-weight:800;flex-shrink:0}
+.ta-emi{background:var(--teal);color:var(--white)}
+.ta-lore{background:var(--amber);color:var(--white)}
+.team-name{font-family:var(--fd);font-size:1.1rem;font-weight:700}
+.team-role{font-size:12px;color:var(--grey);margin-top:2px}
+.team-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:10px;border:.5px solid rgba(0,0,0,.12);color:var(--grey)}
+.tag.t{border-color:var(--teal);color:var(--teal);background:var(--teal-light)}
+.tag.a{border-color:var(--amber);color:var(--amber-dark);background:var(--amber-light)}
+
+/* SERVICES */
+#services{background:var(--dark);padding:7rem 0}
+.svc-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
+.svc-header .eyebrow::before{background:var(--amber)}
+.svc-header .eyebrow{color:var(--amber)}
+.svc-header .section-title{color:var(--white)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:20px;overflow:hidden;margin-top:3.5rem}
+.svc-card{background:var(--dark2);padding:2.5rem 2rem;position:relative;transition:background .3s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.svc-card.ct::before{background:var(--teal)}
+.svc-card.ca::before{background:var(--amber)}
+.svc-card.cr::before{background:var(--red)}
+.svc-card:hover{background:#1c1c1c}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:36px;height:36px;margin-bottom:1.25rem;display:block}
+.svc-title{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
+.svc-desc{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.7}
+.svc-who{display:inline-block;margin-top:1.25rem;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:10px}
+.sw-t{background:rgba(0,151,167,.12);color:var(--teal)}
+.sw-a{background:rgba(232,160,0,.12);color:var(--amber)}
+.sw-r{background:rgba(232,56,26,.12);color:var(--red)}
+
+/* PORTFOLIO */
+#portfolio{background:var(--cream);padding:7rem 0}
+.port-inner{max-width:1200px;margin:0 auto;padding:0 3rem}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+.port-grid .big{grid-column:span 2}
+.pcard{border-radius:16px;overflow:hidden;position:relative;background:var(--mid);aspect-ratio:4/3;cursor:none;transition:transform .4s var(--ease)}
+.pcard.big{aspect-ratio:16/9}
+.pcard:hover{transform:scale(1.02)}
+.pcard[onclick]{cursor:pointer!important}
+.pcard[onclick]{cursor:pointer!important}
+.pcard:hover .pover{opacity:1}
+.pbg{position:absolute;inset:0;font-size:6rem;display:flex;align-items:center;justify-content:center;opacity:.12;color:var(--white);filter:grayscale(1)}
+.pover{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 55%,transparent 100%);opacity:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.ptag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem}
+.pname{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:var(--white)}
+.pdesc{font-size:12px;color:rgba(255,255,255,.6);margin-top:3px}
+.at .ptag{color:var(--teal)}
+.aa .ptag{color:var(--amber)}
+.ar .ptag{color:var(--red)}
+
+/* CLIENTS */
+#clients{background:var(--white);padding:6rem 0;overflow:hidden}
+.cl-inner{max-width:1200px;margin:0 auto 3rem;padding:0 3rem;text-align:center}
+.marquee-wrap{overflow:hidden;width:100%;margin-bottom:.75rem}
+.marquee{display:flex;gap:4rem;width:max-content;animation:mq 20s linear infinite;align-items:center}
+.marquee.rev{animation-direction:reverse}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cl-item{font-family:var(--fd);font-size:1rem;font-weight:700;color:rgba(0,0,0,.15);white-space:nowrap;transition:color .3s;cursor:default}
+.cl-item:hover{color:var(--dark)}
+
+/* CONTACT */
+#contact{background:var(--dark);padding:8rem 0 6rem}
+.ct-inner{max-width:700px;margin:0 auto;padding:0 3rem;text-align:center}
+.ct-inner .eyebrow{justify-content:center;color:var(--amber)}
+.ct-inner .eyebrow::before{background:var(--amber)}
+.ct-inner .section-title{color:var(--white);margin-bottom:1rem}
+.ct-inner p{color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:2.5rem;font-size:1rem}
+.ct-cards{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.ct-card{background:rgba(255,255,255,.06);border-radius:14px;padding:1.1rem 1.5rem;border:.5px solid rgba(255,255,255,.08);transition:all .3s;text-decoration:none;color:var(--white);cursor:none;display:flex;align-items:center;gap:10px}
+.ct-card:hover{border-color:var(--teal);transform:translateY(-3px);background:rgba(0,151,167,.1)}
+.ct-icon{font-size:1.25rem}
+.ct-label{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
+.ct-val{font-size:13px;font-weight:500}
+.ct-big{display:inline-block;font-family:var(--fd);font-size:clamp(1rem,1.8vw,1.5rem);font-weight:800;color:var(--white);text-decoration:none;border-bottom:3px solid var(--teal);padding-bottom:4px;transition:all .2s;cursor:none}
+.ct-big:hover{color:var(--amber);border-color:var(--amber)}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:.5px solid rgba(255,255,255,.06);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between}
+.fl img{height:26px;opacity:.5}
+.fc{font-size:11px;color:rgba(255,255,255,.25)}
+.flinks{display:flex;gap:1.5rem}
+.flinks a{font-size:11px;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--white)}
+
+/* MOBILE */
 @media(max-width:900px){
   nav{padding:1rem 1.5rem}
-  .cs-hero{padding:8rem 1.5rem 4rem}
-  .cs-body{padding:4rem 1.5rem}
-  .cs-overview{grid-template-columns:1fr;gap:3rem}
-  .cs-stats{grid-template-columns:1fr 1fr}
-  .cs-screens-2{grid-template-columns:1fr}
-  .cs-deliverables{grid-template-columns:1fr 1fr}
-  .cs-credits{flex-direction:column}
-  .cs-meta{gap:1.5rem}
-  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
+  #hero{grid-template-columns:1fr;min-height:100svh}
+  .hero-right{position:absolute;inset:0;opacity:.35}
+  .hero-right::after{background:linear-gradient(to top,var(--dark) 30%,transparent)}
+  .hero-left{padding:7rem 1.25rem 7rem;z-index:2}
+  .hero-headline{font-size:clamp(1.8rem,8.5vw,3rem);line-height:1.1;hyphens:none;overflow-wrap:normal;word-break:normal}
+  .hero-sub{font-size:.875rem;max-width:100%;padding-right:.5rem}
+
+  .hero-stats{right:1.25rem;bottom:1.75rem;gap:1rem}
+  .stat-num{font-size:1.6rem}
+  .stat-label{font-size:9px}
+  .scroll-hint{display:none}
+  .btn-p,.btn-s{font-size:12px;padding:11px 18px}
+  /* About */
+  .about-grid,.team-grid,.svc-grid,.port-grid{grid-template-columns:1fr}
+  .about-grid{gap:3rem}
+  /* Photo stack */
+  .photo-stack{margin-top:2rem;position:relative;display:block}
+  .photo-stack .p1{display:none}
+  .photo-stack .p2{position:relative;width:100%;height:auto;max-height:520px;object-fit:cover;object-position:center top;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.15);display:block}
+  .photo-stack .map-badge{display:block;width:72px;height:72px;position:absolute;bottom:14px;right:14px;border:3px solid #fff;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+  /* Portfolio */
+  .port-grid .big{grid-column:span 1}
+  .pcard.big{aspect-ratio:4/3}
+  /* Spacing */
+  section,#hero .hero-left{padding-left:1.25rem;padding-right:1.25rem}
+  .about-inner,.svc-inner,.port-inner,.cl-inner,.ct-inner,.team-inner{padding:0 1.25rem}
+  /* Team cards */
+  .team-card-img{height:280px}
+  /* Services grid */
+  .svc-grid{gap:1px}
+  /* Footer */
+  footer{flex-direction:column;gap:1rem;text-align:center}
+  .nav-links{display:none}
+  /* Section titles */
+  .section-title{font-size:clamp(1.7rem,7vw,2.5rem)}
+  /* Hero eyebrow */
+  .hero-eyebrow{font-size:10px;margin-bottom:1rem}
 }
-@media(max-width:500px){
-  .cs-stats{grid-template-columns:1fr}
-  .cs-deliverables{grid-template-columns:1fr}
+/* Extra small phones */
+@media(max-width:390px){
+  .hero-headline{font-size:1.7rem}
+}
+
+/* ── Mobile contact section spacing ── */
+@media(max-width:900px){
+  #contact{padding:5rem 0 4rem}
+  .ct-big{font-size:1rem;word-break:break-all}
+  .ct-cards{flex-direction:column;align-items:center}
+  .ct-card{width:100%;max-width:320px;justify-content:center}
+  /* Hero: prevent stats from overlapping buttons */
+  .hero-stats{position:relative;bottom:auto;right:auto;margin-top:2rem;justify-content:flex-start}
+  .hero-left{padding:6rem 1.25rem 3rem;display:flex;flex-direction:column;justify-content:flex-end;gap:0}
+  #hero{min-height:100svh}
+  /* Marquee clients smaller text */
+  .cl-item{font-size:.85rem}
+  /* Services cards */
+  .svc-card{padding:1.75rem 1.5rem}
+  /* About section order: text first, then photo */
+  .about-grid{display:flex;flex-direction:column}
+}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+
+
+
+
+/* -- KALMOON MODAL -- */
+.km-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10000;display:none;align-items:center;justify-content:center;padding:1rem;cursor:default!important}
+.km-overlay.open{display:flex}
+.km-overlay *,.km-overlay *::before,.km-overlay *::after{cursor:default!important}
+.km-overlay button{cursor:pointer!important}
+.km-modal{background:#0b0b14;border-radius:18px;width:min(900px,96vw);max-height:92vh;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.09);box-shadow:0 24px 70px rgba(0,0,0,.8);overflow:hidden}
+.km-hd{display:flex;align-items:flex-start;justify-content:space-between;padding:1.5rem 1.75rem .75rem;gap:1rem}
+.km-title{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;line-height:1.1;display:flex;align-items:center;gap:.5rem}
+.km-desc{font-size:13px;color:rgba(255,255,255,.45);margin-top:.4rem;line-height:1.7;max-width:520px}
+.km-x{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.65);font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer!important;transition:background .2s,color .2s}
+.km-x:hover{background:rgba(255,255,255,.16);color:#fff}
+.km-tags{display:flex;gap:5px;flex-wrap:wrap;padding:0 1.75rem .9rem}
+.km-tag{font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:3px 9px;border-radius:8px;border:1px solid}
+.km-tag.tc{border-color:#0097a7;color:#0097a7;background:rgba(0,151,167,.1)}
+.km-tag.ta{border-color:#b87000;color:#b87000;background:rgba(232,160,0,.1)}
+.km-tag.tg{border-color:rgba(255,255,255,.18);color:rgba(255,255,255,.45)}
+.km-stage{margin:0 1.75rem;position:relative;background:#060610;border-radius:12px;height:440px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+.km-img{display:none;max-height:440px;max-width:100%;object-fit:contain;border-radius:8px;user-select:none;pointer-events:none}
+.km-img.on{display:block}
+.km-arr{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.65);border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer!important;transition:background .2s;z-index:5}
+.km-arr:hover{background:rgba(255,255,255,.2)}
+.km-arr.prev{left:10px}
+.km-arr.next{right:10px}
+.km-ctr{position:absolute;bottom:7px;right:11px;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.04em;pointer-events:none}
+.km-bot{padding:.6rem 1.75rem;display:flex;flex-direction:column;gap:.45rem}
+.km-lbl{text-align:center;font-size:10.5px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
+.km-dots{display:flex;gap:5px;justify-content:center;flex-wrap:wrap}
+.km-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);border:none;padding:0;cursor:pointer!important;transition:all .2s}
+.km-dot.on{background:#0097a7;transform:scale(1.4)}
+.km-cta{display:flex;gap:.6rem;justify-content:center;padding:.3rem 1.75rem 1.4rem}
+.km-cta a{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:9px 20px;border-radius:28px;text-decoration:none;transition:all .2s;cursor:pointer!important}
+.km-cta-p{background:#0097a7;color:#fff}
+.km-cta-p:hover{background:#006b75}
+.km-cta-s{background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.18)}
+.km-cta-s:hover{color:#fff;border-color:rgba(255,255,255,.45)}
+@media(max-width:600px){
+  .km-hd{padding:1.1rem 1.2rem .6rem}
+  .km-tags,.km-bot,.km-cta{padding-left:1.2rem;padding-right:1.2rem}
+  .km-stage{margin:0 1.2rem;height:300px}
+  .km-img{max-height:300px}
+  .km-title{font-size:1.2rem}
+}
+
+
+@media(max-width:900px){
+  .hero-headline > span{overflow:visible!important}
+  .hero-headline{font-size:clamp(1.8rem,8.5vw,3rem)!important;line-height:1.1}
 }
 </style>
 </head>
 <body>
-<div class="cur-dot"></div>
-<div class="cur-ring"></div>
 
-<nav>
-  <a href="/" class="nav-back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
-    <span data-en="Back to work" data-es="Volver al portafolio">Back to work</span>
-  </a>
-  <div class="lang-toggle">
-    <button class="active" onclick="setLang('en')">EN</button>
-    <button onclick="setLang('es')">ES</button>
+<div class="cur-dot" id="cd"></div>
+<div class="cur-ring" id="cr"></div>
+
+<nav id="nav">
+  <div class="nav-logo"><img src="logo.png" alt="Pegando La Vuelta"/></div>
+  <div class="nav-links">
+    <a href="#about" data-en="About" data-es="Nosotros">About</a>
+    <a href="#services" data-en="Services" data-es="Servicios">Services</a>
+    <a href="#portfolio" data-en="Work" data-es="Proyectos">Work</a>
+    <a href="#clients" data-en="Clients" data-es="Clientes">Clients</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    <div class="lang-toggle">
+      <button id="bEN" class="active" onclick="setLang('en')">EN</button>
+      <button id="bES" onclick="setLang('es')">ES</button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="cs-hero">
-  <div class="cs-hero-bg"></div>
-  <div class="cs-hero-accent"></div>
-  <div class="cs-hero-inner">
-    <div class="cs-tags">
-      <span class="cs-tag blue">Fintech</span>
-      <span class="cs-tag">UX Writing</span>
-      <span class="cs-tag">Content Strategy</span>
-      <span class="cs-tag">Landing Page</span>
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span data-en="Creative & Digital Agency" data-es="Agencia Creativa & Digital">Creative & Digital Agency</span></div>
+    <h1 class="hero-headline">
+      <span style="display:block;overflow:hidden"><span class="word" data-en="We build" data-es="Creamos">We build</span></span>
+      <span style="display:block;overflow:hidden"><span class="word"><em data-en="brands" data-es="marcas">brands</em>,</span></span>
+      <span style="display:block;overflow:hidden"><span class="word" data-en="communities" data-es="comunidades">communities</span></span>
+      <span style="display:block;overflow:hidden"><span class="word">& <span class="r" data-en="products." data-es="productos.">products.</span></span></span>
+    </h1>
+    <p class="hero-sub" data-en="12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide." data-es="12+ años viajando y construyendo por Sudamérica. De Bogotá a Ushuaia — tres veces. Ahora llevamos esa energía a marcas del mundo.">12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide.</p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn-p" data-en="See our work →" data-es="Ver proyectos →">See our work →</a>
+      <a href="#contact" class="btn-s" data-en="Let's talk" data-es="Hablemos">Let's talk</a>
     </div>
-    <h1 data-en="Tyba<br><em>Pocket</em>" data-es="Tyba<br><em>Pocket</em>">Tyba<br><em>Pocket</em></h1>
-    <p class="cs-hero-sub" data-en="Product landing page for a fintech investment tool by Credicorp Capital & BCP — designed to turn first-time investors into confident ones." data-es="Landing page de producto para una herramienta de inversión fintech de Credicorp Capital & BCP — diseñada para convertir a los primerizos en inversores seguros.">Product landing page for a fintech investment tool by Credicorp Capital & BCP — designed to turn first-time investors into confident ones.</p>
-    <div class="cs-meta">
-      <div class="cs-meta-item">
-        <span class="cs-meta-label" data-en="Client" data-es="Cliente">Client</span>
-        <span class="cs-meta-val">tyba · Credicorp Capital</span>
+  </div>
+  <div class="hero-right">
+    <img src="hero-couple.jpg" alt="Emi & Lorena en los Andes"/>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">12+</div><div class="stat-label" data-en="Years on the road" data-es="Años en ruta">Years on the road</div></div>
+    <div><div class="stat-num">3×</div><div class="stat-label">Bogotá → Ushuaia</div></div>
+    <div><div class="stat-num">10k+</div><div class="stat-label" data-en="Community members" data-es="Miembros">Community members</div></div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span data-en="Scroll" data-es="Scroll">Scroll</span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow"><span data-en="Who we are" data-es="Quiénes somos">Who we are</span></div>
+        <h2 class="section-title" data-en="Three people.<br>One relentless agency." data-es="Tres personas.<br>Una agencia sin frenos.">Three people.<br>One relentless agency.</h2>
+        <div class="about-text">
+          <p data-en="<strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward." data-es="<strong>Pegando La Vuelta</strong> nació en la ruta — Emi y Lorena viajando Sudamérica de punta a punta durante más de 12 años, de Bogotá a Ushuaia, tres veces. Ese viaje moldeó cómo trabajamos: adaptables, creativos, siempre avanzando."><strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward.</p>
+          <p data-en="Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen." data-es="Hoy somos un equipo de tres, con Andrea sumando la capa de estrategia creativa y comunicación que completa nuestro stack. Remotos, full-stack, sin intermediarios.">Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen.</p>
+        </div>
+        <span class="route-badge">🗺 Bogotá · Medellín · Cartagena · Quito · Cuenca · Lima · Cusco · La Paz · Salta · Mendoza · Buenos Aires · Bariloche · Ushuaia</span>
       </div>
-      <div class="cs-meta-item">
-        <span class="cs-meta-label" data-en="Sector" data-es="Sector">Sector</span>
-        <span class="cs-meta-val" data-en="Fintech · Investment" data-es="Fintech · Inversión">Fintech · Investment</span>
-      </div>
-      <div class="cs-meta-item">
-        <span class="cs-meta-label" data-en="Deliverables" data-es="Entregables">Deliverables</span>
-        <span class="cs-meta-val" data-en="UX Writing · Content · Design" data-es="UX Writing · Contenido · Diseño">UX Writing · Content · Design</span>
-      </div>
-      <div class="cs-meta-item">
-        <span class="cs-meta-label" data-en="Market" data-es="Mercado">Market</span>
-        <span class="cs-meta-val">Perú · LATAM</span>
+      <div class="photo-stack reveal">
+        <!-- p1 placeholder removed -->
+        <img class="p2" src="./assets/img_9ba08b8b3b.jpg" alt="Emi & Lorena en Cusco" style="object-position:center top"/>
+        <div class="map-badge"><img src="./assets/img_29548f514b.jpg" alt="Ruta Bogotá-Ushuaia" style="width:100%;height:100%;object-fit:cover"/></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BODY -->
-<div class="cs-body">
-
-  <!-- OVERVIEW -->
-  <div class="cs-overview">
-    <div class="reveal">
-      <div class="cs-eyebrow" data-en="The challenge" data-es="El desafío">The challenge</div>
-      <h2 data-en="Making investing feel<br>approachable" data-es="Hacer que invertir se<br>sienta accesible">Making investing feel<br>approachable</h2>
-      <p data-en="tyba Pocket is a micro-investment product backed by Credicorp Capital and BCP — one of Peru's largest financial institutions. The challenge: communicate a complex financial product to a first-time investor audience without losing trust, compliance, or clarity." data-es="tyba Pocket es un producto de micro-inversión respaldado por Credicorp Capital y BCP — una de las instituciones financieras más grandes del Perú. El reto: comunicar un producto financiero complejo a un público inversor primerizo sin perder confianza, compliance ni claridad.">tyba Pocket is a micro-investment product backed by Credicorp Capital and BCP — one of Peru's largest financial institutions. The challenge: communicate a complex financial product to a first-time investor audience without losing trust, compliance, or clarity.</p>
-      <p data-en="The landing needed to explain what tyba Pocket is, why it's safe, and how to get started — all in language that feels human, not like a bank." data-es="El landing necesitaba explicar qué es tyba Pocket, por qué es seguro y cómo empezar — todo en un lenguaje que se siente humano, no como un banco.">The landing needed to explain what tyba Pocket is, why it's safe, and how to get started — all in language that feels human, not like a bank.</p>
-    </div>
-    <div class="reveal">
-      <div class="cs-pills">
-        <span class="cs-pill">UX Writing</span>
-        <span class="cs-pill">Content Strategy</span>
-        <span class="cs-pill">Landing Page Design</span>
-        <span class="cs-pill">Brand Voice</span>
-        <span class="cs-pill">Fintech</span>
-        <span class="cs-pill">LATAM</span>
-        <span class="cs-pill">Content 360°</span>
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-inner">
+    <div class="eyebrow reveal"><span data-en="The team" data-es="El equipo">The team</span></div>
+    <h2 class="section-title reveal" data-en="Built by travelers.<br>Driven by craft." data-es="Construido por viajeros.<br>Impulsado por el oficio.">Built by travelers.<br>Driven by craft.</h2>
+    <div class="team-grid team-grid-3">
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="emi-portrait.jpg" alt="Emi Torres" style="object-position:center 25%"/></div>
+        <div class="team-card-info">
+          <div class="team-card-top">
+            <div class="team-avatar ta-emi">EM</div>
+            <div><div class="team-name">Emi Torres</div><div class="team-role" data-en="Community Engineer · Full-Stack Dev · Strategist" data-es="Community Engineer · Dev Full-Stack · Estratega">Community Engineer · Full-Stack Dev · Strategist</div></div>
+          </div>
+          <div class="team-tags">
+            <span class="tag t">Telegram Bots</span><span class="tag t">React Native</span><span class="tag t">Web3</span><span class="tag t">Python</span><span class="tag">Strategy</span><span class="tag">XAU/USD</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="cs-section reveal">
-    <div class="cs-stats">
-      <div class="cs-stat">
-        <div class="cs-stat-num">S/20</div>
-        <div class="cs-stat-label" data-en="Minimum investment — the entry point we had to make feel exciting, not limiting." data-es="Inversión mínima — el punto de entrada que había que hacer sentir emocionante, no limitante.">Minimum investment — the entry point we had to make feel exciting, not limiting.</div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="lorena-portrait.jpg" alt="Lorena" style="object-position:center 30%"/></div>
+        <div class="team-card-info">
+          <div class="team-card-top">
+            <div class="team-avatar ta-lore">LO</div>
+            <div><div class="team-name">Lorena</div><div class="team-role" data-en="Designer · Photographer · Filmmaker · Illustrator" data-es="Diseñadora · Fotógrafa · Cineasta · Ilustradora">Designer · Photographer · Filmmaker · Illustrator</div></div>
+          </div>
+          <div class="team-tags">
+            <span class="tag a">Brand Design</span><span class="tag a">Photography</span><span class="tag a">Video</span><span class="tag a">Illustration</span><span class="tag">Community</span><span class="tag">Content</span>
+          </div>
+        </div>
       </div>
-      <div class="cs-stat">
-        <div class="cs-stat-num">100%</div>
-        <div class="cs-stat-label" data-en="Human-first copy — no financial jargon, no barriers, no excuses." data-es="Copy human-first — sin jerga financiera, sin barreras, sin excusas.">Human-first copy — no financial jargon, no barriers, no excuses.</div>
-      </div>
-      <div class="cs-stat">
-        <div class="cs-stat-num">BCP</div>
-        <div class="cs-stat-label" data-en="Backed by — trust that needed to be communicated without overshadowing the product." data-es="Respaldado por — confianza que debía comunicarse sin opacar el producto.">Backed by — trust that needed to be communicated without overshadowing the product.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCREENSHOT 1 -->
-  <div class="cs-section reveal">
-    <div class="cs-eyebrow" data-en="Hero section" data-es="Sección hero">Hero section</div>
-    <h2 data-en="Opening with conviction" data-es="Abriendo con convicción">Opening with conviction</h2>
-    <p data-en="The hero reframes the product concept immediately: this isn't just saving, it's investing. The headline 'Conoce una nueva opción que parece ahorro, pero es inversión' positions tyba Pocket as a bridge between familiar behavior and a smarter outcome." data-es="El hero reencuadra el concepto del producto de inmediato: esto no es solo ahorro, es inversión. El headline posiciona tyba Pocket como un puente entre el comportamiento familiar y un resultado más inteligente.">'The hero reframes the product concept immediately — this isn't just saving, it's investing. The headline positions tyba Pocket as a bridge between familiar behavior and a smarter outcome.</p>
-    <div class="cs-screens">
-      <div class="cs-screen">
-        <img src="./assets/img_tyba_hero.jpg" alt="tyba Pocket hero section"/>
-        <div class="cs-screen-caption" data-en="Hero · 'Conoce una nueva opción que parece ahorro, pero es inversión'" data-es="Hero · 'Conoce una nueva opción que parece ahorro, pero es inversión'">Hero · "Conoce una nueva opción que parece ahorro, pero es inversión"</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCREENSHOT 2 -->
-  <div class="cs-section reveal">
-    <div class="cs-eyebrow" data-en="Value proposition" data-es="Propuesta de valor">Value proposition</div>
-    <h2 data-en="From saving to growing" data-es="De guardar a hacer crecer">From saving to growing</h2>
-    <p data-en="The mid-section deepens the emotional hook: 'Imagina que cada vez que recibes dinero, no solo lo guardas: lo haces crecer.' This UX copy turns a passive financial behavior into an active, empowering one — key for first-time investors." data-es="La sección media profundiza el gancho emocional. Este copy UX convierte un comportamiento financiero pasivo en uno activo y empoderador — clave para inversores primerizos.">The mid-section deepens the emotional hook. This UX copy turns a passive financial behavior into an active, empowering one — key for first-time investors.</p>
-    <div class="cs-screens">
-      <div class="cs-screen">
-        <img src="./assets/img_tyba_value.jpg" alt="tyba Pocket value proposition"/>
-        <div class="cs-screen-caption" data-en="Value prop · Emotional hook + social proof section" data-es="Propuesta de valor · Gancho emocional + prueba social">Value prop · Emotional hook + social proof section</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCREENSHOT 3 -->
-  <div class="cs-section reveal">
-    <div class="cs-eyebrow" data-en="Benefits & onboarding" data-es="Beneficios y onboarding">Benefits & onboarding</div>
-    <h2 data-en="Clarity over complexity" data-es="Claridad sobre complejidad">Clarity over complexity</h2>
-    <p data-en="Financial products live or die by how clearly they explain themselves. The benefits section strips away jargon and replaces it with four direct, human statements. The onboarding block tells users exactly what they need — no surprises." data-es="Los productos financieros viven o mueren según qué tan claramente se explican. La sección de beneficios elimina la jerga y la reemplaza con cuatro declaraciones directas y humanas. El bloque de onboarding le dice a los usuarios exactamente lo que necesitan, sin sorpresas.">Financial products live or die by how clearly they explain themselves. The benefits section strips away jargon and replaces it with four direct, human statements. The onboarding block tells users exactly what they need — no surprises.</p>
-    <div class="cs-screens">
-      <div class="cs-screen">
-        <img src="./assets/img_tyba_benefits.jpg" alt="tyba Pocket benefits and onboarding"/>
-        <div class="cs-screen-caption" data-en="Benefits grid + onboarding requirements" data-es="Grid de beneficios + requisitos de onboarding">Benefits grid + onboarding requirements</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DELIVERABLES -->
-  <div class="cs-section reveal">
-    <div class="cs-eyebrow" data-en="What we delivered" data-es="Qué entregamos">What we delivered</div>
-    <h2 data-en="Full content stack" data-es="Stack de contenido completo">Full content stack</h2>
-    <div class="cs-deliverables">
-      <div class="cs-del">
-        <div class="cs-del-icon">✍️</div>
-        <h3 data-en="UX Writing" data-es="UX Writing">UX Writing</h3>
-        <p data-en="Every word on the page — headlines, CTAs, microcopy, error states, tooltips — written to guide, not overwhelm." data-es="Cada palabra de la página — headlines, CTAs, microcopy, estados de error — escrita para guiar, no abrumar.">Every word on the page — headlines, CTAs, microcopy — written to guide, not overwhelm.</p>
-      </div>
-      <div class="cs-del">
-        <div class="cs-del-icon">🧭</div>
-        <h3 data-en="Content Strategy" data-es="Estrategia de Contenido">Content Strategy</h3>
-        <p data-en="Narrative architecture from hero to CTA. Each section earns the next, building trust and reducing friction to conversion." data-es="Arquitectura narrativa del hero al CTA. Cada sección justifica la siguiente, construyendo confianza y reduciendo fricción.">Narrative architecture from hero to CTA. Each section earns the next, building trust and reducing friction.</p>
-      </div>
-      <div class="cs-del">
-        <div class="cs-del-icon">🎨</div>
-        <h3 data-en="Landing Page Design" data-es="Diseño de Landing Page">Landing Page Design</h3>
-        <p data-en="Visual direction and layout designed to communicate security and modernity — aligned with tyba's existing brand system." data-es="Dirección visual y layout diseñados para comunicar seguridad y modernidad — alineados con el sistema de marca de tyba.">Visual direction and layout designed to communicate security and modernity — aligned with tyba's brand system.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- CREDITS -->
-  <div class="cs-section reveal">
-    <div class="cs-credits">
-      <div class="cs-credits-text">
-        <h3 data-en="Built by Andrea" data-es="Hecho por Andrea">Built by Andrea</h3>
-        <p data-en="Creative strategy, UX writing, and landing page design — end to end. Coordinated by Pegando La Vuelta Agency." data-es="Estrategia creativa, UX writing y diseño de landing — de punta a punta. Coordinado por Pegando La Vuelta Agency.">Creative strategy, UX writing, and landing page design — end to end. Coordinated by Pegando La Vuelta Agency.</p>
-      </div>
-      <div class="cs-credit-people">
-        <div class="cs-credit-person">
-          <div class="cs-credit-avatar an">AN</div>
-          <div>
-            <div class="cs-credit-name">Andrea</div>
-            <div class="cs-credit-role" data-en="Creative Strategist · UX Writing · Design" data-es="Estratega Creativa · UX Writing · Diseño">Creative Strategist · UX Writing · Design</div>
+      <div class="team-card reveal">
+        <div class="team-card-img" style="background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center">
+          <div style="font-family:var(--fd);font-size:5rem;font-weight:800;color:rgba(255,255,255,0.15)">AN</div>
+        </div>
+        <div class="team-card-info">
+          <div class="team-card-top">
+            <div class="team-avatar" style="background:#e8f4f8;color:#2d6a8a">AN</div>
+            <div><div class="team-name">Andrea</div><div class="team-role" data-en="Creative Strategist · Content · UX Writing" data-es="Estratega Creativa · Contenido · UX Writing">Creative Strategist · Content · UX Writing</div></div>
+          </div>
+          <div class="team-tags">
+            <span class="tag">Content 360°</span><span class="tag">UX Writing</span><span class="tag">Brand Strategy</span><span class="tag">LATAM</span><span class="tag">Fintech</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CTA -->
-  <div class="cs-cta reveal">
-    <h2 data-en="Got a fintech project?" data-es="¿Tenés un proyecto fintech?">Got a fintech project?</h2>
-    <p data-en="We help financial brands communicate with clarity and confidence." data-es="Ayudamos a marcas financieras a comunicar con claridad y confianza.">We help financial brands communicate with clarity and confidence.</p>
-    <a href="/#contact" class="btn-p" data-en="Let's talk →" data-es="Hablemos →">Let's talk →</a>
+<!-- SERVICES -->
+<section id="services">
+  <div class="svc-inner">
+    <div class="svc-header reveal">
+      <div class="eyebrow"><span data-en="What we do" data-es="Qué hacemos">What we do</span></div>
+      <h2 class="section-title" data-en="Full-stack.<br>No middlemen." data-es="Stack completo.<br>Sin intermediarios.">Full-stack.<br>No middlemen.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card ct reveal"><span class="svc-icon">🤖</span><div class="svc-title" data-en="Telegram Bot Dev" data-es="Bots de Telegram">Telegram Bot Dev</div><p class="svc-desc" data-en="Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end." data-es="Comunidades gamificadas, membresías, referidos y mini-apps — de punta a punta.">Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ct reveal"><span class="svc-icon">🌐</span><div class="svc-title" data-en="Web Development" data-es="Desarrollo Web">Web Development</div><p class="svc-desc" data-en="Landing pages, portfolios, interactive tools, calculators, HTML5 games. React & vanilla." data-es="Landing pages, portfolios, herramientas interactivas y juegos HTML5.">Landing pages, portfolios, interactive tools, calculators, HTML5 games.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ct reveal"><span class="svc-icon">📱</span><div class="svc-title" data-en="Mobile Apps" data-es="Apps Móviles">Mobile Apps</div><p class="svc-desc" data-en="React Native / Expo for iOS & Android. AR features, audio, gyroscope, Google Play pipeline." data-es="React Native / Expo para iOS & Android. AR, audio, giroscopio, Google Play.">React Native / Expo for iOS & Android. AR features, audio, Google Play pipeline.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">📸</span><div class="svc-title" data-en="Photography & Video" data-es="Foto & Video">Photography & Video</div><p class="svc-desc" data-en="Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America." data-es="Fotografía de viaje, editorial, lifestyle y marca. Cine documental por Latinoamérica.">Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America.</p><span class="svc-who sw-a">Lorena</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">✦</span><div class="svc-title" data-en="Brand & Design" data-es="Marca & Diseño">Brand & Design</div><p class="svc-desc" data-en="Brand identity, illustration, UI/UX design, pitch decks and agency portfolios." data-es="Identidad de marca, ilustración, UI/UX, pitch decks y portafolios de agencia.">Brand identity, illustration, UI/UX, pitch decks and agency portfolios.</p><span class="svc-who sw-a">Lorena</span></div>
+      <div class="svc-card cr reveal"><span class="svc-icon">🚀</span><div class="svc-title" data-en="Community & Strategy" data-es="Comunidad & Estrategia">Community & Strategy</div><p class="svc-desc" data-en="Web3 community architecture, content strategy, creator briefs, ambassador programs, social media." data-es="Comunidades Web3, estrategia de contenido, embajadores y gestión de redes.">Web3 communities, content strategy, creator briefs, ambassador programs.</p><span class="svc-who sw-r">Emi + Lorena</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">✍️</span><div class="svc-title" data-en="Content & UX Writing" data-es="Contenido & UX Writing">Content & UX Writing</div><p class="svc-desc" data-en="Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands." data-es="Ecosistemas de contenido 360°, UX writing, comunicación de marca y estrategia digital para marcas fintech y LATAM.">Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands.</p><span class="svc-who sw-a">Andrea</span></div>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="port-inner">
+    <div class="reveal">
+      <div class="eyebrow"><span data-en="Our work" data-es="Nuestros proyectos">Our work</span></div>
+      <h2 class="section-title" data-en="Selected projects." data-es="Proyectos seleccionados.">Selected projects.</h2>
+    </div>
+    <div class="port-grid">
+      <div class="pcard big at reveal" onclick="window.open('https://pegandolavuelta.agency/manada-panther.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_0b4b5ffcb1.jpg);background-size:cover;background-position:center 40%">
+        <div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div>
+      </div>
+      <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/raw-mancora.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_raw_mancora.jpg);background-size:cover;background-position:center top">
+        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf &amp; lifestyle for intl. travelers</div></div>
+      </div>
+      
+      <div class="pcard at reveal" style="background-image:url(./assets/img_873fb88bec.jpg);background-size:cover;background-position:center center" onclick="window.open('https://pegandolavuelta.agency/kalmoon.html','_blank')">
+        <div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div>
+      </div>
+      <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/pnt-defender.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_pnt_defender.jpg);background-size:cover;background-position:center 20%">
+        <div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div>
+      </div>
+      <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/hotel-app.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_389ef94797.png);background-size:cover;background-position:center top">
+        <div class="pover"><div class="ptag at">Mobile · Hospitality</div><div class="pname">Don Giovanni Hotel App</div><div class="pdesc" data-en="Beachfront hotel · direct booking app · loyalty points" data-es="Hotel frente al mar · app de reservas directas · puntos de fidelidad">Beachfront hotel · direct booking app · loyalty points</div></div>
+      </div>
+      <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/escondite.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_48dda9c50c.jpg);background-size:cover;background-position:center top">
+        <div class="pover"><div class="ptag at">Web · Hospitality</div><div class="pname">El Escondite</div><div class="pdesc" data-en="Private mountain villas · WordPress · Colombian highlands" data-es="Villas privadas en la montaña · WordPress · Cundinamarca">Private mountain villas · WordPress · Colombian highlands</div></div>
+      </div>
+      <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/viajes-plv.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_viajes_plv.jpg);background-size:cover;background-position:center center">
+        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Viajes Pegando La Vuelta</div><div class="pdesc" data-en="South America travel platform · bilingual · trip catalog" data-es="Agencia de viajes Sudamérica · bilingüe · catálogo de viajes">South America travel platform · bilingual · trip catalog</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="cl-inner reveal">
+    <div class="eyebrow" style="justify-content:center"><span data-en="Trusted by" data-es="Trabajamos con">Trusted by</span></div>
+    <h2 class="section-title" data-en="Brands we've<br>worked with." data-es="Marcas con las<br>que trabajamos.">Brands we've<br>worked with.</h2>
+  </div>
+  <div class="marquee-wrap"><div class="marquee">
+    <span class="cl-item">Panther Wallet</span><span class="cl-item">Fontur Colombia</span><span class="cl-item">Crowne Plaza</span><span class="cl-item">Holiday Inn</span><span class="cl-item">Avianca</span><span class="cl-item">Selina</span><span class="cl-item">Jansport</span><span class="cl-item">IATI Seguros</span><span class="cl-item">Arajet</span><span class="cl-item">Viajero Hostels</span>
+    <span class="cl-item">Panther Wallet</span><span class="cl-item">Fontur Colombia</span><span class="cl-item">Crowne Plaza</span><span class="cl-item">Holiday Inn</span><span class="cl-item">Avianca</span><span class="cl-item">Selina</span><span class="cl-item">Jansport</span><span class="cl-item">IATI Seguros</span><span class="cl-item">Arajet</span><span class="cl-item">Viajero Hostels</span>
+  </div></div>
+  <div class="marquee-wrap" style="margin-top:1rem"><div class="marquee rev">
+    <span class="cl-item">Casa Solea</span><span class="cl-item">SmartFilms</span><span class="cl-item">Chullos Tours</span><span class="cl-item">Assist Card</span><span class="cl-item">Apuesta Total</span><span class="cl-item">Sumaj Tours</span><span class="cl-item">Universidad Central</span><span class="cl-item">Raw Máncora</span><span class="cl-item">FERROX</span><span class="cl-item">Casona 1865</span>
+    <span class="cl-item">Casa Solea</span><span class="cl-item">SmartFilms</span><span class="cl-item">Chullos Tours</span><span class="cl-item">Assist Card</span><span class="cl-item">Apuesta Total</span><span class="cl-item">Sumaj Tours</span><span class="cl-item">Universidad Central</span><span class="cl-item">Raw Máncora</span><span class="cl-item">FERROX</span><span class="cl-item">Casona 1865</span>
+  </div></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="ct-inner reveal">
+    <div class="eyebrow"><span data-en="Get in touch" data-es="Contacto">Get in touch</span></div>
+    <h2 class="section-title" data-en="Ready to build<br>something great?" data-es="¿Listos para construir<br>algo increíble?">Ready to build<br>something great?</h2>
+    <p data-en="We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together." data-es="Trabajamos de forma remota con clientes de todo el mundo. Escribinos y veamos qué podemos construir juntos.">We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together.</p>
+    <div class="ct-cards">
+      <a href="mailto:emi@pegandolavuelta.agency" class="ct-card"><span class="ct-icon">✉️</span><div><div class="ct-label">Emi · Email</div><div class="ct-val">emi@pegandolavuelta.agency</div></div></a>
+      <a href="mailto:lore@pegandolavuelta.agency" class="ct-card"><span class="ct-icon">✉️</span><div><div class="ct-label">Lorena · Email</div><div class="ct-val">lore@pegandolavuelta.agency</div></div></a>
+      <a href="https://wa.me/51982251518" class="ct-card" target="_blank"><span class="ct-icon">💬</span><div><div class="ct-label">Emi · WhatsApp</div><div class="ct-val">+51 982 251 518</div></div></a>
+      <a href="https://wa.me/573228921253" class="ct-card" target="_blank"><span class="ct-icon">💬</span><div><div class="ct-label">Lorena · WhatsApp</div><div class="ct-val">+57 322 892 1253</div></div></a>
+      <a href="https://instagram.com/pegandolavuelta" class="ct-card" target="_blank"><span class="ct-icon">📸</span><div><div class="ct-label">Instagram · Agencia</div><div class="ct-val">@pegandolavuelta</div></div></a>
+      <a href="https://instagram.com/neodenoche" class="ct-card" target="_blank"><span class="ct-icon">📸</span><div><div class="ct-label">Instagram · Emi</div><div class="ct-val">@neodenoche</div></div></a>
+      <a href="https://github.com/Neodenoche" class="ct-card" target="_blank"><span class="ct-icon">💻</span><div><div class="ct-label">GitHub</div><div class="ct-val">Neodenoche</div></div></a>
+    </div>
+    <a href="mailto:emi@pegandolavuelta.agency" class="ct-big">emi@pegandolavuelta.agency</a>
+  </div>
+</section>
 
 <footer>
-  <div class="fl"><img src="logo.png" alt="PLV"/></div>
-  <div class="fr">© 2025 Pegando La Vuelta Agency</div>
+  <div class="fl"><img src="logo.png" alt="PLV" style="filter:invert(1)"/></div>
+  <div class="fc" data-en="© 2026 Pegando La Vuelta Agency. Remote · South America." data-es="© 2026 Pegando La Vuelta Agency. Remotos · Sudamérica.">© 2026 Pegando La Vuelta Agency. Remote · South America.</div>
+  <div class="flinks"><a href="#hero">Top</a><a href="#portfolio" data-en="Work" data-es="Proyectos">Work</a><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></div>
 </footer>
 
-<div class="cur-dot"></div>
-<div class="cur-ring"></div>
-
 <script>
-// Cursor
-const dot = document.querySelector('.cur-dot');
-const ring = document.querySelector('.cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
-(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button').forEach(el=>{
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let rx=0,ry=0,mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function anim(){cd.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cr.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(anim)})();
+document.querySelectorAll('a,button,.team-card,.pcard,.svc-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
 });
 
-// Reveal
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+// NAV
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
 
-// Lang
-const stored=localStorage.getItem('plv-lang')||'en';
-setLang(stored);
+// HERO ANIM
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.hero-headline .word').forEach((w,i)=>{
+    setTimeout(()=>{w.style.cssText+=`transition:transform .9s cubic-bezier(.22,1,.36,1) ${i*.1}s,opacity .9s ease ${i*.1}s;transform:translateY(0);opacity:1`},200+i*100);
+  });
+  setTimeout(()=>{
+    document.querySelector('.hero-sub').style.cssText+='transition:transform .8s ease,opacity .8s ease;transform:none;opacity:1';
+    document.querySelector('.hero-ctas').style.cssText+='transition:transform .8s ease .1s,opacity .8s ease .1s;transform:none;opacity:1';
+  },900);
+});
+
+// REVEAL
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=`${(i%3)*.1}s`;io.observe(el)});
+
+// LANG
 function setLang(l){
-  localStorage.setItem('plv-lang',l);
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    el.innerHTML=el.getAttribute('data-'+l)||el.getAttribute('data-en');
-  });
-  document.querySelectorAll('.lang-toggle button').forEach((btn,i)=>{
-    btn.classList.toggle('active',(i===0&&l==='en')||(i===1&&l==='es'));
-  });
+  document.getElementById('bEN').classList.toggle('active',l==='en');
+  document.getElementById('bES').classList.toggle('active',l==='es');
+  document.querySelectorAll('[data-en]').forEach(el=>{const v=el.getAttribute(`data-${l}`);if(v)el.innerHTML=v});
 }
+
+
+
+
+
+
+// -- KALMOON MODAL --
+var KM = (function() {
+  var data = [{src:"./assets/img_48dda9c50c.jpg",en:"Splash Screen",es:"Pantalla de inicio"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Home · Aura Dashboard",es:"Inicio · Panel de Aura"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Your Aura · Green Session",es:"Tu Aura · Sesión verde"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Ritual · 4-7-8 Breathing",es:"Ritual · Respiración 4-7-8"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Ritual · Body Scan",es:"Ritual · Escaneo corporal"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Moon Phase Loading",es:"Carga de fase lunar"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Nightly Check-in · Waxing Crescent",es:"Check-in nocturno · Creciente Cóncava"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Explore your Cosmos · Star Map",es:"Explora tu cosmos · Mapa estelar"},
+{src:"./assets/img_48dda9c50c.jpg",en:"God Mode 🌍 · Ancient Sites",es:"Modo Dios 🌍 · Sitios ancestrales"},
+{src:"./assets/img_48dda9c50c.jpg",en:"El Búho Despierta · Game Select",es:"El Búho Despierta · Selección de juego"},
+{src:"./assets/img_48dda9c50c.jpg",en:"La Primera Luz · Level 1",es:"La Primera Luz · Nivel 1"},
+{src:"./assets/img_48dda9c50c.jpg",en:"Gameplay · World 1 · El Despertar",es:"Gameplay · Mundo 1 · El Despertar"}];
+  var cur = 0;
+  var ready = false;
+
+  function lang() {
+    var btn = document.getElementById('bES');
+    return (btn && btn.classList.contains('active')) ? 'es' : 'en';
+  }
+
+  function build() {
+    if (ready) return;
+    ready = true;
+    var stage = document.getElementById('kmStage');
+    var dots  = document.getElementById('kmDts');
+    var prev  = stage.querySelector('.prev');
+
+    data.forEach(function(item, i) {
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.className = 'km-img' + (i === 0 ? ' on' : '');
+      img.id = 'kmI' + i;
+      stage.insertBefore(img, prev);
+
+      var dot = document.createElement('button');
+      dot.className = 'km-dot' + (i === 0 ? ' on' : '');
+      dot.setAttribute('data-i', String(i));
+      dot.onclick = function() { KM.go(parseInt(this.getAttribute('data-i'), 10)); };
+      dots.appendChild(dot);
+    });
+    updateLabel();
+  }
+
+  function updateLabel() {
+    var l = lang();
+    var item = data[cur];
+    var lbl = document.getElementById('kmLbl');
+    var ctr = document.getElementById('kmCtr');
+    if (lbl) lbl.textContent = item[l] || item.en;
+    if (ctr) ctr.textContent = (cur + 1) + ' / ' + data.length;
+  }
+
+  function go(n) {
+    var old_img = document.getElementById('kmI' + cur);
+    var dots_el = document.getElementById('kmDts');
+    if (old_img) old_img.classList.remove('on');
+    if (dots_el && dots_el.children[cur]) dots_el.children[cur].classList.remove('on');
+    cur = ((n % data.length) + data.length) % data.length;
+    var new_img = document.getElementById('kmI' + cur);
+    if (new_img) new_img.classList.add('on');
+    if (dots_el && dots_el.children[cur]) dots_el.children[cur].classList.add('on');
+    updateLabel();
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('kmOverlay').classList.contains('open')) return;
+    if (e.key === 'ArrowRight') go(cur + 1);
+    if (e.key === 'ArrowLeft')  go(cur - 1);
+    if (e.key === 'Escape') KM.close();
+  });
+
+  // Patch setLang to update labels
+  document.addEventListener('DOMContentLoaded', function() {
+    var orig = window.setLang;
+    if (orig) {
+      window.setLang = function(l) {
+        orig(l);
+        updateLabel();
+      };
+    }
+  });
+
+  return {
+    open: function() {
+      build();
+      document.getElementById('kmOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateLabel();
+    },
+    close: function() {
+      document.getElementById('kmOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    },
+    nav: function(d) { go(cur + d); },
+    go: go
+  };
+}());
+
 </script>
+
+<!-- -- KALMOON MODAL -- -->
+<div class="km-overlay" id="kmOverlay" onclick="if(event.target===this)KM.close()">
+  <div class="km-modal">
+    <div class="km-hd">
+      <div>
+        <div class="km-title">&#x1F989; Kalmoon</div>
+        <div class="km-desc"
+          data-en="Nocturnal wellness app with real-time star map, AI breathing rituals via ElevenLabs, moon phases, body scan meditation and a pixel-art platformer featuring the owl. Built in React Native &middot; Expo SDK 54."
+          data-es="App de bienestar nocturno con mapa estelar en tiempo real, rituales de respiraci&oacute;n IA (ElevenLabs), fases lunares, escaneo corporal y un juego platformer pixel-art con el b&uacute;ho. React Native &middot; Expo SDK 54.">
+          Nocturnal wellness app with real-time star map, AI breathing rituals via ElevenLabs, moon phases, body scan meditation and a pixel-art platformer featuring the owl. Built in React Native &middot; Expo SDK 54.
+        </div>
+      </div>
+      <button class="km-x" onclick="KM.close()">&#x2715;</button>
+    </div>
+    <div class="km-tags">
+      <span class="km-tag tc">React Native</span>
+      <span class="km-tag ta">Expo SDK 54</span>
+      <span class="km-tag tg">iOS &middot; Android</span>
+      <span class="km-tag tg">ElevenLabs</span>
+      <span class="km-tag tg">Star Map</span>
+      <span class="km-tag tg">Pixel-art Game</span>
+    </div>
+    <div class="km-stage" id="kmStage">
+      <button class="km-arr prev" onclick="KM.nav(-1)">&#8249;</button>
+      <button class="km-arr next" onclick="KM.nav(1)">&#8250;</button>
+      <div class="km-ctr" id="kmCtr"></div>
+    </div>
+    <div class="km-bot">
+      <div class="km-lbl" id="kmLbl"></div>
+      <div class="km-dots" id="kmDts"></div>
+    </div>
+    <div class="km-cta">
+      <a href="https://github.com/Neodenoche" target="_blank" class="km-cta-p"
+         data-en="View on GitHub" data-es="Ver en GitHub">View on GitHub</a>
+      <a href="#contact" onclick="KM.close()" class="km-cta-s"
+         data-en="Get in touch" data-es="Hablemos">Get in touch</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
