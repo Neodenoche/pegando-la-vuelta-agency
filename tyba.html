@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tyba Pocket · Case Study — Pegando La Vuelta Agency</title>
+<meta name="description" content="UX Writing, Content Strategy & Landing Page Design for tyba Pocket — a fintech investment product by Credicorp Capital & BCP."/>
+<link rel="canonical" href="https://pegandolavuelta.agency/tyba.html"/>
+<meta property="og:title" content="Tyba Pocket · Case Study — Pegando La Vuelta Agency"/>
+<meta property="og:description" content="UX Writing, Content Strategy & Landing Page Design for tyba Pocket."/>
+<meta property="og:url" content="https://pegandolavuelta.agency/tyba.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#0097A7;--teal-dark:#006B75;--teal-light:#E0F7FA;
+  --amber:#E8A000;--amber-dark:#9E6C00;
+  --red:#E8381A;
+  --dark:#0E0E0E;--dark2:#161616;--mid:#242424;
+  --cream:#F5F2EC;--grey:#666;--light-grey:#F0EDE8;
+  --white:#FFFFFF;
+  --blue:#1A6BF5;--blue-light:#EEF4FF;
+  --fd:'Syne',sans-serif;--fb:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--dark);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+.cur-dot{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--dark);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference}
+.cur-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1.5px solid rgba(0,0,0,.25);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
+body.hov .cur-dot{width:14px;height:14px;background:var(--blue)}
+body.hov .cur-ring{width:52px;height:52px;border-color:var(--blue)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(245,242,236,.95);backdrop-filter:blur(16px);border-bottom:.5px solid rgba(0,0,0,.08)}
+.nav-logo img{height:34px}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(0,0,0,.55);text-decoration:none;transition:color .2s;cursor:none}
+.nav-back:hover{color:var(--dark)}
+.nav-back svg{width:16px;height:16px}
+.lang-toggle{display:flex;gap:3px;background:rgba(0,0,0,.08);border-radius:20px;padding:3px}
+.lang-toggle button{font-size:11px;font-weight:600;letter-spacing:.06em;padding:4px 10px;border:none;border-radius:16px;cursor:none;background:transparent;color:rgba(0,0,0,.4);transition:all .2s}
+.lang-toggle button.active{background:var(--dark);color:var(--white)}
+
+/* HERO */
+.cs-hero{min-height:90vh;background:var(--dark);display:flex;flex-direction:column;justify-content:flex-end;padding:10rem 3rem 5rem;position:relative;overflow:hidden}
+.cs-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a1628 0%,#1a2a4a 50%,#0d1f3c 100%);opacity:.95}
+.cs-hero-accent{position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 30%,rgba(26,107,245,.08) 100%)}
+.cs-hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%}
+.cs-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
+.cs-tag{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6)}
+.cs-tag.blue{border-color:rgba(26,107,245,.5);color:#6B9EFF;background:rgba(26,107,245,.1)}
+.cs-hero h1{font-family:var(--fd);font-size:clamp(3rem,7vw,7rem);font-weight:800;line-height:.92;letter-spacing:-.03em;color:var(--white);margin-bottom:1.5rem}
+.cs-hero h1 em{font-style:normal;color:#6B9EFF}
+.cs-hero-sub{font-size:1.1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.75;margin-bottom:3rem}
+.cs-meta{display:flex;gap:3rem;flex-wrap:wrap}
+.cs-meta-item{display:flex;flex-direction:column;gap:4px}
+.cs-meta-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.cs-meta-val{font-size:14px;font-weight:500;color:rgba(255,255,255,.75)}
+
+/* CONTENT */
+.cs-body{max-width:1200px;margin:0 auto;padding:6rem 3rem}
+.cs-section{margin-bottom:6rem}
+.cs-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+.cs-section h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:1.5rem}
+.cs-section p{font-size:1rem;color:var(--grey);line-height:1.85;max-width:680px;margin-bottom:1rem}
+.cs-section p strong{color:var(--dark);font-weight:600}
+
+/* OVERVIEW GRID */
+.cs-overview{display:grid;grid-template-columns:1.2fr .8fr;gap:5rem;align-items:start;margin-bottom:6rem}
+.cs-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.cs-pill{font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;background:var(--blue-light);color:var(--blue)}
+
+/* STATS */
+.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0}
+.cs-stat{padding:2rem;background:var(--white);border-radius:16px;border:1px solid rgba(0,0,0,.06)}
+.cs-stat-num{font-family:var(--fd);font-size:2.5rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.5rem}
+.cs-stat-label{font-size:13px;color:var(--grey);line-height:1.5}
+
+/* SCREENSHOTS */
+.cs-screens{display:grid;grid-template-columns:1fr;gap:2rem;margin:3rem 0}
+.cs-screen{border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.08);box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.cs-screen img{width:100%;height:auto;display:block}
+.cs-screen-caption{padding:1rem 1.25rem;background:var(--white);font-size:13px;color:var(--grey);border-top:1px solid rgba(0,0,0,.06)}
+
+.cs-screens-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:3rem 0}
+
+/* DELIVERABLES */
+.cs-deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem 0}
+.cs-del{padding:1.75rem;background:var(--white);border-radius:16px;border:1px solid rgba(0,0,0,.06)}
+.cs-del-icon{font-size:1.75rem;margin-bottom:1rem}
+.cs-del h3{font-family:var(--fd);font-size:1rem;font-weight:700;margin-bottom:.5rem}
+.cs-del p{font-size:13px;color:var(--grey);line-height:1.6}
+
+/* CREDITS */
+.cs-credits{background:var(--dark);border-radius:24px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cs-credits-text h3{font-family:var(--fd);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.5rem}
+.cs-credits-text p{font-size:14px;color:rgba(255,255,255,.5);max-width:500px}
+.cs-credit-people{display:flex;gap:1.5rem;flex-wrap:wrap}
+.cs-credit-person{display:flex;align-items:center;gap:10px}
+.cs-credit-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.85rem;font-weight:800}
+.cs-credit-avatar.an{background:#e8f4f8;color:#2d6a8a}
+.cs-credit-name{font-size:13px;font-weight:600;color:var(--white)}
+.cs-credit-role{font-size:11px;color:rgba(255,255,255,.4)}
+
+/* CTA */
+.cs-cta{text-align:center;padding:5rem 0 2rem}
+.cs-cta h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:1rem}
+.cs-cta p{color:var(--grey);margin-bottom:2rem}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);font-size:13px;font-weight:600;letter-spacing:.04em;padding:14px 28px;border-radius:40px;text-decoration:none;transition:all .25s;cursor:none}
+.btn-p:hover{background:var(--blue);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(0,0,0,.08);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.fl img{height:28px;opacity:.5}
+.fr{font-size:12px;color:var(--grey)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .cs-hero{padding:8rem 1.5rem 4rem}
+  .cs-body{padding:4rem 1.5rem}
+  .cs-overview{grid-template-columns:1fr;gap:3rem}
+  .cs-stats{grid-template-columns:1fr 1fr}
+  .cs-screens-2{grid-template-columns:1fr}
+  .cs-deliverables{grid-template-columns:1fr 1fr}
+  .cs-credits{flex-direction:column}
+  .cs-meta{gap:1.5rem}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:2rem 1.5rem}
+}
+@media(max-width:500px){
+  .cs-stats{grid-template-columns:1fr}
+  .cs-deliverables{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="cur-dot"></div>
+<div class="cur-ring"></div>
+
+<nav>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M5 12l7-7M5 12l7 7"/></svg>
+    <span data-en="Back to work" data-es="Volver al portafolio">Back to work</span>
+  </a>
+  <div class="lang-toggle">
+    <button class="active" onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-accent"></div>
+  <div class="cs-hero-inner">
+    <div class="cs-tags">
+      <span class="cs-tag blue">Fintech</span>
+      <span class="cs-tag">UX Writing</span>
+      <span class="cs-tag">Content Strategy</span>
+      <span class="cs-tag">Landing Page</span>
+    </div>
+    <h1 data-en="Tyba<br><em>Pocket</em>" data-es="Tyba<br><em>Pocket</em>">Tyba<br><em>Pocket</em></h1>
+    <p class="cs-hero-sub" data-en="Product landing page for a fintech investment tool by Credicorp Capital & BCP — designed to turn first-time investors into confident ones." data-es="Landing page de producto para una herramienta de inversión fintech de Credicorp Capital & BCP — diseñada para convertir a los primerizos en inversores seguros.">Product landing page for a fintech investment tool by Credicorp Capital & BCP — designed to turn first-time investors into confident ones.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <span class="cs-meta-label" data-en="Client" data-es="Cliente">Client</span>
+        <span class="cs-meta-val">tyba · Credicorp Capital</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label" data-en="Sector" data-es="Sector">Sector</span>
+        <span class="cs-meta-val" data-en="Fintech · Investment" data-es="Fintech · Inversión">Fintech · Investment</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label" data-en="Deliverables" data-es="Entregables">Deliverables</span>
+        <span class="cs-meta-val" data-en="UX Writing · Content · Design" data-es="UX Writing · Contenido · Diseño">UX Writing · Content · Design</span>
+      </div>
+      <div class="cs-meta-item">
+        <span class="cs-meta-label" data-en="Market" data-es="Mercado">Market</span>
+        <span class="cs-meta-val">Perú · LATAM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- OVERVIEW -->
+  <div class="cs-overview">
+    <div class="reveal">
+      <div class="cs-eyebrow" data-en="The challenge" data-es="El desafío">The challenge</div>
+      <h2 data-en="Making investing feel<br>approachable" data-es="Hacer que invertir se<br>sienta accesible">Making investing feel<br>approachable</h2>
+      <p data-en="tyba Pocket is a micro-investment product backed by Credicorp Capital and BCP — one of Peru's largest financial institutions. The challenge: communicate a complex financial product to a first-time investor audience without losing trust, compliance, or clarity." data-es="tyba Pocket es un producto de micro-inversión respaldado por Credicorp Capital y BCP — una de las instituciones financieras más grandes del Perú. El reto: comunicar un producto financiero complejo a un público inversor primerizo sin perder confianza, compliance ni claridad.">tyba Pocket is a micro-investment product backed by Credicorp Capital and BCP — one of Peru's largest financial institutions. The challenge: communicate a complex financial product to a first-time investor audience without losing trust, compliance, or clarity.</p>
+      <p data-en="The landing needed to explain what tyba Pocket is, why it's safe, and how to get started — all in language that feels human, not like a bank." data-es="El landing necesitaba explicar qué es tyba Pocket, por qué es seguro y cómo empezar — todo en un lenguaje que se siente humano, no como un banco.">The landing needed to explain what tyba Pocket is, why it's safe, and how to get started — all in language that feels human, not like a bank.</p>
+    </div>
+    <div class="reveal">
+      <div class="cs-pills">
+        <span class="cs-pill">UX Writing</span>
+        <span class="cs-pill">Content Strategy</span>
+        <span class="cs-pill">Landing Page Design</span>
+        <span class="cs-pill">Brand Voice</span>
+        <span class="cs-pill">Fintech</span>
+        <span class="cs-pill">LATAM</span>
+        <span class="cs-pill">Content 360°</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="cs-section reveal">
+    <div class="cs-stats">
+      <div class="cs-stat">
+        <div class="cs-stat-num">S/20</div>
+        <div class="cs-stat-label" data-en="Minimum investment — the entry point we had to make feel exciting, not limiting." data-es="Inversión mínima — el punto de entrada que había que hacer sentir emocionante, no limitante.">Minimum investment — the entry point we had to make feel exciting, not limiting.</div>
+      </div>
+      <div class="cs-stat">
+        <div class="cs-stat-num">100%</div>
+        <div class="cs-stat-label" data-en="Human-first copy — no financial jargon, no barriers, no excuses." data-es="Copy human-first — sin jerga financiera, sin barreras, sin excusas.">Human-first copy — no financial jargon, no barriers, no excuses.</div>
+      </div>
+      <div class="cs-stat">
+        <div class="cs-stat-num">BCP</div>
+        <div class="cs-stat-label" data-en="Backed by — trust that needed to be communicated without overshadowing the product." data-es="Respaldado por — confianza que debía comunicarse sin opacar el producto.">Backed by — trust that needed to be communicated without overshadowing the product.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 1 -->
+  <div class="cs-section reveal">
+    <div class="cs-eyebrow" data-en="Hero section" data-es="Sección hero">Hero section</div>
+    <h2 data-en="Opening with conviction" data-es="Abriendo con convicción">Opening with conviction</h2>
+    <p data-en="The hero reframes the product concept immediately: this isn't just saving, it's investing. The headline 'Conoce una nueva opción que parece ahorro, pero es inversión' positions tyba Pocket as a bridge between familiar behavior and a smarter outcome." data-es="El hero reencuadra el concepto del producto de inmediato: esto no es solo ahorro, es inversión. El headline posiciona tyba Pocket como un puente entre el comportamiento familiar y un resultado más inteligente.">'The hero reframes the product concept immediately — this isn't just saving, it's investing. The headline positions tyba Pocket as a bridge between familiar behavior and a smarter outcome.</p>
+    <div class="cs-screens">
+      <div class="cs-screen">
+        <img src="./assets/img_tyba_hero.jpg" alt="tyba Pocket hero section"/>
+        <div class="cs-screen-caption" data-en="Hero · 'Conoce una nueva opción que parece ahorro, pero es inversión'" data-es="Hero · 'Conoce una nueva opción que parece ahorro, pero es inversión'">Hero · "Conoce una nueva opción que parece ahorro, pero es inversión"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 2 -->
+  <div class="cs-section reveal">
+    <div class="cs-eyebrow" data-en="Value proposition" data-es="Propuesta de valor">Value proposition</div>
+    <h2 data-en="From saving to growing" data-es="De guardar a hacer crecer">From saving to growing</h2>
+    <p data-en="The mid-section deepens the emotional hook: 'Imagina que cada vez que recibes dinero, no solo lo guardas: lo haces crecer.' This UX copy turns a passive financial behavior into an active, empowering one — key for first-time investors." data-es="La sección media profundiza el gancho emocional. Este copy UX convierte un comportamiento financiero pasivo en uno activo y empoderador — clave para inversores primerizos.">The mid-section deepens the emotional hook. This UX copy turns a passive financial behavior into an active, empowering one — key for first-time investors.</p>
+    <div class="cs-screens">
+      <div class="cs-screen">
+        <img src="./assets/img_tyba_value.jpg" alt="tyba Pocket value proposition"/>
+        <div class="cs-screen-caption" data-en="Value prop · Emotional hook + social proof section" data-es="Propuesta de valor · Gancho emocional + prueba social">Value prop · Emotional hook + social proof section</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREENSHOT 3 -->
+  <div class="cs-section reveal">
+    <div class="cs-eyebrow" data-en="Benefits & onboarding" data-es="Beneficios y onboarding">Benefits & onboarding</div>
+    <h2 data-en="Clarity over complexity" data-es="Claridad sobre complejidad">Clarity over complexity</h2>
+    <p data-en="Financial products live or die by how clearly they explain themselves. The benefits section strips away jargon and replaces it with four direct, human statements. The onboarding block tells users exactly what they need — no surprises." data-es="Los productos financieros viven o mueren según qué tan claramente se explican. La sección de beneficios elimina la jerga y la reemplaza con cuatro declaraciones directas y humanas. El bloque de onboarding le dice a los usuarios exactamente lo que necesitan, sin sorpresas.">Financial products live or die by how clearly they explain themselves. The benefits section strips away jargon and replaces it with four direct, human statements. The onboarding block tells users exactly what they need — no surprises.</p>
+    <div class="cs-screens">
+      <div class="cs-screen">
+        <img src="./assets/img_tyba_benefits.jpg" alt="tyba Pocket benefits and onboarding"/>
+        <div class="cs-screen-caption" data-en="Benefits grid + onboarding requirements" data-es="Grid de beneficios + requisitos de onboarding">Benefits grid + onboarding requirements</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLES -->
+  <div class="cs-section reveal">
+    <div class="cs-eyebrow" data-en="What we delivered" data-es="Qué entregamos">What we delivered</div>
+    <h2 data-en="Full content stack" data-es="Stack de contenido completo">Full content stack</h2>
+    <div class="cs-deliverables">
+      <div class="cs-del">
+        <div class="cs-del-icon">✍️</div>
+        <h3 data-en="UX Writing" data-es="UX Writing">UX Writing</h3>
+        <p data-en="Every word on the page — headlines, CTAs, microcopy, error states, tooltips — written to guide, not overwhelm." data-es="Cada palabra de la página — headlines, CTAs, microcopy, estados de error — escrita para guiar, no abrumar.">Every word on the page — headlines, CTAs, microcopy — written to guide, not overwhelm.</p>
+      </div>
+      <div class="cs-del">
+        <div class="cs-del-icon">🧭</div>
+        <h3 data-en="Content Strategy" data-es="Estrategia de Contenido">Content Strategy</h3>
+        <p data-en="Narrative architecture from hero to CTA. Each section earns the next, building trust and reducing friction to conversion." data-es="Arquitectura narrativa del hero al CTA. Cada sección justifica la siguiente, construyendo confianza y reduciendo fricción.">Narrative architecture from hero to CTA. Each section earns the next, building trust and reducing friction.</p>
+      </div>
+      <div class="cs-del">
+        <div class="cs-del-icon">🎨</div>
+        <h3 data-en="Landing Page Design" data-es="Diseño de Landing Page">Landing Page Design</h3>
+        <p data-en="Visual direction and layout designed to communicate security and modernity — aligned with tyba's existing brand system." data-es="Dirección visual y layout diseñados para comunicar seguridad y modernidad — alineados con el sistema de marca de tyba.">Visual direction and layout designed to communicate security and modernity — aligned with tyba's brand system.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDITS -->
+  <div class="cs-section reveal">
+    <div class="cs-credits">
+      <div class="cs-credits-text">
+        <h3 data-en="Built by Andrea" data-es="Hecho por Andrea">Built by Andrea</h3>
+        <p data-en="Creative strategy, UX writing, and landing page design — end to end. Coordinated by Pegando La Vuelta Agency." data-es="Estrategia creativa, UX writing y diseño de landing — de punta a punta. Coordinado por Pegando La Vuelta Agency.">Creative strategy, UX writing, and landing page design — end to end. Coordinated by Pegando La Vuelta Agency.</p>
+      </div>
+      <div class="cs-credit-people">
+        <div class="cs-credit-person">
+          <div class="cs-credit-avatar an">AN</div>
+          <div>
+            <div class="cs-credit-name">Andrea</div>
+            <div class="cs-credit-role" data-en="Creative Strategist · UX Writing · Design" data-es="Estratega Creativa · UX Writing · Diseño">Creative Strategist · UX Writing · Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cs-cta reveal">
+    <h2 data-en="Got a fintech project?" data-es="¿Tenés un proyecto fintech?">Got a fintech project?</h2>
+    <p data-en="We help financial brands communicate with clarity and confidence." data-es="Ayudamos a marcas financieras a comunicar con claridad y confianza.">We help financial brands communicate with clarity and confidence.</p>
+    <a href="/#contact" class="btn-p" data-en="Let's talk →" data-es="Hablemos →">Let's talk →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="fl"><img src="logo.png" alt="PLV"/></div>
+  <div class="fr">© 2025 Pegando La Vuelta Agency</div>
+</footer>
+
+<div class="cur-dot"></div>
+<div class="cur-ring"></div>
+
+<script>
+// Cursor
+const dot = document.querySelector('.cur-dot');
+const ring = document.querySelector('.cur-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>document.body.classList.add('hov'));
+  el.addEventListener('mouseleave',()=>document.body.classList.remove('hov'));
+});
+
+// Reveal
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Lang
+const stored=localStorage.getItem('plv-lang')||'en';
+setLang(stored);
+function setLang(l){
+  localStorage.setItem('plv-lang',l);
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.innerHTML=el.getAttribute('data-'+l)||el.getAttribute('data-en');
+  });
+  document.querySelectorAll('.lang-toggle button').forEach((btn,i)=>{
+    btn.classList.toggle('active',(i===0&&l==='en')||(i===1&&l==='es'));
+  });
+}
+</script>
+</body>
+</html>
