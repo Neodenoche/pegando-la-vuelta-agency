@@ -158,6 +158,20 @@
     .ages,.nolikes{grid-template-columns:1fr;}
     section{padding:80px 0;}
   }
+
+/* ── Formularios de lista de espera / Guías ── */
+.kl-form{display:flex;flex-direction:column;gap:12px;max-width:420px;}
+.kl-form.center{margin:28px auto 0;}
+.kl-form input,.kl-form select{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px 16px;color:#F2F2F7;font-family:inherit;font-size:15px;outline:none;width:100%;box-sizing:border-box;transition:border-color .2s;}
+.kl-form input::placeholder{color:rgba(255,255,255,0.35);}
+.kl-form select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23888' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer;}
+.kl-form select:invalid{color:rgba(255,255,255,0.35);}
+.kl-form select option{background:#14142A;color:#F2F2F7;}
+.kl-form input:focus,.kl-form select:focus{border-color:rgba(200,184,255,0.5);}
+.kl-form button{cursor:pointer;border:none;font-family:inherit;}
+.kl-ok{display:none;padding:16px 20px;border:1px solid rgba(109,200,151,0.4);border-radius:12px;background:rgba(109,200,151,0.10);color:#9FE0BC;font-size:15px;line-height:1.5;}
+.kl-err{display:none;padding:12px 16px;border:1px solid rgba(255,120,120,0.35);border-radius:12px;background:rgba(255,120,120,0.08);color:#FFB0A8;font-size:14px;}
+
 </style>
 </head>
 <body>
@@ -344,7 +358,26 @@
         <li data-es="Empezar es gratis — Kalmoon solo gana una comisión cuando tú cobras una sesión" data-en="Getting started is free — Kalmoon only earns a commission when you get paid for a session">Empezar es gratis — Kalmoon solo gana una comisión cuando tú cobras una sesión</li>
       </ul>
       <div style="margin-top:28px;">
-        <a class="btn btn-moon" href="mailto:emilianotorres.com@gmail.com?subject=Quiero%20ser%20Gu%C3%ADa%20-%20Kalmoon&body=Hola%2C%20quiero%20ser%20Gu%C3%ADa%20fundador%20en%20Kalmoon.%0D%0A%0D%0ANombre%3A%20___%0D%0AEspecialidad%20(ej.%20psicolog%C3%ADa%2C%20reiki%2C%20breathwork%2C%20constelaciones)%3A%20___%0D%0AModalidad%20(online%20%2F%20presencial%20%2F%20ambas)%3A%20___%0D%0APa%C3%ADs%20y%20ciudad%3A%20___%0D%0AInstagram%20o%20web%20(opcional)%3A%20___%0D%0A" data-es="🌿 Quiero ser Guía fundador" data-en="🌿 I want to be a founding Guide">🌿 Quiero ser Guía fundador</a>
+        <form class="kl-form" data-klkind="guia" action="https://formsubmit.co/emilianotorres.com@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="🌿 Nuevo Guía fundador - Kalmoon">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="tipo" value="Guía fundador">
+          <input type="text" name="nombre" required data-phes="Tu nombre" data-phen="Your name" placeholder="Tu nombre">
+          <input type="email" name="email" required data-phes="Tu email" data-phen="Your email" placeholder="Tu email">
+          <input type="text" name="especialidad" required data-phes="Especialidad (psicología, reiki, breathwork...)" data-phen="Specialty (psychology, reiki, breathwork...)" placeholder="Especialidad (psicología, reiki, breathwork...)">
+          <select name="modalidad" required>
+            <option value="" disabled selected data-es="Modalidad" data-en="Modality">Modalidad</option>
+            <option value="Online" data-es="Online" data-en="Online">Online</option>
+            <option value="Presencial" data-es="Presencial" data-en="In person">Presencial</option>
+            <option value="Ambas" data-es="Ambas" data-en="Both">Ambas</option>
+          </select>
+          <input type="text" name="pais_ciudad" required data-phes="País y ciudad" data-phen="Country and city" placeholder="País y ciudad">
+          <input type="text" name="instagram_web" data-phes="Instagram o web (opcional)" data-phen="Instagram or website (optional)" placeholder="Instagram o web (opcional)">
+          <button type="submit" class="btn btn-moon" data-es="🌿 Quiero ser Guía fundador" data-en="🌿 I want to be a founding Guide">🌿 Quiero ser Guía fundador</button>
+          <div class="kl-ok" data-es="🌿 ¡Recibido! Te contactamos pronto para sumarte a la primera generación de Guías." data-en="🌿 Got it! We'll reach out soon to add you to the first generation of Guides.">🌿 ¡Recibido! Te contactamos pronto para sumarte a la primera generación de Guías.</div>
+          <div class="kl-err" data-es="Algo falló al enviar. Probá de nuevo o escribinos a emilianotorres.com@gmail.com" data-en="Something went wrong. Try again or email us at emilianotorres.com@gmail.com">Algo falló al enviar. Probá de nuevo o escribinos a emilianotorres.com@gmail.com</div>
+        </form>
       </div>
     </div>
     <div class="fart" style="--tint:rgba(109,200,151,0.16);">
@@ -360,7 +393,23 @@
     <svg class="wait-owl" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg"><ellipse cx="0" cy="15" rx="70" ry="80" fill="#1E1E35"/><path d="M-70 15 Q-105 45 -90 85 Q-62 55 -55 20 Z" fill="#16162A"/><path d="M70 15 Q105 45 90 85 Q62 55 55 20 Z" fill="#16162A"/><ellipse cx="0" cy="28" rx="50" ry="62" fill="#2A2A45"/><ellipse cx="-26" cy="-38" rx="26" ry="27" fill="#F0A830"/><ellipse cx="26" cy="-38" rx="26" ry="27" fill="#F0A830"/><ellipse cx="-26" cy="-37" rx="16" ry="17" fill="#0E0E1A"/><ellipse cx="26" cy="-37" rx="16" ry="17" fill="#0E0E1A"/><circle cx="-33" cy="-44" r="5" fill="#FFFFFF"/><circle cx="19" cy="-44" r="5" fill="#FFFFFF"/><path d="M-52 -60 L-36 -76 L-28 -58 Z" fill="#F0A830"/><path d="M52 -60 L36 -76 L28 -58 Z" fill="#F0A830"/><path d="M-12 -55 Q0 -46 12 -55" stroke="#F0A830" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M-11 -28 Q0 -17 11 -28 Q0 -8 -11 -28 Z" fill="#F0A830"/><path d="M-28 12 Q0 26 28 12 Q15 50 0 55 Q-15 50 -28 12 Z" fill="#1E1E35"/></svg>
     <h2 data-es="Sé de los primeros en entrar" data-en="Be among the first to get in">Sé de los primeros en entrar</h2>
     <p class="lede" data-es="Kalmoon está en sus últimas etapas antes de llegar a las tiendas. Déjanos tu nombre y te avisamos ni bien se abra la puerta — los primeros de la lista entran antes que nadie." data-en="Kalmoon is in its final stages before reaching the app stores. Leave us your name and we'll let you know the moment the door opens — the first on the list get in before anyone else.">Kalmoon está en sus últimas etapas antes de llegar a las tiendas. Déjanos tu nombre y te avisamos ni bien se abra la puerta — los primeros de la lista entran antes que nadie.</p>
-    <a class="btn btn-moon" style="font-size:16.5px; padding:17px 36px;" href="mailto:emilianotorres.com@gmail.com?subject=Acceso%20anticipado%20-%20Kalmoon&body=Hola%2C%20quiero%20acceso%20anticipado%20a%20Kalmoon.%0D%0A%0D%0ANombre%3A%20___%0D%0A" data-es="🌙 Sumarme a la lista de espera" data-en="🌙 Join the waitlist">🌙 Sumarme a la lista de espera</a>
+    <form class="kl-form center" data-klkind="wait" action="https://formsubmit.co/emilianotorres.com@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="🌙 Lista de espera - Kalmoon">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="tipo" value="Lista de espera">
+      <input type="text" name="nombre" required data-phes="Tu nombre" data-phen="Your name" placeholder="Tu nombre">
+      <input type="email" name="email" required data-phes="Tu email" data-phen="Your email" placeholder="Tu email">
+      <select name="interes" required>
+        <option value="" disabled selected data-es="Me interesa..." data-en="I'm interested in...">Me interesa...</option>
+        <option value="Usar la app" data-es="Ser de los primeros en usar la app" data-en="Being among the first to use the app">Ser de los primeros en usar la app</option>
+        <option value="Invertir" data-es="Invertir en Kalmoon" data-en="Investing in Kalmoon">Invertir en Kalmoon</option>
+        <option value="Ambas" data-es="Ambas" data-en="Both">Ambas</option>
+      </select>
+      <button type="submit" class="btn btn-moon" style="font-size:16.5px; padding:17px 36px;" data-es="🌙 Sumarme a la lista de espera" data-en="🌙 Join the waitlist">🌙 Sumarme a la lista de espera</button>
+      <div class="kl-ok" data-es="🌙 ¡Listo! Estás en la lista. Te avisamos ni bien Kalmoon abra sus puertas." data-en="🌙 Done! You're on the list. We'll let you know as soon as Kalmoon opens its doors.">🌙 ¡Listo! Estás en la lista. Te avisamos ni bien Kalmoon abra sus puertas.</div>
+      <div class="kl-err" data-es="Algo falló al enviar. Probá de nuevo o escribinos a emilianotorres.com@gmail.com" data-en="Something went wrong. Try again or email us at emilianotorres.com@gmail.com">Algo falló al enviar. Probá de nuevo o escribinos a emilianotorres.com@gmail.com</div>
+    </form>
     <p class="hero-note" style="margin-top:18px;" data-es="Sin spam. Solo un aviso cuando Kalmoon esté lista." data-en="No spam. Just one heads-up when Kalmoon is ready.">Sin spam. Solo un aviso cuando Kalmoon esté lista.</p>
   </div>
 </section>
@@ -405,10 +454,42 @@ function setLang(lang){
     if (!img.dataset.cached){ img.setAttribute('data-src-es-cache','1'); img._esSrc = img.src; img.dataset.cached = '1'; }
     img.src = (lang==='en') ? img.getAttribute('data-src-en') : img._esSrc;
   });
+  document.querySelectorAll('[data-phes]').forEach(function(el){
+    var p = (lang==='en') ? el.getAttribute('data-phen') : el.getAttribute('data-phes');
+    if (p!==null) el.placeholder = p;
+  });
   document.getElementById('tg-es').classList.toggle('on', lang==='es');
   document.getElementById('tg-en').classList.toggle('on', lang==='en');
   document.documentElement.lang = lang;
 }
+
+// ── Envío AJAX de formularios (FormSubmit) — el usuario no sale de la página ──
+document.querySelectorAll('form.kl-form').forEach(function(form){
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var ok  = form.querySelector('.kl-ok');
+    var err = form.querySelector('.kl-err');
+    err.style.display = 'none';
+    var prevTxt = btn.innerHTML;
+    btn.disabled = true; btn.style.opacity = '0.6'; btn.innerHTML = '…';
+    var data = {};
+    new FormData(form).forEach(function(v,k){ data[k] = v; });
+    fetch('https://formsubmit.co/ajax/emilianotorres.com@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(j){
+      if (j.success === 'true' || j.success === true) {
+        form.querySelectorAll('input:not([type="hidden"]), select, button').forEach(function(el){ el.style.display = 'none'; });
+        ok.style.display = 'block';
+      } else { throw new Error('formsubmit'); }
+    }).catch(function(){
+      err.style.display = 'block';
+      btn.disabled = false; btn.style.opacity = '1'; btn.innerHTML = prevTxt;
+    });
+  });
+});
 </script>
 </body>
 </html>

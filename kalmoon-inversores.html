@@ -407,6 +407,19 @@
     .hero h1{font-size:36px;}
     nav .links{display:none;}
   }
+
+/* form lista de espera */
+.kl-form{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto;}
+.kl-form input,.kl-form select{background:rgba(255,255,255,0.05);border:1px solid var(--hair);border-radius:12px;padding:14px 16px;color:var(--text);font-family:inherit;font-size:15px;outline:none;width:100%;box-sizing:border-box;}
+.kl-form input::placeholder{color:rgba(255,255,255,0.35);}
+.kl-form select{appearance:none;-webkit-appearance:none;cursor:pointer;}
+.kl-form select:invalid{color:rgba(255,255,255,0.35);}
+.kl-form select option{background:#14142A;color:#F2F2F7;}
+.kl-form input:focus,.kl-form select:focus{border-color:rgba(200,184,255,0.5);}
+.kl-form button{cursor:pointer;border:none;font-family:inherit;}
+.kl-ok{display:none;padding:16px 20px;border:1px solid rgba(109,200,151,0.4);border-radius:12px;background:rgba(109,200,151,0.10);color:#9FE0BC;font-size:15px;line-height:1.5;}
+.kl-err{display:none;padding:12px 16px;border:1px solid rgba(255,120,120,0.35);border-radius:12px;background:rgba(255,120,120,0.08);color:#FFB0A8;font-size:14px;}
+
 </style>
 </head>
 <body>
@@ -977,9 +990,23 @@
     <div class="kicker"><span data-i18n="wait_kicker">Lista de espera</span></div>
     <h2 style="font-size:26px;"><span data-i18n="wait_h2">¿Todavía no es el momento de invertir? Sumate igual</span></h2>
     <p class="lede" style="margin:0 auto 28px; text-align:center;"><span data-i18n="wait_p">Si no es el momento para invertir pero te gustaría probar Kalmoon apenas esté disponible — o si invertís y además querés ser de los primeros en usarla — dejanos tu nombre y te avisamos ni bien se lanza.</span></p>
-    <div class="cta-row" style="justify-content:center;">
-      <a class="btn btn-primary" href="mailto:emilianotorres.com@gmail.com?subject=Lista%20de%20espera%20-%20Kalmoon&body=Hola%20Emi%2C%20quiero%20sumarme%20a%20la%20lista%20de%20espera%20de%20Kalmoon.%0D%0A%0D%0ANombre%3A%20___%0D%0A%0D%0AMe%20interesa%20(escrib%C3%AD%20tu%20respuesta%20abajo%2C%20por%20ejemplo%20%22invertir%22%2C%20%22usar%20la%20app%22%2C%20o%20%22ambas%22)%3A%0D%0A___"><span data-i18n="wait_cta">Sumarme a la lista de espera</span></a>
-    </div>
+    <form class="kl-form" action="https://formsubmit.co/emilianotorres.com@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="🌙 Lista de espera (pitch) - Kalmoon">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="tipo" value="Lista de espera (pitch inversores)">
+        <input type="text" name="nombre" required placeholder="Tu nombre" data-i18n-ph="wait_f_nombre">
+        <input type="email" name="email" required placeholder="Tu email" data-i18n-ph="wait_f_email">
+        <select name="interes" required>
+          <option value="" disabled selected data-i18n="wait_f_int">Me interesa...</option>
+          <option value="Usar la app" data-i18n="wait_f_int1">Ser de los primeros en usar la app</option>
+          <option value="Invertir" data-i18n="wait_f_int2">Invertir en Kalmoon</option>
+          <option value="Ambas" data-i18n="wait_f_int3">Ambas</option>
+        </select>
+        <button type="submit" class="btn btn-primary"><span data-i18n="wait_cta">Sumarme a la lista de espera</span></button>
+        <div class="kl-ok"><span data-i18n="wait_ok">🌙 ¡Listo! Estás en la lista. Te avisamos ni bien Kalmoon abra sus puertas.</span></div>
+        <div class="kl-err"><span data-i18n="wait_err">Algo falló al enviar. Probá de nuevo o escribí a emilianotorres.com@gmail.com</span></div>
+      </form>
   </div>
 </section>
 
@@ -1214,6 +1241,14 @@
       wait_h2: "Not ready to invest yet? Join anyway",
       wait_p: "If now isn't the right time to invest but you'd like to try Kalmoon as soon as it's available — or if you invest and also want to be among the first to use it — leave us your name and we'll let you know the moment it launches.",
       wait_cta: "Join the waitlist",
+      wait_f_nombre: "Your name",
+      wait_f_email: "Your email",
+      wait_f_int: "I'm interested in...",
+      wait_f_int1: "Being among the first to use the app",
+      wait_f_int2: "Investing in Kalmoon",
+      wait_f_int3: "Both",
+      wait_ok: "🌙 Done! You're on the list. We'll let you know as soon as Kalmoon opens its doors.",
+      wait_err: "Something went wrong. Try again or email emilianotorres.com@gmail.com",
 
       invest_struct_h3: "How the round could be structured",
       invest_intro: "We haven't closed final terms yet — this is a starting point for conversation, not a formal offer.",
@@ -1256,6 +1291,17 @@
       }
     });
 
+    document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-ph');
+      if (lang === 'es') {
+        if (el.dataset.esPh !== undefined) el.placeholder = el.dataset.esPh;
+      } else if (lang === 'en') {
+        if (el.dataset.esPh === undefined) el.dataset.esPh = el.placeholder;
+        var t = I18N.en[key];
+        if (t) el.placeholder = t;
+      }
+    });
+
     var btnEs = document.getElementById('lang-btn-es');
     var btnEn = document.getElementById('lang-btn-en');
     if (btnEs && btnEn) {
@@ -1268,6 +1314,34 @@
 
   cacheOriginal();
   setLang('es');
+
+  // Envio AJAX del formulario de lista de espera (FormSubmit)
+  document.querySelectorAll('form.kl-form').forEach(function(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var ok  = form.querySelector('.kl-ok');
+      var err = form.querySelector('.kl-err');
+      err.style.display = 'none';
+      var prevTxt = btn.innerHTML;
+      btn.disabled = true; btn.style.opacity = '0.6'; btn.innerHTML = '…';
+      var data = {};
+      new FormData(form).forEach(function(v,k){ data[k] = v; });
+      fetch('https://formsubmit.co/ajax/emilianotorres.com@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function(r){ return r.json(); }).then(function(j){
+        if (j.success === 'true' || j.success === true) {
+          form.querySelectorAll('input:not([type="hidden"]), select, button').forEach(function(el){ el.style.display = 'none'; });
+          ok.style.display = 'block';
+        } else { throw new Error('formsubmit'); }
+      }).catch(function(){
+        err.style.display = 'block';
+        btn.disabled = false; btn.style.opacity = '1'; btn.innerHTML = prevTxt;
+      });
+    });
+  });
 </script>
 
 </body>
