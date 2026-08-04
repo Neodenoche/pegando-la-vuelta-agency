@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viajes — Pegando La Vuelta</title>
+<meta name="description" content="7 experiencias en Colombia y Bolivia: Guajira, Rincón del Mar, Guaviare, Pandora, Bolivia y la ruta completa Colombia Unfiltered. Paquetes boutique diseñados por viajeros.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#F3EBDA;
+    --sand-deep:#E9DCC0;
+    --jungle:#1F3D2B;
+    --jungle-deep:#152A1E;
+    --terracota:#C1592E;
+    --terracota-deep:#A3441F;
+    --turquesa:#1E8C82;
+    --ocre:#D9A441;
+    --ink:#24211B;
+    --paper:#FBF7EE;
+    --display: 'Fraunces', serif;
+    --body: 'Work Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    background:var(--sand);
+    color:var(--ink);
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:var(--display); font-weight:500; line-height:1.08; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--terracota); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--terracota);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(243,235,218,.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(36,33,27,.08);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1180px; margin:0 auto;}
+  .logo{font-family:var(--display); font-size:22px; font-weight:600; display:flex; flex-direction:column; line-height:1;}
+  .logo span{font-family:var(--mono); font-size:10px; letter-spacing:.16em; color:var(--jungle); text-transform:uppercase; margin-top:4px; font-weight:400;}
+  nav.links{display:flex; align-items:center; gap:32px;}
+  nav.links a{font-size:14px; font-weight:500; position:relative; padding:4px 0;}
+  nav.links a:not(.cta)::after{content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--terracota); transition:width .25s;}
+  nav.links a:not(.cta):hover::after{width:100%;}
+  nav.links a.current::after{width:100%;}
+  .lang-toggle{
+    font-family:var(--mono); font-size:12px; letter-spacing:.05em; display:flex; gap:2px;
+    border:1px solid rgba(36,33,27,.25); border-radius:20px; padding:3px;
+  }
+  .lang-toggle button{
+    border:none; background:none; padding:4px 11px; border-radius:16px; cursor:pointer;
+    font-family:var(--mono); font-size:11px; color:var(--ink); opacity:.5;
+  }
+  .lang-toggle button.active{background:var(--jungle); color:var(--sand); opacity:1;}
+  .cta-btn{
+    background:var(--terracota); color:var(--paper) !important; padding:10px 20px; border-radius:30px;
+    font-size:13px; font-weight:600; white-space:nowrap; transition:background .2s;
+  }
+  .cta-btn:hover{background:var(--terracota-deep);}
+  .burger{display:none;}
+
+  /* ---------- PAGE HERO ---------- */
+  .page-hero{
+    position:relative; padding:150px 0 60px; overflow:hidden;
+    background:
+      radial-gradient(ellipse 90% 60% at 15% 0%, rgba(217,164,65,.18), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 90% 20%, rgba(30,140,130,.14), transparent 60%),
+      var(--sand);
+  }
+  .page-hero h1{font-size:clamp(34px,4.6vw,54px); margin-bottom:16px;}
+  .page-hero h1 em{font-style:italic; color:var(--terracota);}
+  .page-hero p.lead{font-size:17px; max-width:520px; color:#4a463c;}
+
+  /* ---------- FILTER BAR ---------- */
+  .filter-bar{
+    display:flex; gap:10px; flex-wrap:wrap; padding:26px 0 10px;
+    font-family:var(--mono); font-size:12.5px;
+  }
+  .filter-pill{
+    border:1.5px solid rgba(36,33,27,.2); border-radius:30px; padding:8px 18px;
+    cursor:pointer; background:var(--paper); transition:.2s; text-transform:uppercase; letter-spacing:.04em;
+  }
+  .filter-pill.active, .filter-pill:hover{background:var(--jungle); color:var(--sand); border-color:var(--jungle);}
+
+  /* ---------- TRIPS ---------- */
+  section.trips-section{padding:40px 0 100px;}
+  .trip-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .trip-card{
+    background:var(--paper); border-radius:8px; overflow:hidden; border:1px solid rgba(36,33,27,.08);
+    transition:transform .25s, box-shadow .25s; cursor:pointer; display:flex; flex-direction:column;
+  }
+  .trip-card:hover{transform:translateY(-6px); box-shadow:0 18px 34px rgba(31,61,43,.16);}
+  .trip-img{aspect-ratio:4/3; background-size:cover; background-position:center; position:relative;}
+  .trip-img.placeholder{
+    background:linear-gradient(135deg, var(--jungle), var(--turquesa));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .trip-img.placeholder span{
+    font-family:var(--mono); font-size:10.5px; color:rgba(251,247,238,.6); text-transform:uppercase; letter-spacing:.08em;
+  }
+  .trip-tag{
+    position:absolute; top:14px; left:14px; background:var(--terracota); color:var(--paper);
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; padding:5px 10px; border-radius:20px; text-transform:uppercase;
+  }
+  .trip-off{
+    position:absolute; top:14px; right:14px; background:var(--ocre); color:var(--jungle-deep);
+    font-family:var(--mono); font-size:10.5px; font-weight:500; padding:5px 10px; border-radius:20px;
+  }
+  .trip-body{padding:22px 22px 24px; flex:1; display:flex; flex-direction:column;}
+  .trip-meta{font-family:var(--mono); font-size:11.5px; color:var(--turquesa); letter-spacing:.03em; margin-bottom:10px; text-transform:uppercase;}
+  .trip-body h3{font-size:20px; margin-bottom:10px;}
+  .trip-body p{font-size:14px; color:#5a5648; margin-bottom:18px; flex:1;}
+  .trip-foot{display:flex; align-items:center; justify-content:space-between; padding-top:14px; border-top:1px solid rgba(36,33,27,.1);}
+  .trip-price{font-family:var(--mono); font-size:15px; font-weight:500; color:var(--jungle);}
+  .trip-price span{font-size:11px; color:#8a8574; display:block; font-weight:400;}
+  .trip-price del{font-size:12px; color:#a89f8a; font-weight:400;}
+  .trip-arrow{width:34px; height:34px; border-radius:50%; border:1.5px solid var(--ink); display:flex; align-items:center; justify-content:center; transition:.2s; flex-shrink:0;}
+  .trip-card:hover .trip-arrow{background:var(--terracota); border-color:var(--terracota); color:var(--paper);}
+
+  /* CTA band */
+  .cta-band{
+    background:var(--terracota); color:var(--paper); text-align:center; border-radius:14px;
+    padding:70px 40px; margin:0 28px;
+  }
+  .cta-band h2{color:var(--paper); font-size:clamp(28px,3.6vw,42px); margin-bottom:18px;}
+  .cta-band p{max-width:480px; margin:0 auto 32px; font-size:16px; opacity:.92;}
+  .btn-primary{
+    background:var(--jungle-deep); color:var(--sand); padding:15px 30px; border-radius:34px; font-weight:600; font-size:15px;
+    display:inline-block; transition:transform .2s, background .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+
+  /* footer */
+  footer{background:var(--jungle-deep); color:#b7c2b1; padding:70px 0 30px; margin-top:90px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:50px;}
+  .foot-logo{font-family:var(--display); font-size:24px; color:var(--sand); margin-bottom:14px;}
+  .foot-grid p{font-size:14px; max-width:320px; line-height:1.6;}
+  .foot-col h5{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ocre); margin-bottom:16px;}
+  .foot-col a, .foot-col p{display:block; font-size:14px; margin-bottom:10px; color:#b7c2b1;}
+  .foot-col a:hover{color:var(--sand);}
+  .foot-bottom{border-top:1px solid rgba(183,194,177,.15); padding-top:24px; font-size:12.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--mono);}
+
+  .whatsapp-float{
+    position:fixed; bottom:24px; right:24px; z-index:90; background:#25D366; width:56px; height:56px;
+    border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.25);
+  }
+
+  @media(max-width:880px){
+    .trip-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr; gap:30px;}
+    nav.links{position:fixed; top:66px; left:0; right:0; background:var(--sand); flex-direction:column; padding:24px 28px; gap:18px; border-bottom:1px solid rgba(36,33,27,.1); transform:translateY(-130%); transition:transform .3s; }
+    nav.links.open{transform:translateY(0);}
+    .burger{display:block; background:none; border:none; font-size:22px; cursor:pointer;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Pegando La Vuelta<span>Viajes hechos por viajeros</span></a>
+    <nav class="links" id="navLinks">
+      <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="viajes.html" class="current" data-es="Viajes" data-en="Trips">Viajes</a>
+      <a href="index.html#nosotros" data-es="Nosotros" data-en="About">Nosotros</a>
+      <a href="index.html#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+      <a class="cta-btn" href="https://wa.me/573228921253" target="_blank" data-es="Escríbenos" data-en="Message us">Escríbenos</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="lang-toggle">
+        <button class="active" data-set-lang="es">ES</button>
+        <button data-set-lang="en">EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="eyebrow" data-es="Catálogo completo" data-en="Full catalog">Catálogo completo</div>
+    <h1 data-es="7 rutas, <em>una forma</em> de viajar" data-en="7 routes, <em>one way</em> to travel"><em>Nuestros</em> viajes</h1>
+    <p class="lead" data-es="Experiencias boutique en Colombia y Bolivia. Tú pagas tu vuelo, nosotros armamos todo lo demás." data-en="Boutique experiences across Colombia and Bolivia. You cover your flight, we handle everything else.">Experiencias boutique en Colombia y Bolivia. Tú pagas tu vuelo, nosotros armamos todo lo demás.</p>
+
+    <div class="filter-bar">
+      <div class="filter-pill active" data-filter="all" data-es="Todos" data-en="All">Todos</div>
+      <div class="filter-pill" data-filter="colombia" data-es="Colombia" data-en="Colombia">Colombia</div>
+      <div class="filter-pill" data-filter="bolivia" data-es="Bolivia" data-en="Bolivia">Bolivia</div>
+    </div>
+  </div>
+</section>
+
+<section class="trips-section">
+  <div class="wrap">
+    <div class="trip-grid" id="tripGrid">
+
+      <!-- 1. Guajira -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-guajira.html'">
+        <div class="trip-img" style="background-image:url('assets/trip-guajira.webp')">
+          <div class="trip-tag">Colombia</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="4 días · kitesurf" data-en="4 days · kitesurf">4 días · kitesurf</div>
+          <h3 data-es="Guajira Vibes: Kitesurf, Cultura y Sol" data-en="Guajira Vibes: Kitesurf, Culture & Sun">Guajira Vibes: Kitesurf, Cultura y Sol</h3>
+          <p data-es="Fechas grupales fijas todo el año. Tres noches de sol, mar y cultura wayuu en el desierto que se encuentra con el Caribe." data-en="Fixed group dates all year round. Three nights of sun, sea and Wayuu culture where the desert meets the Caribbean.">Fechas grupales fijas todo el año. Tres noches de sol, mar y cultura wayuu en el desierto que se encuentra con el Caribe.</p>
+          <div class="trip-foot">
+            <div class="trip-price">$1.640.000 <span data-es="COP / persona" data-en="COP / person">COP / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Rincón del Mar -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-rincon-del-mar.html'">
+        <div class="trip-img" style="background-image:url('assets/trip-rincon-del-mar.webp')">
+          <div class="trip-tag">Colombia</div>
+          <div class="trip-off">13% OFF</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="5 días · playa" data-en="5 days · beach">5 días · playa</div>
+          <h3 data-es="Rincón del Mar: Escape Costero al Caribe" data-en="Rincón del Mar: A Coastal Escape">Rincón del Mar: Escape Costero al Caribe</h3>
+          <p data-es="Aguas turquesa, manglares y selva. Despierta viendo a los pescadores llegar con la pesca del día." data-en="Turquoise waters, mangroves and jungle. Wake up to fishermen bringing in the day's catch.">Aguas turquesa, manglares y selva. Despierta viendo a los pescadores llegar con la pesca del día.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><del>$1.500.000</del> $1.300.000 <span data-es="COP / persona" data-en="COP / person">COP / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Colombia Unfiltered -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-colombia-unfiltered.html'">
+        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+          <div class="trip-tag">Colombia</div>
+          <div class="trip-off">10% OFF</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="13 días · selva, ciudad y mar" data-en="13 days · jungle, city & sea">13 días · selva, ciudad y mar</div>
+          <h3 data-es="Colombia Unfiltered" data-en="Colombia Unfiltered">Colombia Unfiltered</h3>
+          <p data-es="Del Amazonas al Caribe en 13 días: arte rupestre en San José del Guaviare, ríos de colores, La Piedra del Peñol, Cartagena y Rincón del Mar." data-en="From the Amazon to the Caribbean in 13 days: rock art in San José del Guaviare, colored rivers, La Piedra del Peñol, Cartagena and Rincón del Mar.">Del Amazonas al Caribe en 13 días: arte rupestre en San José del Guaviare, ríos de colores, La Piedra del Peñol, Cartagena y Rincón del Mar.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><del>$3.000</del> $2.700 <span data-es="USD / persona" data-en="USD / person">USD / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Bolivia -->
+      <div class="trip-card" data-country="bolivia" onclick="window.location.href='viaje-bolivia.html'">
+        <div class="trip-img" style="background-image:url('assets/trip-bolivia.webp')">
+          <div class="trip-tag">Bolivia</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="7 días · desierto de sal" data-en="7 days · salt desert">7 días · desierto de sal</div>
+          <h3 data-es="Bolivia — 7 días, 6 noches" data-en="Bolivia — 7 Days, 6 Nights">Bolivia — 7 días, 6 noches</h3>
+          <p data-es="Donde la tierra se encuentra con el cielo. De la altura vibrante de La Paz al Salar de Uyuni." data-en="Where the earth meets the sky. From the vibrant heights of La Paz to the Uyuni salt flats.">Donde la tierra se encuentra con el cielo. De la altura vibrante de La Paz al Salar de Uyuni.</p>
+          <div class="trip-foot">
+            <div class="trip-price">$1.500 <span data-es="USD / persona" data-en="USD / person">USD / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Ancestral Guaviare 4d/3n -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-guaviare-4d3n.html'">
+        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+          <div class="trip-tag">Colombia</div>
+          <div class="trip-off">30% OFF</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="4 días · selva ancestral" data-en="4 days · ancestral jungle">4 días · selva ancestral</div>
+          <h3 data-es="Guaviare Ancestral — 4 días, 3 noches" data-en="Ancestral Guaviare — 4 Days, 3 Nights">Guaviare Ancestral — 4 días, 3 noches</h3>
+          <p data-es="Fechas grupales predeterminadas. Una aventura por las tierras ancestrales del Guaviare." data-en="Pre-set group dates. An adventure through the ancestral lands of Guaviare.">Fechas grupales predeterminadas. Una aventura por las tierras ancestrales del Guaviare.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><del>$1.850.000</del> $1.300.000 <span data-es="COP / persona" data-en="COP / person">COP / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Ancestral Guaviare 3d/2n -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-guaviare-3d2n.html'">
+        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+          <div class="trip-tag">Colombia</div>
+          <div class="trip-off">3% OFF</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="3 días · selva ancestral" data-en="3 days · ancestral jungle">3 días · selva ancestral</div>
+          <h3 data-es="Guaviare Ancestral — 3 días, 2 noches" data-en="Ancestral Guaviare — 3 Days, 2 Nights">Guaviare Ancestral — 3 días, 2 noches</h3>
+          <p data-es="Versión corta de la ruta ancestral del Guaviare, con fechas grupales predeterminadas." data-en="Shorter version of the ancestral Guaviare route, with pre-set group dates.">Versión corta de la ruta ancestral del Guaviare, con fechas grupales predeterminadas.</p>
+          <div class="trip-foot">
+            <div class="trip-price"><del>$1.750.000</del> $1.700.000 <span data-es="COP / persona" data-en="COP / person">COP / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Pandora Forests -->
+      <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-pandora.html'">
+        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+          <div class="trip-tag">Colombia</div>
+        </div>
+        <div class="trip-body">
+          <div class="trip-meta" data-es="3 días · bosque y cuevas" data-en="3 days · forest & caves">3 días · bosque y cuevas</div>
+          <h3 data-es="Bosques de Pandora y Ventanas de Tisquizoque" data-en="Pandora Forests & Tisquizoque Windows">Bosques de Pandora y Ventanas de Tisquizoque</h3>
+          <p data-es="Montañas frondosas, cuevas y una biodiversidad impresionante. Un mundo de fantasía en cada rincón." data-en="Lush mountains, caves and impressive biodiversity. A fantasy world around every corner.">Montañas frondosas, cuevas y una biodiversidad impresionante. Un mundo de fantasía en cada rincón.</p>
+          <div class="trip-foot">
+            <div class="trip-price">$1.300.000 <span data-es="COP / persona" data-en="COP / person">COP / persona</span></div>
+            <div class="trip-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2 data-es="¿No ves el viaje que buscas?" data-en="Don't see the trip you're after?">¿No ves el viaje que buscas?</h2>
+      <p data-es="Somos una agencia boutique — armamos paquetes grupales a la medida. Cuéntanos qué te imaginas." data-en="We're a boutique agency — we build custom group packages. Tell us what you're picturing.">Somos una agencia boutique — armamos paquetes grupales a la medida. Cuéntanos qué te imaginas.</p>
+      <a class="btn-primary" href="https://wa.me/573228921253" target="_blank" data-es="Escribir por WhatsApp" data-en="Message on WhatsApp">Escribir por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Pegando La Vuelta</div>
+        <p data-es="Equipo de viajeros diseñando experiencias auténticas y sostenibles en Colombia y Bolivia, con guías locales en cada parada de la ruta." data-en="A team of travelers designing authentic, sustainable experiences across Colombia and Bolivia, with local guides at every stop of the route.">
+          Equipo de viajeros diseñando experiencias auténticas y sostenibles en Colombia y Bolivia, con guías locales en cada parada de la ruta.
+        </p>
+      </div>
+      <div class="foot-col">
+        <h5 data-es="Navegación" data-en="Navigation">Navegación</h5>
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="viajes.html" data-es="Viajes" data-en="Trips">Viajes</a>
+        <a href="index.html#nosotros" data-es="Nosotros" data-en="About">Nosotros</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-es="Contacto" data-en="Contact">Contacto</h5>
+        <a href="mailto:pegandolavuelta20@gmail.com">pegandolavuelta20@gmail.com</a>
+        <a href="https://wa.me/573228921253">+57 322 892 1253</a>
+        <a href="https://www.instagram.com/pegandolavuelta" target="_blank">@pegandolavuelta</a>
+        <p style="margin:0;">Bogotá, Colombia</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pegando La Vuelta</span>
+      <span>RNT 205074</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/573228921253" target="_blank" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2 22l5.36-1.4a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2m0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.7 8.24-8.25 8.24m4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.24-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.65-1.23-1.47-1.38-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14 0-.31-.01-.48-.01-.16 0-.43.06-.66.31-.22.24-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29"/></svg>
+</a>
+
+<script>
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+
+  function applyLang(lang){
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('[data-es]').forEach(function(el){
+      var text = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-es');
+      if(text !== null && text !== undefined && text !== '') el.innerHTML = text;
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-set-lang') === lang);
+    });
+    localStorage.setItem('plv-lang', lang);
+  }
+
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-set-lang')); });
+  });
+
+  applyLang(localStorage.getItem('plv-lang') || 'es');
+
+  document.querySelectorAll('.filter-pill').forEach(function(pill){
+    pill.addEventListener('click', function(){
+      document.querySelectorAll('.filter-pill').forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+      var filter = pill.getAttribute('data-filter');
+      document.querySelectorAll('.trip-card').forEach(function(card){
+        var show = filter === 'all' || card.getAttribute('data-country') === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

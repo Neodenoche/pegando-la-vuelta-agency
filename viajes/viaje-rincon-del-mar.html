@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rincón del Mar: Escape Costero al Caribe — Pegando La Vuelta</title>
+<meta name="description" content="5 días en Rincón del Mar: manglares, islas del archipiélago y turismo consciente en el Caribe colombiano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#F3EBDA; --sand-deep:#E9DCC0; --jungle:#1F3D2B; --jungle-deep:#152A1E;
+    --terracota:#C1592E; --terracota-deep:#A3441F; --turquesa:#1E8C82; --ocre:#D9A441;
+    --ink:#24211B; --paper:#FBF7EE;
+    --display: 'Fraunces', serif; --body: 'Work Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body); background:var(--sand); color:var(--ink); line-height:1.5; overflow-x:hidden;}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:980px; margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:var(--display); font-weight:500; line-height:1.1; letter-spacing:-0.01em;}
+  .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--terracota); display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--terracota);}
+
+  header{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(243,235,218,.86); backdrop-filter:blur(10px); border-bottom:1px solid rgba(36,33,27,.08);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1180px; margin:0 auto;}
+  .logo{font-family:var(--display); font-size:22px; font-weight:600; display:flex; flex-direction:column; line-height:1;}
+  .logo span{font-family:var(--mono); font-size:10px; letter-spacing:.16em; color:var(--jungle); text-transform:uppercase; margin-top:4px; font-weight:400;}
+  nav.links{display:flex; align-items:center; gap:32px;}
+  nav.links a{font-size:14px; font-weight:500; position:relative; padding:4px 0;}
+  nav.links a:not(.cta)::after{content:''; position:absolute; bottom:0; left:0; width:0; height:1px; background:var(--terracota); transition:width .25s;}
+  nav.links a:not(.cta):hover::after{width:100%;}
+  .lang-toggle{font-family:var(--mono); font-size:12px; letter-spacing:.05em; display:flex; gap:2px; border:1px solid rgba(36,33,27,.25); border-radius:20px; padding:3px;}
+  .lang-toggle button{border:none; background:none; padding:4px 11px; border-radius:16px; cursor:pointer; font-family:var(--mono); font-size:11px; color:var(--ink); opacity:.5;}
+  .lang-toggle button.active{background:var(--jungle); color:var(--sand); opacity:1;}
+  .cta-btn{background:var(--terracota); color:var(--paper) !important; padding:10px 20px; border-radius:30px; font-size:13px; font-weight:600; white-space:nowrap; transition:background .2s;}
+  .cta-btn:hover{background:var(--terracota-deep);}
+  .burger{display:none;}
+
+  .breadcrumb{padding:150px 0 0; font-family:var(--mono); font-size:12px; color:#8a8574;}
+  .breadcrumb a{color:var(--terracota);}
+
+  .trip-hero{position:relative; margin:24px 0 0; border-radius:10px; overflow:hidden; aspect-ratio:16/8; background-size:cover; background-position:center;}
+  .trip-hero.placeholder{background:linear-gradient(135deg, var(--jungle), var(--turquesa)); display:flex; align-items:center; justify-content:center;}
+  .trip-hero.placeholder span{font-family:var(--mono); font-size:12px; color:rgba(251,247,238,.6); text-transform:uppercase; letter-spacing:.08em;}
+  .trip-off{position:absolute; top:16px; right:16px; background:var(--ocre); color:var(--jungle-deep); font-family:var(--mono); font-size:11px; font-weight:500; padding:6px 12px; border-radius:20px;}
+
+  .trip-title{padding:30px 0 6px;}
+  .trip-title h1{font-size:clamp(30px,4vw,46px);}
+  .trip-title .country-tag{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--terracota); margin-bottom:10px; display:block;}
+
+  .facts-bar{display:flex; flex-wrap:wrap; gap:22px; padding:22px 0; border-top:1px solid rgba(36,33,27,.1); border-bottom:1px solid rgba(36,33,27,.1); margin:18px 0 40px; font-size:13.5px;}
+  .fact{display:flex; flex-direction:column; gap:2px;}
+  .fact b{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--turquesa);}
+
+  .price-band{background:var(--jungle); color:var(--sand); border-radius:10px; padding:26px 28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:44px;}
+  .price-band .amount{font-family:var(--mono); font-size:24px; color:var(--ocre);}
+  .price-band .amount del{font-size:15px; color:#9db096; margin-right:8px; font-weight:400;}
+  .price-band .amount span{display:block; font-size:11px; color:#b7c2b1; font-weight:400; margin-top:2px;}
+  .btn-primary{background:var(--terracota); color:var(--paper); padding:14px 26px; border-radius:30px; font-weight:600; font-size:14.5px; display:inline-block; transition:background .2s, transform .2s;}
+  .btn-primary:hover{background:var(--terracota-deep); transform:translateY(-2px);}
+
+  section.block{padding:0 0 46px;}
+  section.block h2{font-size:clamp(22px,2.6vw,30px); margin-bottom:18px;}
+  section.block p{font-size:15.5px; color:#4a463c; margin-bottom:14px; max-width:720px;}
+
+  .keypoints{list-style:none; display:grid; gap:10px; margin-top:10px;}
+  .keypoints li{display:flex; gap:10px; font-size:14.5px; color:#4a463c;}
+  .keypoints li::before{content:'—'; color:var(--terracota); flex-shrink:0;}
+
+  .itin-day{border-left:2px solid var(--sand-deep); padding:0 0 26px 22px; margin-left:6px; position:relative;}
+  .itin-day::before{content:''; position:absolute; left:-7px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--terracota);}
+  .itin-day .day-label{font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--turquesa); margin-bottom:4px;}
+  .itin-day h3{font-size:18px; margin-bottom:8px;}
+  .itin-day p{font-size:14.5px; color:#4a463c; margin-bottom:0; white-space:pre-line;}
+
+  .cost-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px;}
+  .cost-col h4{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--terracota); margin-bottom:12px;}
+  .cost-col ul{list-style:none; display:grid; gap:8px;}
+  .cost-col li{font-size:14px; color:#4a463c; padding-left:16px; position:relative;}
+  .cost-col li::before{content:'✓'; position:absolute; left:0; color:var(--turquesa); font-weight:600;}
+  .cost-col.excludes li::before{content:'×'; color:#b5523a;}
+
+  .cta-band{background:var(--terracota); color:var(--paper); text-align:center; border-radius:14px; padding:60px 36px; margin:20px 0 60px;}
+  .cta-band h2{color:var(--paper); font-size:clamp(24px,3vw,34px); margin-bottom:14px;}
+  .cta-band p{max-width:460px; margin:0 auto 26px; font-size:15px; opacity:.92; color:var(--paper);}
+  .cta-band .btn-primary{background:var(--jungle-deep);}
+
+  footer{background:var(--jungle-deep); color:#b7c2b1; padding:70px 0 30px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:50px; max-width:1180px; margin-left:auto; margin-right:auto; padding:0 28px;}
+  .foot-logo{font-family:var(--display); font-size:24px; color:var(--sand); margin-bottom:14px;}
+  .foot-grid p{font-size:14px; max-width:320px; line-height:1.6;}
+  .foot-col h5{font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--ocre); margin-bottom:16px;}
+  .foot-col a, .foot-col p{display:block; font-size:14px; margin-bottom:10px; color:#b7c2b1;}
+  .foot-col a:hover{color:var(--sand);}
+  .foot-bottom{border-top:1px solid rgba(183,194,177,.15); padding-top:24px; font-size:12.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--mono); max-width:1180px; margin:0 auto; padding-left:28px; padding-right:28px;}
+
+  .whatsapp-float{position:fixed; bottom:24px; right:24px; z-index:90; background:#25D366; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.25);}
+
+  @media(max-width:880px){
+    .facts-bar{gap:16px;}
+    .cost-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr; gap:30px;}
+    nav.links{position:fixed; top:66px; left:0; right:0; background:var(--sand); flex-direction:column; padding:24px 28px; gap:18px; border-bottom:1px solid rgba(36,33,27,.1); transform:translateY(-130%); transition:transform .3s; }
+    nav.links.open{transform:translateY(0);}
+    .burger{display:block; background:none; border:none; font-size:22px; cursor:pointer;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo">Pegando La Vuelta<span>Viajes hechos por viajeros</span></a>
+    <nav class="links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="viajes.html">Viajes</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="cta-btn" href="https://wa.me/573228921253" target="_blank">Escríbenos</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="lang-toggle">
+        <button class="active">ES</button>
+        <button>EN</button>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="viajes.html">Viajes</a> / Rincón del Mar: Escape Costero al Caribe</div>
+
+  <div class="trip-hero" style="background-image:url('assets/trip-rincon-del-mar.webp')">
+    
+    <div class="trip-off">13% OFF</div>
+  </div>
+
+  <div class="trip-title">
+    <span class="country-tag">Colombia · 5 días</span>
+    <h1>Rincón del Mar: Escape Costero al Caribe</h1>
+  </div>
+
+  <div class="facts-bar">
+    <div class="fact"><b>Transporte</b>Mototaxi local</div>
+    <div class="fact"><b>Alojamiento</b>Eco-hotel caribeño</div>
+    <div class="fact"><b>Altitud máx</b>2 msnm</div>
+    <div class="fact"><b>Salida desde</b>San Onofre</div>
+    <div class="fact"><b>Mejor época</b>Enero</div>
+    <div class="fact"><b>Nivel</b>Fácil</div>
+  </div>
+
+  <div class="price-band">
+    <div class="amount"><del>$1.500.000</del> $1.300.000 <span style='font-size:11px;'>COP</span><span>por persona</span></div>
+    <a class="btn-primary" href="https://wa.me/573228921253?text=Hola!%20Quiero%20info%20del%20viaje%20viaje%20rincon%20del%20mar" target="_blank">Reservar por WhatsApp</a>
+  </div>
+
+  <section class="block">
+    <div class="eyebrow">Overview</div>
+    <h2>Sobre este viaje</h2>
+    <p>Una inmersión en aguas turquesa, manglares y selva. Despertar viendo a los pescadores traer la pesca del día, disfrutar carimañolas y arepas de huevo al ritmo de la champeta, y atardeceres pintados de naranja, rosa y morado sobre un mar sereno.</p><p>Turismo consciente: exploración de la biodiversidad marina, conservación, vida local y simpleza — una de las zonas de mayor biodiversidad de Colombia.</p>
+    <ul class="keypoints">
+      <li>Cóctel de atardecer en Dos Aguas</li>
+      <li>Visita a Isla de los Pájaros</li>
+      <li>Paddle board</li>
+      <li>Recorrido en canoa por el manglar</li>
+      <li>Visita a Múcura, Tintipán y (opcional) Santa Cruz</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">Itinerario</div>
+    <h2>Día por día</h2>
+    <div class="itin-day">
+      <div class="day-label">Día 1</div>
+      <h3>Rincón del Mar</h3>
+      <p>Check-in en el hotel. Almuerzo de bienvenida en Dubai. Tarde libre en la playa. Cóctel de atardecer en Dos Aguas.</p>
+    </div>
+    <div class="itin-day">
+      <div class="day-label">Día 2</div>
+      <h3>Conexión e isla</h3>
+      <p>Visita a Playa Balsillas. Visita a Isla de los Pájaros y avistamiento de plancton. Regreso al hotel, noche libre.</p>
+    </div>
+    <div class="itin-day">
+      <div class="day-label">Día 3</div>
+      <h3>Expedición acuática</h3>
+      <p>Paddle board. Recorrido en canoa por el manglar. Regreso al hotel, noche libre.</p>
+    </div>
+    <div class="itin-day">
+      <div class="day-label">Día 4</div>
+      <h3>Islas y despedida</h3>
+      <p>Recorrido en lancha por las islas del archipiélago. Visita a Múcura, Tintipán y opcionalmente Santa Cruz. Regreso al hotel.</p>
+    </div>
+    <div class="itin-day">
+      <div class="day-label">Día 5</div>
+      <h3>Último amanecer</h3>
+      <p>Fin de los servicios de Pegando La Vuelta.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow">Incluye</div>
+    <h2>Qué está cubierto</h2>
+    <div class="cost-grid">
+      <div class="cost-col includes">
+        <h4>Incluye</h4>
+        <ul>
+          <li>Tours y guía para excursiones</li>
+          <li>Alojamiento por 4 noches</li>
+          <li>Transporte interno</li>
+          <li>Seguro de viaje</li>
+          <li>Cóctel en Dos Aguas</li>
+          <li>Almuerzo de bienvenida en Dubai</li>
+        </ul>
+      </div>
+      <div class="cost-col excludes">
+        <h4>No incluye</h4>
+        <ul>
+          <li>Traslados desde tu ciudad de origen a San Onofre y de regreso</li>
+          <li>Propinas y servicios no especificados</li>
+          <li>Mototaxi de San Onofre a Rincón del Mar</li>
+          <li>Comidas no incluidas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>¿Listo para vivir esto?</h2>
+    <p>Escríbenos y armamos tu cupo — te contamos fechas disponibles y resolvemos tus dudas.</p>
+    <a class="btn-primary" href="https://wa.me/573228921253?text=Hola!%20Quiero%20reservar%20viaje%20rincon%20del%20mar" target="_blank">Escribir por WhatsApp</a>
+  </div>
+</div>
+
+<footer id="contacto">
+  <div class="foot-grid">
+    <div>
+      <div class="foot-logo">Pegando La Vuelta</div>
+      <p>Equipo de viajeros diseñando experiencias auténticas y sostenibles en Colombia y Bolivia, con guías locales en cada parada de la ruta.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Navegación</h5>
+      <a href="index.html">Inicio</a>
+      <a href="viajes.html">Viajes</a>
+      <a href="index.html#nosotros">Nosotros</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contacto</h5>
+      <a href="mailto:pegandolavuelta20@gmail.com">pegandolavuelta20@gmail.com</a>
+      <a href="https://wa.me/573228921253">+57 322 892 1253</a>
+      <a href="https://www.instagram.com/pegandolavuelta" target="_blank">@pegandolavuelta</a>
+      <p style="margin:0;">Bogotá, Colombia</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Pegando La Vuelta</span>
+    <span>RNT 205074</span>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/573228921253" target="_blank" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2 22l5.36-1.4a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2m0 18.15h-.01a8.23 8.23 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.7 8.24-8.25 8.24m4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.24-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.65-1.23-1.47-1.38-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.24-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14 0-.31-.01-.48-.01-.16 0-.43.06-.66.31-.22.24-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.16-.48-.29"/></svg>
+</a>
+
+<script>
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
