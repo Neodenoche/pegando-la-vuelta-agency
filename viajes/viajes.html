@@ -153,6 +153,11 @@
   .foot-col a, .foot-col p{display:block; font-size:14px; margin-bottom:10px; color:#b7c2b1;}
   .foot-col a:hover{color:var(--sand);}
   .foot-bottom{border-top:1px solid rgba(183,194,177,.15); padding-top:24px; font-size:12.5px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--mono);}
+  .foot-avalados{border-top:1px solid rgba(183,194,177,.15); padding-top:30px; margin-bottom:30px;}
+  .foot-avalados p{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:rgba(183,194,177,.6); margin-bottom:16px;}
+  .foot-avalados-logos{display:flex; align-items:center; gap:28px; flex-wrap:wrap;}
+  .foot-avalados-logos img{height:36px; width:auto; opacity:.7; filter:brightness(0) invert(1); transition:opacity .2s;}
+  .foot-avalados-logos img:hover{opacity:1;}
 
   .whatsapp-float{
     position:fixed; bottom:24px; right:24px; z-index:90; background:#25D366; width:56px; height:56px;
@@ -243,7 +248,7 @@
 
       <!-- 3. Colombia Unfiltered -->
       <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-colombia-unfiltered.html'">
-        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+        <div class="trip-img" style="background-image:url('assets/trip-colombia-unfiltered.webp')">
           <div class="trip-tag">Colombia</div>
           <div class="trip-off">10% OFF</div>
         </div>
@@ -276,7 +281,7 @@
 
       <!-- 5. Ancestral Guaviare 4d/3n -->
       <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-guaviare-4d3n.html'">
-        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+        <div class="trip-img" style="background-image:url('assets/trip-guaviare-4d3n.png')">
           <div class="trip-tag">Colombia</div>
           <div class="trip-off">30% OFF</div>
         </div>
@@ -293,7 +298,7 @@
 
       <!-- 6. Ancestral Guaviare 3d/2n -->
       <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-guaviare-3d2n.html'">
-        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+        <div class="trip-img" style="background-image:url('assets/trip-guaviare-3d2n.png')">
           <div class="trip-tag">Colombia</div>
           <div class="trip-off">3% OFF</div>
         </div>
@@ -310,7 +315,7 @@
 
       <!-- 7. Pandora Forests -->
       <div class="trip-card" data-country="colombia" onclick="window.location.href='viaje-pandora.html'">
-        <div class="trip-img placeholder"><span data-es="Foto pendiente" data-en="Photo pending">Foto pendiente</span>
+        <div class="trip-img" style="background-image:url('assets/trip-pandora.jpg')">
           <div class="trip-tag">Colombia</div>
         </div>
         <div class="trip-body">
@@ -359,6 +364,14 @@
         <a href="https://wa.me/573228921253">+57 322 892 1253</a>
         <a href="https://www.instagram.com/pegandolavuelta" target="_blank">@pegandolavuelta</a>
         <p style="margin:0;">Bogotá, Colombia</p>
+      </div>
+    </div>
+    <div class="foot-avalados">
+      <p data-es="Avalados por" data-en="Endorsed by">Avalados por</p>
+      <div class="foot-avalados-logos">
+        <img src="assets/logo-fontur.webp" alt="Fontur Colombia">
+        <img src="assets/logo-camara.webp" alt="Cámara de Comercio de Bogotá">
+        <img src="assets/logo-marca-pais.webp" alt="Marca País Colombia">
       </div>
     </div>
     <div class="foot-bottom">
