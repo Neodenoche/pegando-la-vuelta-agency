@@ -70,22 +70,24 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 .lang-btn{font-size:10px;letter-spacing:2px;font-weight:600;padding:5px 10px;border-radius:100px;border:none;background:transparent;color:rgba(255,255,255,0.35);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
 .lang-btn.active{background:#FF6B35;color:#fff}
 </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet"><style>html[dir=rtl] body,html[dir=rtl] *{font-family:"IBM Plex Sans Arabic",sans-serif!important;letter-spacing:0!important}html[dir=rtl] .lang-btn,html[dir=rtl] .lang-toggle{direction:ltr}</style></head>
 <body>
 
 <a class="back" href="https://pegandolavuelta.agency">
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg><span data-en="Agency" data-es="Agencia">Agency</span></a>
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg><span data-en="Agency" data-es="Agencia" data-fr="Agence" data-ar="الوكالة">Agency</span></a>
 
 <div class="lang-toggle">
   <button class="lang-btn active" onclick="setLang('en')">EN</button>
   <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" data-l="ar" onclick="setLang('ar')">AR</button>
 </div>
 
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Case Study · Telegram Bot · Web3" data-es="Caso de estudio · Bot Telegram · Web3">Case Study · Telegram Bot · Web3</div>
+    <div class="hero-eyebrow" data-en="Case Study · Telegram Bot · Web3" data-es="Caso de estudio · Bot Telegram · Web3" data-fr="Étude de cas · Bot Telegram · Web3" data-ar="دراسة حالة · بوت تيليغرام · ويب 3">Case Study · Telegram Bot · Web3</div>
     <h1 class="hero-title">Manada<br><em>Panther Bot</em></h1>
     <p class="hero-sub">A fully gamified Telegram community ecosystem built for Panther Wallet — loyalty tiers, USDT raffles, referral campaigns, and an HTML5 mini-game, all running on Python + SQLite deployed on Railway.</p>
     <div class="hero-stats">
@@ -99,7 +101,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo" data-fr="Le brief" data-ar="الملخص">The brief</div>
   <h2 class="section-title">Build the community.<br><em>Own the engagement.</em></h2>
   <p class="section-body">Panther Wallet needed more than a Telegram group — they needed a retention engine. The bot had to reward loyal holders, run surprise raffles, track referrals, and keep growing users coming back daily without manual intervention.</p>
   <div class="tags">
@@ -112,7 +114,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó">What was built</div>
+  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó" data-fr="Ce qui a été construit" data-ar="ما تم بناؤه">What was built</div>
   <h2 class="section-title">Six systems.<br><em>One ecosystem.</em></h2>
   <div class="feat-grid">
     <div class="feat">
@@ -151,7 +153,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 
 <section class="section">
-  <div class="section-eyebrow" data-en="The community" data-es="La comunidad">The community</div>
+  <div class="section-eyebrow" data-en="The community" data-es="La comunidad" data-fr="La communauté" data-ar="المجتمع">The community</div>
   <h2 class="section-title">200 members.<br><em>Growing organically.</em></h2>
   <p class="section-body">The Manada Panther Telegram group runs 24/7 with automated moderation, pinned announcements, and the bot responding in real-time to dozens of commands. The screenshot below shows a typical afternoon in the group — holders helping each other, Panther staff answering questions, and the community growing organically.</p>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:40px 0;align-items:start">
@@ -202,7 +204,7 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <hr class="divider">
 <div class="cta-section">
   <h2 class="cta-title">Need a bot that<br><em>runs your community?</em></h2>
-  <p class="cta-sub"><span data-en="Telegram bots, Web3 integrations, mini-games — we build the full stack." data-es="Bots de Telegram, integraciones Web3, mini-juegos — construimos el stack completo.">Telegram bots, Web3 integrations, mini-games — we build the full stack.</span></p>
+  <p class="cta-sub"><span data-en="Telegram bots, Web3 integrations, mini-games — we build the full stack." data-es="Bots de Telegram, integraciones Web3, mini-juegos — construimos el stack completo." data-fr="Bots Telegram, intégrations Web3, mini-jeux — nous construisons la pile complète." data-ar="بوتات تيليغرام، تكاملات ويب 3، ألعاب مصغّرة — نبني المنظومة الكاملة.">Telegram bots, Web3 integrations, mini-games — we build the full stack.</span></p>
   <div class="cta-links">
     <a href="https://t.me/ManadaPantherBot" target="_blank" class="cta-link">Join the community ↗</a>
     <a href="https://go.mypanther.io/game-defender" target="_blank" class="cta-link">Play PNT Defender ↗</a>
@@ -218,21 +220,20 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;lin
 <script>
 function setLang(lang){
   document.querySelectorAll('[data-en]').forEach(el=>{
-    if(el.getAttribute('data-'+lang+'-html')==='true'){
-      el.innerHTML=el.getAttribute('data-'+lang);
-    } else {
-      el.textContent=el.getAttribute('data-'+lang);
-    }
+    var v=el.getAttribute('data-'+lang); if(v===null) v=el.getAttribute('data-en');
+    var h=el.getAttribute('data-'+lang+'-html')==='true'||(el.getAttribute('data-'+lang)===null&&el.getAttribute('data-en-html')==='true');
+    if(h){el.innerHTML=v;}else{el.textContent=v;}
   });
   document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase()||(lang==='ar'&&btn.dataset.l==='ar'));
   });
   document.documentElement.lang=lang;
-  localStorage.setItem('plv-lang',lang);
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  try{localStorage.setItem('plv-lang',lang);}catch(e){}
 }
 (function(){
-  const saved=localStorage.getItem('plv-lang')||'en';
-  if(saved==='es') setLang('es');
+  var saved='en';try{saved=localStorage.getItem('plv-lang')||'en';}catch(e){}
+  if(['es','fr','ar'].indexOf(saved)>-1) setLang(saved);
 })();
 </script>
 </body>
