@@ -25,7 +25,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -397,6 +397,22 @@ nav{background:rgba(237,242,239,.94)}
 .svc-card:last-child .svc-desc{max-width:60ch}
 @media(max-width:900px){.port-grid{grid-auto-rows:300px}.svc-card:last-child{grid-column:auto}}
 .port-grid .pcard:first-child .pover{background:linear-gradient(to top,rgba(5,15,18,.96) 0%,rgba(5,15,18,.78) 50%,rgba(5,15,18,.4) 100%)}
+
+/* IDIOMAS: árabe (RTL) */
+html[lang="ar"] body,html[lang="ar"] .hero-sub,html[lang="ar"] .about-text p,html[lang="ar"] .svc-desc,html[lang="ar"] .ct-inner p,html[lang="ar"] .pdesc,html[lang="ar"] button{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif}
+html[lang="ar"] .section-title,html[lang="ar"] .hero-headline,html[lang="ar"] .stat-num,html[lang="ar"] .pname,html[lang="ar"] .svc-title,html[lang="ar"] .team-name,html[lang="ar"] .ct-big{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-variation-settings:normal;letter-spacing:0;line-height:1.25}
+html[lang="ar"] .hero-headline{font-weight:700;font-size:clamp(2.6rem,5.4vw,5.4rem)}
+html[lang="ar"] .nav-links a,html[lang="ar"] .eyebrow,html[lang="ar"] .hero-eyebrow,html[lang="ar"] .ptag,html[lang="ar"] .stat-label{letter-spacing:0}
+html[lang="ar"] .lang-toggle button{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif}
+html[dir="rtl"] .hero-right::after{background:linear-gradient(to top,rgba(8,22,25,.78) 0%,transparent 38%)}
+html[dir="rtl"] .hero-right{margin:6rem 0 2rem 3rem}
+@media(max-width:900px){html[dir="rtl"] .hero-right{margin:0 1.25rem 1.25rem}}
+html[dir="rtl"] .ct-big,html[dir="rtl"] .ct-val,html[dir="rtl"] .pgl{direction:ltr}
+html[dir="rtl"] .pover{text-align:right}
+html[dir="rtl"] .hero-stats{right:auto;left:5.5rem}
+html[dir="rtl"] .stat-num{direction:ltr;unicode-bidi:isolate;text-align:right}
+html[dir="rtl"] .lang-toggle{direction:ltr}
+@media(max-width:900px){html[dir="rtl"] .hero-stats{left:auto}}
 /* ===== /REFRESH ===== */
 </style>
 </head>
@@ -408,14 +424,16 @@ nav{background:rgba(237,242,239,.94)}
 <nav id="nav">
   <div class="nav-logo"><img src="logo.png" alt="Pegando La Vuelta"/></div>
   <div class="nav-links">
-    <a href="#about" data-en="About" data-es="Nosotros">About</a>
-    <a href="#services" data-en="Services" data-es="Servicios">Services</a>
-    <a href="#portfolio" data-en="Work" data-es="Proyectos">Work</a>
-    <a href="#clients" data-en="Clients" data-es="Clientes">Clients</a>
-    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    <a href="#about" data-en="About" data-es="Nosotros" data-fr="À propos" data-ar="من نحن">About</a>
+    <a href="#services" data-en="Services" data-es="Servicios" data-fr="Services" data-ar="خدماتنا">Services</a>
+    <a href="#portfolio" data-en="Work" data-es="Proyectos" data-fr="Projets" data-ar="أعمالنا">Work</a>
+    <a href="#clients" data-en="Clients" data-es="Clientes" data-fr="Clients" data-ar="عملاؤنا">Clients</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto" data-fr="Contact" data-ar="تواصل معنا">Contact</a>
     <div class="lang-toggle">
       <button id="bEN" class="active" onclick="setLang('en')">EN</button>
       <button id="bES" onclick="setLang('es')">ES</button>
+      <button id="bFR" onclick="setLang('fr')">FR</button>
+      <button id="bAR" onclick="setLang('ar')">عربي</button>
     </div>
   </div>
 </nav>
@@ -423,28 +441,28 @@ nav{background:rgba(237,242,239,.94)}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow"><span data-en="Creative & Digital Agency" data-es="Agencia Creativa & Digital">Creative & Digital Agency</span></div>
+    <div class="hero-eyebrow"><span data-en="Creative & Digital Agency" data-es="Agencia Creativa & Digital" data-fr="Agence créative & digitale" data-ar="وكالة إبداعية ورقمية">Creative & Digital Agency</span></div>
     <h1 class="hero-headline">
-      <span style="display:block;overflow:hidden"><span class="word" data-en="We build" data-es="Creamos">We build</span></span>
-      <span style="display:block;overflow:hidden"><span class="word"><em data-en="brands" data-es="marcas">brands</em>,</span></span>
-      <span style="display:block;overflow:hidden"><span class="word" data-en="communities" data-es="comunidades">communities</span></span>
-      <span style="display:block;overflow:hidden"><span class="word">& <span class="r" data-en="products." data-es="productos.">products.</span></span></span>
+      <span style="display:block;overflow:hidden"><span class="word" data-en="We build" data-es="Creamos" data-fr="Nous créons" data-ar="نصنع">We build</span></span>
+      <span style="display:block;overflow:hidden"><span class="word"><em data-en="brands" data-es="marcas" data-fr="des marques" data-ar="علامات تجارية">brands</em>,</span></span>
+      <span style="display:block;overflow:hidden"><span class="word" data-en="communities" data-es="comunidades" data-fr="des communautés" data-ar="مجتمعات">communities</span></span>
+      <span style="display:block;overflow:hidden"><span class="word">& <span class="r" data-en="products." data-es="productos." data-fr="des produits." data-ar="ومنتجات.">products.</span></span></span>
     </h1>
-    <p class="hero-sub" data-en="12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide." data-es="12+ años viajando y construyendo por Sudamérica. De Bogotá a Ushuaia — tres veces. Ahora llevamos esa energía a marcas del mundo.">12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide.</p>
+    <p class="hero-sub" data-en="12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide." data-es="12+ años viajando y construyendo por Sudamérica. De Bogotá a Ushuaia — tres veces. Ahora llevamos esa energía a marcas del mundo." data-fr="Plus de 12 ans à voyager et à construire à travers l'Amérique du Sud. De Bogotá à Ushuaïa, trois fois. Aujourd'hui, nous mettons cette énergie au service de marques du monde entier." data-ar="أكثر من 12 عامًا من السفر والبناء عبر أمريكا الجنوبية. من بوغوتا إلى أوشوايا، ثلاث مرات. واليوم ننقل هذه الطاقة إلى علامات تجارية حول العالم.">12+ years traveling and building across South America. Bogotá to Ushuaia — three times. Now we bring that energy to brands worldwide.</p>
     <div class="hero-ctas">
-      <a href="#portfolio" class="btn-p" data-en="See our work →" data-es="Ver proyectos →">See our work →</a>
-      <a href="#contact" class="btn-s" data-en="Let's talk" data-es="Hablemos">Let's talk</a>
+      <a href="#portfolio" class="btn-p" data-en="See our work →" data-es="Ver proyectos →" data-fr="Voir nos projets →" data-ar="شاهد أعمالنا ←">See our work →</a>
+      <a href="#contact" class="btn-s" data-en="Let's talk" data-es="Hablemos" data-fr="Parlons-en" data-ar="لنتحدث">Let's talk</a>
     </div>
   </div>
   <div class="hero-right">
     <img src="hero-lake.jpg" alt="Emi con impermeable amarillo frente a una laguna glaciar en los Andes"/>
   </div>
   <div class="hero-stats">
-    <div><div class="stat-num">12+</div><div class="stat-label" data-en="Years on the road" data-es="Años en ruta">Years on the road</div></div>
+    <div><div class="stat-num">12+</div><div class="stat-label" data-en="Years on the road" data-es="Años en ruta" data-fr="Années sur la route" data-ar="سنوات على الطريق">Years on the road</div></div>
     <div><div class="stat-num">3×</div><div class="stat-label">Bogotá → Ushuaia</div></div>
-    <div><div class="stat-num">10k+</div><div class="stat-label" data-en="Community members" data-es="Miembros">Community members</div></div>
+    <div><div class="stat-num">10k+</div><div class="stat-label" data-en="Community members" data-es="Miembros" data-fr="Membres de la communauté" data-ar="أعضاء المجتمع">Community members</div></div>
   </div>
-  <div class="scroll-hint"><div class="scroll-line"></div><span data-en="Scroll" data-es="Scroll">Scroll</span></div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span data-en="Scroll" data-es="Scroll" data-fr="Défiler" data-ar="مرر للأسفل">Scroll</span></div>
 </section>
 
 <!-- ABOUT -->
@@ -452,11 +470,11 @@ nav{background:rgba(237,242,239,.94)}
   <div class="about-inner">
     <div class="about-grid">
       <div class="reveal">
-        <div class="eyebrow"><span data-en="Who we are" data-es="Quiénes somos">Who we are</span></div>
-        <h2 class="section-title" data-en="Three people.<br>One relentless agency." data-es="Tres personas.<br>Una agencia sin frenos.">Three people.<br>One relentless agency.</h2>
+        <div class="eyebrow"><span data-en="Who we are" data-es="Quiénes somos" data-fr="Qui sommes-nous" data-ar="من نحن">Who we are</span></div>
+        <h2 class="section-title" data-en="Three people.<br>One relentless agency." data-es="Tres personas.<br>Una agencia sin frenos." data-fr="Trois personnes.<br>Une agence infatigable." data-ar="ثلاثة أشخاص.<br>وكالة واحدة لا تتوقف.">Three people.<br>One relentless agency.</h2>
         <div class="about-text">
-          <p data-en="<strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward." data-es="<strong>Pegando La Vuelta</strong> nació en la ruta — Emi y Lorena viajando Sudamérica de punta a punta durante más de 12 años, de Bogotá a Ushuaia, tres veces. Ese viaje moldeó cómo trabajamos: adaptables, creativos, siempre avanzando."><strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward.</p>
-          <p data-en="Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen." data-es="Hoy somos un equipo de tres, con Andrea sumando la capa de estrategia creativa y comunicación que completa nuestro stack. Remotos, full-stack, sin intermediarios.">Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen.</p>
+          <p data-en="<strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward." data-es="<strong>Pegando La Vuelta</strong> nació en la ruta — Emi y Lorena viajando Sudamérica de punta a punta durante más de 12 años, de Bogotá a Ushuaia, tres veces. Ese viaje moldeó cómo trabajamos: adaptables, creativos, siempre avanzando." data-fr="<strong>Pegando La Vuelta</strong> est née sur la route : Emi et Lorena parcourent l'Amérique du Sud par voie terrestre depuis plus de 12 ans, de Bogotá à Ushuaïa, trois fois. Ce voyage a façonné notre manière de travailler : adaptable, ingénieuse, toujours en mouvement." data-ar="<strong>Pegando La Vuelta</strong> وُلدت على الطريق: يجوب إيمي ولورينا أمريكا الجنوبية برًا منذ أكثر من 12 عامًا، من بوغوتا إلى أوشوايا، ثلاث مرات. هذه الرحلة صاغت طريقة عملنا: مرونة وحسن تدبير وتقدم دائم إلى الأمام."><strong>Pegando La Vuelta</strong> was born on the road — Emi and Lorena traveling South America overland for over 12 years, Bogotá to Ushuaia, three times. That journey shaped how we work: adaptable, resourceful, always moving forward.</p>
+          <p data-en="Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen." data-es="Hoy somos un equipo de tres, con Andrea sumando la capa de estrategia creativa y comunicación que completa nuestro stack. Remotos, full-stack, sin intermediarios." data-fr="Aujourd'hui, nous sommes trois : Andrea apporte la stratégie créative et la couche communication qui complètent notre équipe. Travail à distance, full-stack, sans intermédiaires." data-ar="اليوم نحن فريق من ثلاثة أشخاص، وتضيف أندريا الاستراتيجية الإبداعية وطبقة التواصل التي تكمل فريقنا. عمل عن بُعد، حلول متكاملة، بلا وسطاء.">Today we're a team of three, with Andrea bringing the creative strategy and communication layer that completes our stack. Remote-first, full-stack, no middlemen.</p>
         </div>
         <span class="route-badge">Bogotá · Medellín · Cartagena · Quito · Cuenca · Lima · Cusco · La Paz · Salta · Mendoza · Buenos Aires · Bariloche · Ushuaia</span>
       </div>
@@ -472,15 +490,15 @@ nav{background:rgba(237,242,239,.94)}
 <!-- TEAM -->
 <section class="team-section">
   <div class="team-inner">
-    <div class="eyebrow reveal"><span data-en="The team" data-es="El equipo">The team</span></div>
-    <h2 class="section-title reveal" data-en="Built by travelers.<br>Driven by craft." data-es="Construido por viajeros.<br>Impulsado por el oficio.">Built by travelers.<br>Driven by craft.</h2>
+    <div class="eyebrow reveal"><span data-en="The team" data-es="El equipo" data-fr="L'équipe" data-ar="الفريق">The team</span></div>
+    <h2 class="section-title reveal" data-en="Built by travelers.<br>Driven by craft." data-es="Construido por viajeros.<br>Impulsado por el oficio." data-fr="Construit par des voyageurs.<br>Guidé par le savoir-faire." data-ar="بناه مسافرون.<br>تقوده الحِرفة.">Built by travelers.<br>Driven by craft.</h2>
     <div class="team-grid team-grid-3">
       <div class="team-card reveal">
         <div class="team-card-img"><img src="emi-portrait.jpg" alt="Emi Torres" style="object-position:center 25%"/></div>
         <div class="team-card-info">
           <div class="team-card-top">
             <div class="team-avatar ta-emi">EM</div>
-            <div><div class="team-name">Emi Torres</div><div class="team-role" data-en="Community Engineer · Full-Stack Dev · Strategist" data-es="Community Engineer · Dev Full-Stack · Estratega">Community Engineer · Full-Stack Dev · Strategist</div></div>
+            <div><div class="team-name">Emi Torres</div><div class="team-role" data-en="Community Engineer · Full-Stack Dev · Strategist" data-es="Community Engineer · Dev Full-Stack · Estratega" data-fr="Community Engineer · Développeur full-stack · Stratège" data-ar="مهندس مجتمعات · مطوّر Full-Stack · استراتيجي">Community Engineer · Full-Stack Dev · Strategist</div></div>
           </div>
           <div class="team-tags">
             <span class="tag t">Telegram Bots</span><span class="tag t">React Native</span><span class="tag t">Web3</span><span class="tag t">Python</span><span class="tag">Strategy</span><span class="tag">XAU/USD</span>
@@ -492,7 +510,7 @@ nav{background:rgba(237,242,239,.94)}
         <div class="team-card-info">
           <div class="team-card-top">
             <div class="team-avatar ta-lore">LO</div>
-            <div><div class="team-name">Lorena</div><div class="team-role" data-en="Designer · Photographer · Filmmaker · Illustrator" data-es="Diseñadora · Fotógrafa · Cineasta · Ilustradora">Designer · Photographer · Filmmaker · Illustrator</div></div>
+            <div><div class="team-name">Lorena</div><div class="team-role" data-en="Designer · Photographer · Filmmaker · Illustrator" data-es="Diseñadora · Fotógrafa · Cineasta · Ilustradora" data-fr="Designer · Photographe · Réalisatrice · Illustratrice" data-ar="مصممة · مصوّرة · مخرجة · رسامة">Designer · Photographer · Filmmaker · Illustrator</div></div>
           </div>
           <div class="team-tags">
             <span class="tag a">Brand Design</span><span class="tag a">Photography</span><span class="tag a">Video</span><span class="tag a">Illustration</span><span class="tag">Community</span><span class="tag">Content</span>
@@ -506,7 +524,7 @@ nav{background:rgba(237,242,239,.94)}
         <div class="team-card-info">
           <div class="team-card-top">
             <div class="team-avatar" style="background:#e8f4f8;color:#2d6a8a">AN</div>
-            <div><div class="team-name">Andrea</div><div class="team-role" data-en="Creative Strategist · Content · UX Writing" data-es="Estratega Creativa · Contenido · UX Writing">Creative Strategist · Content · UX Writing</div></div>
+            <div><div class="team-name">Andrea</div><div class="team-role" data-en="Creative Strategist · Content · UX Writing" data-es="Estratega Creativa · Contenido · UX Writing" data-fr="Stratège créative · Contenu · UX Writing" data-ar="استراتيجية إبداعية · محتوى · UX Writing">Creative Strategist · Content · UX Writing</div></div>
           </div>
           <div class="team-tags">
             <span class="tag">Content 360°</span><span class="tag">UX Writing</span><span class="tag">Brand Strategy</span><span class="tag">LATAM</span><span class="tag">Fintech</span>
@@ -521,17 +539,17 @@ nav{background:rgba(237,242,239,.94)}
 <section id="services">
   <div class="svc-inner">
     <div class="svc-header reveal">
-      <div class="eyebrow"><span data-en="What we do" data-es="Qué hacemos">What we do</span></div>
-      <h2 class="section-title" data-en="Full-stack.<br>No middlemen." data-es="Stack completo.<br>Sin intermediarios.">Full-stack.<br>No middlemen.</h2>
+      <div class="eyebrow"><span data-en="What we do" data-es="Qué hacemos" data-fr="Ce que nous faisons" data-ar="ماذا نقدم">What we do</span></div>
+      <h2 class="section-title" data-en="Full-stack.<br>No middlemen." data-es="Stack completo.<br>Sin intermediarios." data-fr="Full-stack.<br>Sans intermédiaires." data-ar="حلول متكاملة.<br>بلا وسطاء.">Full-stack.<br>No middlemen.</h2>
     </div>
     <div class="svc-grid">
-      <div class="svc-card ct reveal"><span class="svc-icon">🤖</span><div class="svc-title" data-en="Telegram Bot Dev" data-es="Bots de Telegram">Telegram Bot Dev</div><p class="svc-desc" data-en="Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end." data-es="Comunidades gamificadas, membresías, referidos y mini-apps — de punta a punta.">Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end.</p><span class="svc-who sw-t">Emi</span></div>
-      <div class="svc-card ct reveal"><span class="svc-icon">🌐</span><div class="svc-title" data-en="Web Development" data-es="Desarrollo Web">Web Development</div><p class="svc-desc" data-en="Landing pages, portfolios, interactive tools, calculators, HTML5 games. React & vanilla." data-es="Landing pages, portfolios, herramientas interactivas y juegos HTML5.">Landing pages, portfolios, interactive tools, calculators, HTML5 games.</p><span class="svc-who sw-t">Emi</span></div>
-      <div class="svc-card ct reveal"><span class="svc-icon">📱</span><div class="svc-title" data-en="Mobile Apps" data-es="Apps Móviles">Mobile Apps</div><p class="svc-desc" data-en="React Native / Expo for iOS & Android. AR features, audio, gyroscope, Google Play pipeline." data-es="React Native / Expo para iOS & Android. AR, audio, giroscopio, Google Play.">React Native / Expo for iOS & Android. AR features, audio, Google Play pipeline.</p><span class="svc-who sw-t">Emi</span></div>
-      <div class="svc-card ca reveal"><span class="svc-icon">📸</span><div class="svc-title" data-en="Photography & Video" data-es="Foto & Video">Photography & Video</div><p class="svc-desc" data-en="Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America." data-es="Fotografía de viaje, editorial, lifestyle y marca. Cine documental por Latinoamérica.">Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America.</p><span class="svc-who sw-a">Lorena</span></div>
-      <div class="svc-card ca reveal"><span class="svc-icon">✦</span><div class="svc-title" data-en="Brand & Design" data-es="Marca & Diseño">Brand & Design</div><p class="svc-desc" data-en="Brand identity, illustration, UI/UX design, pitch decks and agency portfolios." data-es="Identidad de marca, ilustración, UI/UX, pitch decks y portafolios de agencia.">Brand identity, illustration, UI/UX, pitch decks and agency portfolios.</p><span class="svc-who sw-a">Lorena</span></div>
-      <div class="svc-card cr reveal"><span class="svc-icon">🚀</span><div class="svc-title" data-en="Community & Strategy" data-es="Comunidad & Estrategia">Community & Strategy</div><p class="svc-desc" data-en="Web3 community architecture, content strategy, creator briefs, ambassador programs, social media." data-es="Comunidades Web3, estrategia de contenido, embajadores y gestión de redes.">Web3 communities, content strategy, creator briefs, ambassador programs.</p><span class="svc-who sw-r">Emi + Lorena</span></div>
-      <div class="svc-card ca reveal"><span class="svc-icon">✍️</span><div class="svc-title" data-en="Content & UX Writing" data-es="Contenido & UX Writing">Content & UX Writing</div><p class="svc-desc" data-en="Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands." data-es="Ecosistemas de contenido 360°, UX writing, comunicación de marca y estrategia digital para marcas fintech y LATAM.">Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands.</p><span class="svc-who sw-a">Andrea</span></div>
+      <div class="svc-card ct reveal"><span class="svc-icon">🤖</span><div class="svc-title" data-en="Telegram Bot Dev" data-es="Bots de Telegram" data-fr="Bots Telegram" data-ar="بوتات تيليجرام">Telegram Bot Dev</div><p class="svc-desc" data-en="Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end." data-es="Comunidades gamificadas, membresías, referidos y mini-apps — de punta a punta." data-fr="Communautés gamifiées, systèmes d'abonnement, suivi de parrainage, mini-apps, déployés de bout en bout." data-ar="مجتمعات قائمة على الألعاب، أنظمة عضوية، تتبع الإحالات، تطبيقات مصغّرة، من الفكرة حتى الإطلاق.">Gamified communities, membership systems, referral tracking, mini-apps — deployed end to end.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ct reveal"><span class="svc-icon">🌐</span><div class="svc-title" data-en="Web Development" data-es="Desarrollo Web" data-fr="Développement web" data-ar="تطوير المواقع">Web Development</div><p class="svc-desc" data-en="Landing pages, portfolios, interactive tools, calculators, HTML5 games. React & vanilla." data-es="Landing pages, portfolios, herramientas interactivas y juegos HTML5." data-fr="Pages d'atterrissage, portfolios, outils interactifs, calculateurs, jeux HTML5. React et vanilla." data-ar="صفحات هبوط، ملفات أعمال، أدوات تفاعلية، حاسبات، ألعاب HTML5. باستخدام React والتقنيات الأساسية.">Landing pages, portfolios, interactive tools, calculators, HTML5 games.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ct reveal"><span class="svc-icon">📱</span><div class="svc-title" data-en="Mobile Apps" data-es="Apps Móviles" data-fr="Applications mobiles" data-ar="تطبيقات الجوال">Mobile Apps</div><p class="svc-desc" data-en="React Native / Expo for iOS & Android. AR features, audio, gyroscope, Google Play pipeline." data-es="React Native / Expo para iOS & Android. AR, audio, giroscopio, Google Play." data-fr="React Native / Expo pour iOS et Android. Réalité augmentée, audio, gyroscope, publication sur Google Play." data-ar="React Native / Expo لنظامي iOS وأندرويد. واقع معزز، صوت، جيروسكوب، والنشر على Google Play.">React Native / Expo for iOS & Android. AR features, audio, Google Play pipeline.</p><span class="svc-who sw-t">Emi</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">📸</span><div class="svc-title" data-en="Photography & Video" data-es="Foto & Video" data-fr="Photo & vidéo" data-ar="التصوير والفيديو">Photography & Video</div><p class="svc-desc" data-en="Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America." data-es="Fotografía de viaje, editorial, lifestyle y marca. Cine documental por Latinoamérica." data-fr="Photographie de voyage, éditoriale, lifestyle et de marque. Films documentaires à travers l'Amérique latine." data-ar="تصوير السفر والتحرير والأسلوب الحياتي والعلامات التجارية. أفلام وثائقية في أنحاء أمريكا اللاتينية.">Travel, editorial, lifestyle and brand photography. Documentary filmmaking across Latin America.</p><span class="svc-who sw-a">Lorena</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">✦</span><div class="svc-title" data-en="Brand & Design" data-es="Marca & Diseño" data-fr="Marque & design" data-ar="العلامة والتصميم">Brand & Design</div><p class="svc-desc" data-en="Brand identity, illustration, UI/UX design, pitch decks and agency portfolios." data-es="Identidad de marca, ilustración, UI/UX, pitch decks y portafolios de agencia." data-fr="Identité de marque, illustration, design UI/UX, pitch decks et portfolios d'agence." data-ar="هوية العلامة التجارية، رسوم توضيحية، تصميم UI/UX، عروض تقديمية وملفات أعمال للوكالات.">Brand identity, illustration, UI/UX, pitch decks and agency portfolios.</p><span class="svc-who sw-a">Lorena</span></div>
+      <div class="svc-card cr reveal"><span class="svc-icon">🚀</span><div class="svc-title" data-en="Community & Strategy" data-es="Comunidad & Estrategia" data-fr="Communauté & stratégie" data-ar="المجتمع والاستراتيجية">Community & Strategy</div><p class="svc-desc" data-en="Web3 community architecture, content strategy, creator briefs, ambassador programs, social media." data-es="Comunidades Web3, estrategia de contenido, embajadores y gestión de redes." data-fr="Architecture de communautés Web3, stratégie de contenu, briefs créateurs, programmes d'ambassadeurs, réseaux sociaux." data-ar="بناء مجتمعات Web3، استراتيجية المحتوى، تعليمات للمبدعين، برامج السفراء، وسائل التواصل الاجتماعي.">Web3 communities, content strategy, creator briefs, ambassador programs.</p><span class="svc-who sw-r">Emi + Lorena</span></div>
+      <div class="svc-card ca reveal"><span class="svc-icon">✍️</span><div class="svc-title" data-en="Content & UX Writing" data-es="Contenido & UX Writing" data-fr="Contenu & UX Writing" data-ar="المحتوى وUX Writing">Content & UX Writing</div><p class="svc-desc" data-en="Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands." data-es="Ecosistemas de contenido 360°, UX writing, comunicación de marca y estrategia digital para marcas fintech y LATAM." data-fr="Écosystèmes de contenu à 360°, UX writing, communication de marque et stratégie digitale pour la fintech et les marques d'Amérique latine." data-ar="منظومات محتوى شاملة 360°، كتابة تجربة المستخدم، تواصل العلامة التجارية، واستراتيجية رقمية للتقنية المالية وعلامات أمريكا اللاتينية.">Content ecosystems 360°, UX writing, brand communication, and digital strategy for fintech and LATAM brands.</p><span class="svc-who sw-a">Andrea</span></div>
     </div>
   </div>
 </section>
@@ -540,38 +558,38 @@ nav{background:rgba(237,242,239,.94)}
 <section id="portfolio">
   <div class="port-inner">
     <div class="reveal">
-      <div class="eyebrow"><span data-en="Our work" data-es="Nuestros proyectos">Our work</span></div>
-      <h2 class="section-title" data-en="Selected projects." data-es="Proyectos seleccionados.">Selected projects.</h2>
+      <div class="eyebrow"><span data-en="Our work" data-es="Nuestros proyectos" data-fr="Nos projets" data-ar="أعمالنا">Our work</span></div>
+      <h2 class="section-title" data-en="Selected projects." data-es="Proyectos seleccionados." data-fr="Projets sélectionnés." data-ar="مشاريع مختارة.">Selected projects.</h2>
     </div>
     <div class="port-grid">
       <div class="pcard big at reveal" onclick="window.open('https://puroguides.com','_blank')" style="cursor:pointer;background-image:url(./assets/img_puroguides.jpg);background-size:cover;background-position:center top">
-        <div class="pover"><div class="ptag">Platform · Web · Creators</div><div class="pname">PuroGuides</div><div class="pdesc" data-en="Our own platform: local guides for Máncora, Cusco, Cuenca, Bogotá and Dubai, connecting businesses with content creators" data-es="Plataforma propia: guías locales de Máncora, Cusco, Cuenca, Bogotá y Dubái que conectan negocios con creadores de contenido">Our own platform: local guides for Máncora, Cusco, Cuenca, Bogotá and Dubai, connecting businesses with content creators</div>
+        <div class="pover"><div class="ptag">Platform · Web · Creators</div><div class="pname">PuroGuides</div><div class="pdesc" data-en="Our own platform: local guides for Máncora, Cusco, Cuenca, Bogotá and Dubai, connecting businesses with content creators" data-es="Plataforma propia: guías locales de Máncora, Cusco, Cuenca, Bogotá y Dubái que conectan negocios con creadores de contenido" data-fr="Notre propre plateforme : des guides locaux pour Máncora, Cusco, Cuenca, Bogotá et Dubaï, qui relient les commerces aux créateurs de contenu." data-ar="منصتنا الخاصة: أدلة محلية لمانكورا وكوسكو وكوينكا وبوغوتا ودبي، تربط الأعمال التجارية بصنّاع المحتوى.">Our own platform: local guides for Máncora, Cusco, Cuenca, Bogotá and Dubai, connecting businesses with content creators</div>
         <div class="pgl"><a href="https://puroguides.com" target="_blank" onclick="event.stopPropagation()">puroguides.com</a><a href="https://puromancora.web.app" target="_blank" onclick="event.stopPropagation()">PuroMáncora</a><a href="https://purocusco.web.app" target="_blank" onclick="event.stopPropagation()">PuroCusco</a><a href="https://purocuenca.web.app" target="_blank" onclick="event.stopPropagation()">PuroCuenca</a><a href="https://purobogota.web.app" target="_blank" onclick="event.stopPropagation()">PuroBogotá</a><a href="https://purodubai.web.app" target="_blank" onclick="event.stopPropagation()">PuroDubai</a></div></div>
       </div>
       <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/raw-mancora.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_raw_mancora.jpg);background-size:cover;background-position:center top">
-        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales">Surf &amp; lifestyle for intl. travelers</div></div>
+        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Raw Máncora</div><div class="pdesc" data-en="Surf & lifestyle for intl. travelers" data-es="Surf & lifestyle para viajeros internacionales" data-fr="Surf & lifestyle pour voyageurs internationaux" data-ar="ركوب الأمواج ونمط حياة للمسافرين الدوليين">Surf &amp; lifestyle for intl. travelers</div></div>
       </div>
       <div class="pcard big at reveal" onclick="window.open('https://pegandolavuelta.agency/manada-panther.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_0b4b5ffcb1.jpg);background-size:cover;background-position:center 40%">
-        <div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div>
+        <div class="pover"><div class="ptag">Telegram Bot · Web3 · Python</div><div class="pname">Manada Panther Bot</div><div class="pdesc" data-en="Gamified community · 10k+ members · 13 tiers · USDT raffles" data-es="Comunidad gamificada · +10k miembros · 13 niveles · rifas USDT" data-fr="Communauté gamifiée · plus de 10 000 membres · 13 niveaux · tirages en USDT" data-ar="مجتمع قائم على الألعاب · أكثر من 10 آلاف عضو · 13 مستوى · سحوبات بعملة USDT">Gamified community · 10k+ members · 13 tiers · USDT raffles</div></div>
       </div>
       
       <div class="pcard at reveal" style="background-image:url(./assets/img_873fb88bec.jpg);background-size:cover;background-position:center center" onclick="window.open('https://pegandolavuelta.agency/kalmoon.html','_blank')">
-        <div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración">Nocturnal wellness · star map · breathing rituals</div></div>
+        <div class="pover"><div class="ptag">Mobile · React Native</div><div class="pname">Kalmoon</div><div class="pdesc" data-en="Nocturnal wellness · star map · breathing rituals" data-es="Bienestar nocturno · mapa estelar · rituales de respiración" data-fr="Bien-être nocturne · carte du ciel · rituels de respiration" data-ar="عافية ليلية · خريطة النجوم · طقوس التنفس">Nocturnal wellness · star map · breathing rituals</div></div>
       </div>
       <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/pnt-defender.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_pnt_defender.jpg);background-size:cover;background-position:center 20%">
-        <div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI">Space Invaders-style · 13 levels · UFO mechanics</div></div>
+        <div class="pover"><div class="ptag">HTML5 Game · Web3</div><div class="pname">PNT Defender</div><div class="pdesc" data-en="Space Invaders-style · 13 levels · UFO mechanics" data-es="Estilo Space Invaders · 13 niveles · mecánicas OVNI" data-fr="Style Space Invaders · 13 niveaux · mécaniques d'OVNI" data-ar="على طراز Space Invaders · 13 مستوى · ميكانيكا الأجسام الطائرة">Space Invaders-style · 13 levels · UFO mechanics</div></div>
       </div>
       <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/hotel-app.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_389ef94797.png);background-size:cover;background-position:center top">
-        <div class="pover"><div class="ptag at">Mobile · Hospitality</div><div class="pname">Don Giovanni Hotel App</div><div class="pdesc" data-en="Beachfront hotel · direct booking app · loyalty points" data-es="Hotel frente al mar · app de reservas directas · puntos de fidelidad">Beachfront hotel · direct booking app · loyalty points</div></div>
+        <div class="pover"><div class="ptag at">Mobile · Hospitality</div><div class="pname">Don Giovanni Hotel App</div><div class="pdesc" data-en="Beachfront hotel · direct booking app · loyalty points" data-es="Hotel frente al mar · app de reservas directas · puntos de fidelidad" data-fr="Hôtel en bord de mer · app de réservation directe · points de fidélité" data-ar="فندق على الشاطئ · تطبيق حجز مباشر · نقاط ولاء">Beachfront hotel · direct booking app · loyalty points</div></div>
       </div>
       <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/escondite.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_48dda9c50c.jpg);background-size:cover;background-position:center top">
-        <div class="pover"><div class="ptag at">Web · Hospitality</div><div class="pname">El Escondite</div><div class="pdesc" data-en="Private mountain villas · WordPress · Colombian highlands" data-es="Villas privadas en la montaña · WordPress · Cundinamarca">Private mountain villas · WordPress · Colombian highlands</div></div>
+        <div class="pover"><div class="ptag at">Web · Hospitality</div><div class="pname">El Escondite</div><div class="pdesc" data-en="Private mountain villas · WordPress · Colombian highlands" data-es="Villas privadas en la montaña · WordPress · Cundinamarca" data-fr="Villas privées en montagne · WordPress · hauts plateaux colombiens" data-ar="فلل خاصة في الجبال · WordPress · مرتفعات كولومبيا">Private mountain villas · WordPress · Colombian highlands</div></div>
       </div>
       <div class="pcard aa reveal" onclick="window.open('https://pegandolavuelta.agency/tyba.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_tyba_hero.jpg);background-size:cover;background-position:center top">
-        <div class="pover"><div class="ptag" style="color:#6B9EFF">Fintech · UX Writing</div><div class="pname">Tyba Pocket</div><div class="pdesc" data-en="Product landing page · Content strategy · Peru" data-es="Landing de producto · Estrategia de contenido · Perú">Product landing page · Content strategy · Peru</div></div>
+        <div class="pover"><div class="ptag" style="color:#6B9EFF">Fintech · UX Writing</div><div class="pname">Tyba Pocket</div><div class="pdesc" data-en="Product landing page · Content strategy · Peru" data-es="Landing de producto · Estrategia de contenido · Perú" data-fr="Page produit · stratégie de contenu · Pérou" data-ar="صفحة هبوط لمنتج · استراتيجية محتوى · بيرو">Product landing page · Content strategy · Peru</div></div>
       </div>
       <div class="pcard big aa reveal" onclick="window.open('https://pegandolavuelta.agency/viajes-plv.html','_blank')" style="cursor:pointer;background-image:url(./assets/img_viajes_plv.jpg);background-size:cover;background-position:center center">
-        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Viajes Pegando La Vuelta</div><div class="pdesc" data-en="South America travel platform · bilingual · trip catalog" data-es="Agencia de viajes Sudamérica · bilingüe · catálogo de viajes">South America travel platform · bilingual · trip catalog</div></div>
+        <div class="pover"><div class="ptag at">Web · Travel Agency</div><div class="pname">Viajes Pegando La Vuelta</div><div class="pdesc" data-en="South America travel platform · bilingual · trip catalog" data-es="Agencia de viajes Sudamérica · bilingüe · catálogo de viajes" data-fr="Plateforme de voyages en Amérique du Sud · bilingue · catalogue de circuits" data-ar="منصة سفر في أمريكا الجنوبية · ثنائية اللغة · كتالوج رحلات">South America travel platform · bilingual · trip catalog</div></div>
       </div>
     </div>
   </div>
@@ -580,8 +598,8 @@ nav{background:rgba(237,242,239,.94)}
 <!-- CLIENTS -->
 <section id="clients">
   <div class="cl-inner reveal">
-    <div class="eyebrow" style="justify-content:center"><span data-en="Trusted by" data-es="Trabajamos con">Trusted by</span></div>
-    <h2 class="section-title" data-en="Brands we've<br>worked with." data-es="Marcas con las<br>que trabajamos.">Brands we've<br>worked with.</h2>
+    <div class="eyebrow" style="justify-content:center"><span data-en="Trusted by" data-es="Trabajamos con" data-fr="Ils nous font confiance" data-ar="يثق بنا">Trusted by</span></div>
+    <h2 class="section-title" data-en="Brands we've<br>worked with." data-es="Marcas con las<br>que trabajamos." data-fr="Les marques avec<br>lesquelles nous travaillons." data-ar="علامات تجارية<br>عملنا معها.">Brands we've<br>worked with.</h2>
   </div>
   <div class="marquee-wrap"><div class="marquee">
     <span class="cl-item">Panther Wallet</span><span class="cl-item">Fontur Colombia</span><span class="cl-item">Crowne Plaza</span><span class="cl-item">Holiday Inn</span><span class="cl-item">Avianca</span><span class="cl-item">Selina</span><span class="cl-item">Jansport</span><span class="cl-item">IATI Seguros</span><span class="cl-item">Arajet</span><span class="cl-item">Viajero Hostels</span>
@@ -596,9 +614,9 @@ nav{background:rgba(237,242,239,.94)}
 <!-- CONTACT -->
 <section id="contact">
   <div class="ct-inner reveal">
-    <div class="eyebrow"><span data-en="Get in touch" data-es="Contacto">Get in touch</span></div>
-    <h2 class="section-title" data-en="Ready to build<br>something great?" data-es="¿Listos para construir<br>algo increíble?">Ready to build<br>something great?</h2>
-    <p data-en="We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together." data-es="Trabajamos de forma remota con clientes de todo el mundo. Escribinos y veamos qué podemos construir juntos.">We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together.</p>
+    <div class="eyebrow"><span data-en="Get in touch" data-es="Contacto" data-fr="Contactez-nous" data-ar="تواصل معنا">Get in touch</span></div>
+    <h2 class="section-title" data-en="Ready to build<br>something great?" data-es="¿Listos para construir<br>algo increíble?" data-fr="Prêts à construire<br>quelque chose de grand ?" data-ar="هل أنت مستعد لبناء<br>شيء رائع؟">Ready to build<br>something great?</h2>
+    <p data-en="We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together." data-es="Trabajamos de forma remota con clientes de todo el mundo. Escribinos y veamos qué podemos construir juntos." data-fr="Nous travaillons à distance avec des clients du monde entier. Écrivez-nous et voyons ce que nous pouvons construire ensemble." data-ar="نعمل عن بُعد مع عملاء من جميع أنحاء العالم. راسلنا ولنكتشف معًا ما يمكننا بناؤه.">We work remotely with clients worldwide. Drop us a line and let's figure out what we can build together.</p>
     <div class="ct-cards">
       <a href="mailto:emi@pegandolavuelta.agency" class="ct-card"><span class="ct-icon">✉️</span><div><div class="ct-label">Emi · Email</div><div class="ct-val">emi@pegandolavuelta.agency</div></div></a>
       <a href="mailto:lore@pegandolavuelta.agency" class="ct-card"><span class="ct-icon">✉️</span><div><div class="ct-label">Lorena · Email</div><div class="ct-val">lore@pegandolavuelta.agency</div></div></a>
@@ -613,8 +631,8 @@ nav{background:rgba(237,242,239,.94)}
 
 <footer>
   <div class="fl"><img src="logo.png" alt="PLV" style="filter:invert(1)"/></div>
-  <div class="fc" data-en="© 2026 Pegando La Vuelta Agency. Remote · South America." data-es="© 2026 Pegando La Vuelta Agency. Remotos · Sudamérica.">© 2026 Pegando La Vuelta Agency. Remote · South America.</div>
-  <div class="flinks"><a href="#hero">Top</a><a href="#portfolio" data-en="Work" data-es="Proyectos">Work</a><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></div>
+  <div class="fc" data-en="© 2026 Pegando La Vuelta Agency. Remote · South America." data-es="© 2026 Pegando La Vuelta Agency. Remotos · Sudamérica." data-fr="© 2026 Pegando La Vuelta Agency. À distance · Amérique du Sud." data-ar="© 2026 Pegando La Vuelta Agency. عن بُعد · أمريكا الجنوبية.">© 2026 Pegando La Vuelta Agency. Remote · South America.</div>
+  <div class="flinks"><a href="#hero">Top</a><a href="#portfolio" data-en="Work" data-es="Proyectos" data-fr="Projets" data-ar="أعمالنا">Work</a><a href="#contact" data-en="Contact" data-es="Contacto" data-fr="Contact" data-ar="تواصل معنا">Contact</a></div>
 </footer>
 
 <script>
@@ -648,10 +666,15 @@ document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=`
 
 // LANG
 function setLang(l){
-  document.getElementById('bEN').classList.toggle('active',l==='en');
-  document.getElementById('bES').classList.toggle('active',l==='es');
+  ['en','es','fr','ar'].forEach(function(k){var b=document.getElementById('b'+k.toUpperCase());if(b)b.classList.toggle('active',l===k)});
+  document.documentElement.lang=l;
+  document.documentElement.dir=(l==='ar')?'rtl':'ltr';
   document.querySelectorAll('[data-en]').forEach(el=>{const v=el.getAttribute(`data-${l}`);if(v)el.innerHTML=v});
+  try{localStorage.setItem('plv-lang',l)}catch(e){}
 }
+(function(){var l=null;try{l=localStorage.getItem('plv-lang')}catch(e){}
+  if(!l){var n=(navigator.language||'en').slice(0,2).toLowerCase();l=['es','fr','ar'].indexOf(n)>-1?n:'en'}
+  if(l!=='en')document.addEventListener('DOMContentLoaded',function(){setLang(l)})})();
 
 
 
@@ -676,8 +699,8 @@ var KM = (function() {
   var ready = false;
 
   function lang() {
-    var btn = document.getElementById('bES');
-    return (btn && btn.classList.contains('active')) ? 'es' : 'en';
+    var l = document.documentElement.lang;
+    return (l==='es'||l==='fr'||l==='ar') ? l : 'en';
   }
 
   function build() {
@@ -768,7 +791,7 @@ var KM = (function() {
         <div class="km-title">&#x1F989; Kalmoon</div>
         <div class="km-desc"
           data-en="Nocturnal wellness app with real-time star map, AI breathing rituals via ElevenLabs, moon phases, body scan meditation and a pixel-art platformer featuring the owl. Built in React Native &middot; Expo SDK 54."
-          data-es="App de bienestar nocturno con mapa estelar en tiempo real, rituales de respiraci&oacute;n IA (ElevenLabs), fases lunares, escaneo corporal y un juego platformer pixel-art con el b&uacute;ho. React Native &middot; Expo SDK 54.">
+          data-es="App de bienestar nocturno con mapa estelar en tiempo real, rituales de respiraci&oacute;n IA (ElevenLabs), fases lunares, escaneo corporal y un juego platformer pixel-art con el b&uacute;ho. React Native &middot; Expo SDK 54." data-fr="Application de bien-être nocturne avec carte du ciel en temps réel, rituels de respiration guidés par IA via ElevenLabs, phases de lune, méditation de scan corporel et un jeu de plateforme pixel art avec le hibou. Développée en React Native &middot; Expo SDK 54." data-ar="تطبيق عافية ليلية مع خريطة نجوم لحظية، وطقوس تنفس بالذكاء الاصطناعي عبر ElevenLabs، وأطوار القمر، وتأمل مسح الجسد، ولعبة منصّات بنمط البكسل بطلها البومة. طُوّر باستخدام React Native &middot; Expo SDK 54.">
           Nocturnal wellness app with real-time star map, AI breathing rituals via ElevenLabs, moon phases, body scan meditation and a pixel-art platformer featuring the owl. Built in React Native &middot; Expo SDK 54.
         </div>
       </div>
@@ -793,11 +816,11 @@ var KM = (function() {
     </div>
     <div class="km-cta">
       <a href="./kalmoon-inversores.html" target="_blank" class="km-cta-p"
-         data-en="Investor Pitch" data-es="Pitch Inversores">Investor Pitch</a>
+         data-en="Investor Pitch" data-es="Pitch Inversores" data-fr="Présentation investisseurs" data-ar="عرض المستثمرين">Investor Pitch</a>
       <a href="https://github.com/Neodenoche" target="_blank" class="km-cta-s"
-         data-en="View on GitHub" data-es="Ver en GitHub">View on GitHub</a>
+         data-en="View on GitHub" data-es="Ver en GitHub" data-fr="Voir sur GitHub" data-ar="عرض على GitHub">View on GitHub</a>
       <a href="#contact" onclick="KM.close()" class="km-cta-s"
-         data-en="Get in touch" data-es="Hablemos">Get in touch</a>
+         data-en="Get in touch" data-es="Hablemos" data-fr="Contactez-nous" data-ar="تواصل معنا">Get in touch</a>
     </div>
   </div>
 </div>
