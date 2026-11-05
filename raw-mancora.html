@@ -110,38 +110,40 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
   .split{grid-template-columns:1fr}
 }
 </style>
-</head>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet"><style>html[dir=rtl] body,html[dir=rtl] *{font-family:"IBM Plex Sans Arabic",sans-serif!important;letter-spacing:0!important}html[dir=rtl] .lang-btn,html[dir=rtl] .lang-toggle{direction:ltr}</style></head>
 <body>
 
 <a class="back" href="https://pegandolavuelta.agency">
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2L4 6l4 4"/></svg>
-  <span data-en="Agency" data-es="Agencia">Agency</span>
+  <span data-en="Agency" data-es="Agencia" data-fr="Agence" data-ar="الوكالة">Agency</span>
 </a>
 
 <div class="lang-toggle">
   <button class="lang-btn active" onclick="setLang('en')">EN</button>
   <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" data-l="ar" onclick="setLang('ar')">AR</button>
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Case Study · Web Design · Travel" data-es="Caso de estudio · Diseño Web · Turismo">Case Study · Web Design · Travel</div>
+    <div class="hero-eyebrow" data-en="Case Study · Web Design · Travel" data-es="Caso de estudio · Diseño Web · Turismo" data-fr="Étude de cas · Web Design · Voyage" data-ar="دراسة حالة · تصميم ويب · سفر">Case Study · Web Design · Travel</div>
     <h1 class="hero-title">Raw <em>Máncora</em></h1>
-    <p class="hero-sub" data-en="A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers." data-es="Una landing page de surf y lifestyle para un guía local que ofrece la Máncora real — sin trampas turísticas, sin itinerarios guionados. Construida para convertir viajeros internacionales de habla inglesa.">A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers.</p>
+    <p class="hero-sub" data-en="A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers." data-es="Una landing page de surf y lifestyle para un guía local que ofrece la Máncora real — sin trampas turísticas, sin itinerarios guionados. Construida para convertir viajeros internacionales de habla inglesa." data-fr="Une landing page surf et lifestyle pour un guide local qui propose la vraie Máncora — sans pièges à touristes, sans itinéraires scénarisés. Conçue pour convertir les voyageurs internationaux anglophones." data-ar="صفحة هبوط لركوب الأمواج ونمط الحياة لمرشد محلي يقدّم مانكورا الحقيقية — بلا فخاخ سياحية ولا برامج مكتوبة مسبقًا. بُنيت لتحويل المسافرين الدوليين الناطقين بالإنجليزية.">A surf & lifestyle landing page for a local guide offering the real Máncora — no tourist traps, no scripted itineraries. Built to convert English-speaking international travelers.</p>
     <div class="hero-stats">
       <div>
         <div class="stat-val">8<em>+</em></div>
-        <div class="stat-label" data-en="Experiences" data-es="Experiencias">Experiences</div>
+        <div class="stat-label" data-en="Experiences" data-es="Experiencias" data-fr="Expériences" data-ar="التجارب">Experiences</div>
       </div>
       <div>
         <div class="stat-val">$<em>999</em></div>
-        <div class="stat-label" data-en="Base package" data-es="Paquete base">Base package</div>
+        <div class="stat-label" data-en="Base package" data-es="Paquete base" data-fr="Forfait de base" data-ar="الباقة الأساسية">Base package</div>
       </div>
       <div>
         <div class="stat-val">365<em>d</em></div>
-        <div class="stat-label" data-en="Surf season" data-es="Temporada de surf">Surf season</div>
+        <div class="stat-label" data-en="Surf season" data-es="Temporada de surf" data-fr="Saison de surf" data-ar="موسم ركوب الأمواج">Surf season</div>
       </div>
     </div>
   </div>
@@ -151,9 +153,9 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
 
 <!-- THE BRIEF -->
 <section class="section">
-  <div class="section-eyebrow" data-en="The brief" data-es="El encargo">The brief</div>
-  <h2 class="section-title"><span data-en="Feel the real" data-es="Sentí la verdadera">Feel the real</span><br><em><span data-en="Máncora." data-es="Máncora.">Máncora.</span></em></h2>
-  <p class="section-body" data-en="Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation." data-es="Raw Máncora es un emprendimiento 50/50 entre Pegando La Vuelta y un guía local de Máncora con más de una década de experiencia en terreno. El encargo: construir un sitio que le hable directamente a viajeros internacionales buscando una experiencia auténtica — no un paquete de resort. Tipografía editorial serif, fotografía de playa a sangre y un tono que se siente como la recomendación de un amigo.">Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation.</p>
+  <div class="section-eyebrow" data-en="The brief" data-es="El encargo" data-fr="Le brief" data-ar="الملخص">The brief</div>
+  <h2 class="section-title"><span data-en="Feel the real" data-es="Sentí la verdadera" data-fr="Ressentez la vraie" data-ar="اشعر بمانكورا">Feel the real</span><br><em><span data-en="Máncora." data-es="Máncora." data-fr="Máncora." data-ar="الحقيقية.">Máncora.</span></em></h2>
+  <p class="section-body" data-en="Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation." data-es="Raw Máncora es un emprendimiento 50/50 entre Pegando La Vuelta y un guía local de Máncora con más de una década de experiencia en terreno. El encargo: construir un sitio que le hable directamente a viajeros internacionales buscando una experiencia auténtica — no un paquete de resort. Tipografía editorial serif, fotografía de playa a sangre y un tono que se siente como la recomendación de un amigo." data-fr="Raw Máncora est une entreprise 50/50 entre Pegando La Vuelta et un guide local de Máncora avec plus de dix ans d'expérience sur le terrain. Le brief : construire un site qui s'adresse directement aux voyageurs internationaux en quête d'une expérience authentique — pas d'un forfait resort. Typographie éditoriale à empattements, photographie de plage plein cadre et un ton qui sonne comme la recommandation d'un ami." data-ar="Raw Máncora مشروع مناصفة بين بيغاندو لا فويلتا ومرشد محلي في مانكورا لديه أكثر من عقد من الخبرة الميدانية. المطلوب: موقع يخاطب مباشرة المسافرين الدوليين الباحثين عن تجربة أصيلة — لا عن باقة منتجع. خط تحريري ذو زوائد، وصور شاطئ بملء الشاشة، ونبرة تبدو كتوصية صديق.">Raw Máncora is a 50/50 venture between Pegando La Vuelta and a local Máncora guide with over a decade of experience on the ground. The brief: build a site that speaks directly to international travelers looking for an authentic experience — not a resort package. Serif editorial typography, full-bleed beach photography, and a tone that feels like a friend's recommendation.</p>
   <div class="screenshot"><img src="./assets/img_a9bafb7c8a.png" alt="Raw Máncora hero" loading="lazy"></div>
 </section>
 
@@ -161,9 +163,9 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
 
 <!-- EXPERIENCES -->
 <section class="section">
-  <div class="section-eyebrow" data-en="The experiences" data-es="Las experiencias">The experiences</div>
-  <h2 class="section-title"><span data-en="Real activities." data-es="Actividades reales.">Real activities.</span><br><em><span data-en="Zero filler." data-es="Sin relleno.">Zero filler.</span></em></h2>
-  <p class="section-body" data-en="The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking." data-es="El grid de experiencias muestra 8+ actividades — clases de surf, clases de ceviche, intro al kite surf, vóleibol playero, excursiones a Lobitos — todas fotografiadas con una estética cruda y honesta. Cada card está etiquetada por categoría y enlaza a una reserva directa por WhatsApp.">The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking.</p>
+  <div class="section-eyebrow" data-en="The experiences" data-es="Las experiencias" data-fr="Les expériences" data-ar="التجارب">The experiences</div>
+  <h2 class="section-title"><span data-en="Real activities." data-es="Actividades reales." data-fr="De vraies activités." data-ar="أنشطة حقيقية.">Real activities.</span><br><em><span data-en="Zero filler." data-es="Sin relleno." data-fr="Zéro remplissage." data-ar="بلا حشو.">Zero filler.</span></em></h2>
+  <p class="section-body" data-en="The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking." data-es="El grid de experiencias muestra 8+ actividades — clases de surf, clases de ceviche, intro al kite surf, vóleibol playero, excursiones a Lobitos — todas fotografiadas con una estética cruda y honesta. Cada card está etiquetada por categoría y enlaza a una reserva directa por WhatsApp." data-fr="La grille des expériences présente plus de 8 activités — cours de surf, cours de ceviche, initiation au kitesurf, beach-volley, excursions à Lobitos — toutes photographiées avec une esthétique brute et honnête. Chaque carte est étiquetée par catégorie et renvoie à une réservation directe par WhatsApp." data-ar="تعرض شبكة التجارب أكثر من 8 أنشطة — دروس ركوب الأمواج، دروس السيفيتشي، مدخل إلى الكايت سيرف، كرة طائرة شاطئية، رحلات يوم إلى لوبيتوس — كلها مصوّرة بجمالية خام وصادقة. كل بطاقة موسومة بفئتها وتقود إلى حجز مباشر عبر واتساب.">The experiences grid shows 8+ activities — surf lessons, ceviche classes, kite surf intro, beach volleyball, Lobitos day trips — all photographed with a raw, honest aesthetic. Each card is tagged by category and links to a direct WhatsApp booking.</p>
   <div class="screenshot"><img src="./assets/img_a934707ddd.png" alt="Raw Máncora experiences" loading="lazy"></div>
 </section>
 
@@ -173,15 +175,15 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
 <section class="section">
   <div class="split">
     <div>
-      <div class="section-eyebrow" data-en="The approach" data-es="El enfoque">The approach</div>
-      <h2 class="section-title"><span data-en="Editorial meets" data-es="Lo editorial se encuentra">Editorial meets</span><br><em><span data-en="coastal." data-es="con lo costero.">coastal.</span></em></h2>
-      <p class="section-body" data-en="Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy." data-es="Cormorant Garamond le da al sitio una profundidad editorial inusual para un producto de turismo — señala una experiencia curada, no un tour masivo. El acento coral y el fondo oscuro teal llevan la paleta de un atardecer en Máncora. La prueba social viene de dos testimonios que se leen como despachos de viajeros reales, no como copy de marketing.">Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy.</p>
+      <div class="section-eyebrow" data-en="The approach" data-es="El enfoque" data-fr="L'approche" data-ar="المنهج">The approach</div>
+      <h2 class="section-title"><span data-en="Editorial meets" data-es="Lo editorial se encuentra" data-fr="L'éditorial rencontre" data-ar="التحرير يلتقي">Editorial meets</span><br><em><span data-en="coastal." data-es="con lo costero." data-fr="le côtier." data-ar="بالساحل.">coastal.</span></em></h2>
+      <p class="section-body" data-en="Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy." data-es="Cormorant Garamond le da al sitio una profundidad editorial inusual para un producto de turismo — señala una experiencia curada, no un tour masivo. El acento coral y el fondo oscuro teal llevan la paleta de un atardecer en Máncora. La prueba social viene de dos testimonios que se leen como despachos de viajeros reales, no como copy de marketing." data-fr="Cormorant Garamond donne au site une profondeur éditoriale inhabituelle pour un produit de voyage — il signale une expérience choisie, pas un tour de masse. L'accent corail et le fond sombre teal portent la palette d'un coucher de soleil à Máncora. La preuve sociale vient de deux témoignages qui se lisent comme des dépêches de vrais voyageurs, pas comme du texte marketing." data-ar="يمنح خط Cormorant Garamond الموقع عمقًا تحريريًا غير معتاد في منتج سياحي — فهو يشير إلى تجربة منتقاة لا جولة جماهيرية. وتحمل لمسة المرجان والخلفية الداكنة المائلة إلى الأزرق المخضر ألوان غروب مانكورا. ويأتي الإثبات الاجتماعي من شهادتين تُقرآن كرسائل من مسافرين حقيقيين لا كنص تسويقي.">Cormorant Garamond gives the site an editorial depth unusual for a travel product — it signals a curated experience, not a mass-market tour. The coral accent and teal dark background carry the palette of a Máncora sunset. Social proof comes from two testimonials that read like dispatches from actual travelers, not marketing copy.</p>
       <div class="tech-row">
         <span class="tech">HTML5 · CSS3</span>
         <span class="tech">Cormorant Garamond</span>
-        <span class="tech" data-en="Scroll reveal" data-es="Scroll reveal">Scroll reveal</span>
-        <span class="tech" data-en="WhatsApp booking" data-es="Reserva WhatsApp">WhatsApp booking</span>
-        <span class="tech" data-en="English-first" data-es="Inglés primero">English-first</span>
+        <span class="tech" data-en="Scroll reveal" data-es="Scroll reveal" data-fr="Révélation au défilement" data-ar="ظهور عند التمرير">Scroll reveal</span>
+        <span class="tech" data-en="WhatsApp booking" data-es="Reserva WhatsApp" data-fr="Réservation WhatsApp" data-ar="حجز عبر واتساب">WhatsApp booking</span>
+        <span class="tech" data-en="English-first" data-es="Inglés primero" data-fr="Anglais d'abord" data-ar="الإنجليزية أولًا">English-first</span>
       </div>
     </div>
     <div class="split-img"><img src="./assets/img_8ff26d41d8.png" alt="Raw Máncora reviews" loading="lazy"></div>
@@ -192,23 +194,23 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
 
 <!-- WHAT WAS BUILT -->
 <section class="section">
-  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó">What was built</div>
-  <h2 class="section-title"><span data-en="Everything a traveler" data-es="Todo lo que un viajero">Everything a traveler</span><br><em><span data-en="needs to say yes." data-es="necesita para decir sí.">needs to say yes.</span></em></h2>
+  <div class="section-eyebrow" data-en="What was built" data-es="Qué se construyó" data-fr="Ce qui a été construit" data-ar="ما تم بناؤه">What was built</div>
+  <h2 class="section-title"><span data-en="Everything a traveler" data-es="Todo lo que un viajero" data-fr="Tout ce dont un voyageur" data-ar="كل ما يحتاجه المسافر">Everything a traveler</span><br><em><span data-en="needs to say yes." data-es="necesita para decir sí." data-fr="a besoin pour dire oui." data-ar="ليقول نعم.">needs to say yes.</span></em></h2>
   <div class="features">
     <div class="feat">
       <div class="feat-icon">🌊</div>
-      <div class="feat-title" data-en="Hero + Social proof" data-es="Hero + Prueba social">Hero + Social proof</div>
-      <div class="feat-desc" data-en="Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold." data-es="Fotografía de playa a sangre, barra de 4 stats (8+ experiencias, 1 guía, 365d surf, ∞ historias), CTA de WhatsApp sobre el fold.">Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold.</div>
+      <div class="feat-title" data-en="Hero + Social proof" data-es="Hero + Prueba social" data-fr="Hero + Preuve sociale" data-ar="الواجهة + الإثبات الاجتماعي">Hero + Social proof</div>
+      <div class="feat-desc" data-en="Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold." data-es="Fotografía de playa a sangre, barra de 4 stats (8+ experiencias, 1 guía, 365d surf, ∞ historias), CTA de WhatsApp sobre el fold." data-fr="Photographie de plage plein cadre, barre de 4 stats (8+ expériences, 1 guide, 365j de surf, ∞ histoires), CTA WhatsApp au-dessus de la ligne de flottaison." data-ar="صور شاطئ بملء الشاشة، شريط من 4 إحصاءات (+8 تجارب، مرشد واحد، 365 يوم ركوب أمواج، ∞ قصص)، وزر واتساب في أعلى الصفحة.">Full-bleed beach photography, 4 stats bar (8+ experiences, 1 guide, 365d surf, ∞ stories), WhatsApp CTA above the fold.</div>
     </div>
     <div class="feat">
       <div class="feat-icon">🏄</div>
-      <div class="feat-title" data-en="Experiences grid" data-es="Grid de experiencias">Experiences grid</div>
-      <div class="feat-desc" data-en="8+ activities in a 3-column image grid with category tags, names, and per-card booking links." data-es="8+ actividades en un grid de imágenes de 3 columnas con tags de categoría, nombres y links de reserva por card.">8+ activities in a 3-column image grid with category tags, names, and per-card booking links.</div>
+      <div class="feat-title" data-en="Experiences grid" data-es="Grid de experiencias" data-fr="Grille d'expériences" data-ar="شبكة التجارب">Experiences grid</div>
+      <div class="feat-desc" data-en="8+ activities in a 3-column image grid with category tags, names, and per-card booking links." data-es="8+ actividades en un grid de imágenes de 3 columnas con tags de categoría, nombres y links de reserva por card." data-fr="8+ activités dans une grille d'images à 3 colonnes avec tags de catégorie, noms et liens de réservation par carte." data-ar="أكثر من 8 أنشطة في شبكة صور من 3 أعمدة مع وسوم الفئات والأسماء وروابط حجز لكل بطاقة.">8+ activities in a 3-column image grid with category tags, names, and per-card booking links.</div>
     </div>
     <div class="feat">
       <div class="feat-icon">⭐</div>
-      <div class="feat-title" data-en="Testimonials" data-es="Testimonios">Testimonials</div>
-      <div class="feat-desc" data-en="Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic." data-es="Dos reseñas de 5 estrellas de viajeros reales (Brooklyn, NY y Melbourne, AU) escritas para sentirse auténticas y específicas, no genéricas.">Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic.</div>
+      <div class="feat-title" data-en="Testimonials" data-es="Testimonios" data-fr="Témoignages" data-ar="الشهادات">Testimonials</div>
+      <div class="feat-desc" data-en="Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic." data-es="Dos reseñas de 5 estrellas de viajeros reales (Brooklyn, NY y Melbourne, AU) escritas para sentirse auténticas y específicas, no genéricas." data-fr="Deux avis 5 étoiles de vrais voyageurs (Brooklyn, NY et Melbourne, AU) écrits pour paraître authentiques et précis, pas génériques." data-ar="تقييمان من 5 نجوم من مسافرين حقيقيين (بروكلين، نيويورك وملبورن، أستراليا) كُتبا ليبدوا أصيلين ومحددين لا عامّين.">Two 5-star reviews from real travelers (Brooklyn, NY and Melbourne, AU) written to feel authentic and specific, not generic.</div>
     </div>
   </div>
 </section>
@@ -217,29 +219,32 @@ body{background:var(--sand);color:var(--text);font-family:'DM Sans',sans-serif;l
 
 <!-- CTA -->
 <div class="cta-section">
-  <h2 class="cta-title"><span data-en="Need a site that" data-es="¿Necesitás un sitio que">Need a site that</span><br><em><span data-en="sells the experience?" data-es="venda la experiencia?">sells the experience?</span></em></h2>
-  <p class="cta-sub" data-en="Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive." data-es="Turismo, hospitalidad, lifestyle — construimos sitios que hacen que los visitantes internacionales sientan el lugar antes de llegar.">Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive.</p>
+  <h2 class="cta-title"><span data-en="Need a site that" data-es="¿Necesitás un sitio que" data-fr="Besoin d'un site qui" data-ar="هل تحتاج إلى موقع">Need a site that</span><br><em><span data-en="sells the experience?" data-es="venda la experiencia?" data-fr="vend l'expérience ?" data-ar="يبيع التجربة؟">sells the experience?</span></em></h2>
+  <p class="cta-sub" data-en="Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive." data-es="Turismo, hospitalidad, lifestyle — construimos sitios que hacen que los visitantes internacionales sientan el lugar antes de llegar." data-fr="Voyage, hôtellerie, lifestyle — nous construisons des sites qui font ressentir le lieu aux visiteurs internationaux avant leur arrivée." data-ar="سفر وضيافة ونمط حياة — نبني مواقع تجعل الزوار الدوليين يشعرون بالمكان قبل وصولهم.">Travel, hospitality, lifestyle — we build sites that make international visitors feel the place before they arrive.</p>
   <a href="https://wa.me/51982251518?text=Hola%20Emi%2C%20vi%20el%20case%20study%20de%20Raw%20M%C3%A1ncora%20y%20me%20interesa%20hablar." class="cta-btn" target="_blank">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.523 5.848L.043 23.25a.75.75 0 0 0 .916.95l5.656-1.486A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.953-1.354l-.354-.212-3.682.967.983-3.594-.232-.372A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-    <span data-en="Talk to Emi" data-es="Hablar con Emi">Talk to Emi</span>
+    <span data-en="Talk to Emi" data-es="Hablar con Emi" data-fr="Parler à Emi" data-ar="تحدّث مع إيمي">Talk to Emi</span>
   </a>
-  <div class="cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú">Pegando La Vuelta Agency · Máncora, Peru</span></div>
+  <div class="cta-fine"><span data-en="Pegando La Vuelta Agency · Máncora, Peru" data-es="Agencia Pegando La Vuelta · Máncora, Perú" data-fr="Agence Pegando La Vuelta · Máncora, Pérou" data-ar="وكالة بيغاندو لا فويلتا · مانكورا، بيرو">Pegando La Vuelta Agency · Máncora, Peru</span></div>
 </div>
 
 <script>
 function setLang(lang){
   document.querySelectorAll('[data-en]').forEach(el=>{
-    el.textContent=el.getAttribute('data-'+lang);
+    var v=el.getAttribute('data-'+lang); if(v===null) v=el.getAttribute('data-en');
+    var h=el.getAttribute('data-'+lang+'-html')==='true'||(el.getAttribute('data-'+lang)===null&&el.getAttribute('data-en-html')==='true');
+    if(h){el.innerHTML=v;}else{el.textContent=v;}
   });
   document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.classList.toggle('active', btn.textContent===lang.toUpperCase());
+    btn.classList.toggle('active', btn.textContent===lang.toUpperCase()||(lang==='ar'&&btn.dataset.l==='ar'));
   });
   document.documentElement.lang=lang;
-  localStorage.setItem('plv-lang',lang);
+  document.documentElement.dir=(lang==='ar')?'rtl':'ltr';
+  try{localStorage.setItem('plv-lang',lang);}catch(e){}
 }
 (function(){
-  const saved=localStorage.getItem('plv-lang')||'en';
-  if(saved==='es') setLang('es');
+  var saved='en';try{saved=localStorage.getItem('plv-lang')||'en';}catch(e){}
+  if(['es','fr','ar'].indexOf(saved)>-1) setLang(saved);
 })();
 </script>
 </body>
